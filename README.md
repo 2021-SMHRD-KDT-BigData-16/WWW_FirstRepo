@@ -1,6 +1,6 @@
 # WWW
 
-OTT Service
+OTT Service(OTT + Comunity)
 
 
 <hr>
@@ -13,4 +13,7 @@ OTT Service
    <li> push는 각자 맡은 하루의 분량이 끝났을 때만 push하기!!!! </li>
    <li> push하기 전에 팀 톡방에 말하고 push하기 😁 </li>
    <li> push 코멘트는 자기가 개발한 기능과 자신의 이름 적기 ex) 로그인 기능 - 기현 </li>
+   <li> 프로젝트 스케줄러 확인해서 개발중인 기능(In process) 개발 완료된 기능(Done)해놓기 </li>
 </ol>
+
+
