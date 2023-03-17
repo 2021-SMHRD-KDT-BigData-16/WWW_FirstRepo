@@ -14,6 +14,8 @@
 			<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
 			<% for (int i=0; i<contents.size(); i++) {%>
 				<h2><%=contents.get(i).getTitle() %></h2>
+				<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg"/>
+				
 			<%}; %>
 </body>
 </html>
