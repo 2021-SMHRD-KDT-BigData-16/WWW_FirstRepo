@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -18,11 +19,12 @@ public class communityDAO {
 		SqlSession session = factory.openSession(true);
 		try {
 			list = session.selectList("SearchAll");
-			
+
 		} finally {
 			// 3. sqlsession 반납
 			session.close();
 		}
 		return list;
 	}
+
 }
