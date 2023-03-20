@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href = "./styles/content.css">
+<link rel="stylesheet" href="./styles/content.css">
 </head>
 <body>
 	<!-- 
@@ -31,14 +31,15 @@
 		</div>
 	</div>
 	<!-- contentDTO-> Object down casting 필수 -->
-		<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
-	<div id="movie-image">
-		<% for (int i=0; i<contents.size(); i++) {%>
-		<img src="./netflix_img/<%=contents.get(i).getTitle() %>.jpg"/><%=contents.get(i).getTitle()%>
-		<%if(i/5==0) {%>
-		<br>
-		<%}%>
-		<%}; %>
-	</div>
+	<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
+	<% for (int j=0; j<4; j++) {%>
+		<div id="movie-image<%=j%>">
+			<%for(int i=0; i<contents.size(); i++){%>
+			<a href="#"> 
+				<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
+			</a>
+			<%};%>
+		</div>
+	<%}; %>
 </body>
 </html>

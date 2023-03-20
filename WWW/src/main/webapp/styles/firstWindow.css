@@ -15,10 +15,11 @@ img{
     border-bottom:40px;
 }
 
-a{
-    list-style: none;
-    
+.btn_link{
+    text-decoration: none !important;
+    color:white !important;
 }
+
 .btn-outline-warning {
     --bs-btn-color: #f8f7f6 !important;
     --bs-btn-border-color: #ff7600 !important;

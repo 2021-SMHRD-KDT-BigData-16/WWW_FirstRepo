@@ -23,7 +23,6 @@ public class contentSearch extends HttpServlet {
 			throws ServletException, IOException {
 		// 1. 한글 인코딩 잡아주기
 		request.setCharacterEncoding("UTF-8");
-		int num = Integer.parseInt(request.getParameter("rows"));
 
 		contentDTO dto = new contentDTO();
 		contentDAO dao = new contentDAO();
