@@ -40,6 +40,7 @@
 	<mappers>
 		<!-- 8) 한개의 mapper 파일의 경로 -->
 		<mapper resource="com/smhrd/db/contentMapper.xml"/>
+		<mapper resource="com/smhrd/db/communityMapper.xml"/>
 	</mappers>
 	
 	

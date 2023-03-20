@@ -1,5 +1,6 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <%@page import="com.smhrd.model.contentDTO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,12 +26,15 @@
 
 	<div id="movie-content-container">
 		<div id="movie-title">영화</div>
+		<div id="community-title">
+			<a href="communitySerach">커뮤니티</a>
+		</div>
 	</div>
 	<!-- contentDTO-> Object down casting 필수 -->
-	<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
+		<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
 	<div id="movie-image">
 		<% for (int i=0; i<contents.size(); i++) {%>
-		<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg"/><%=contents.get(i).getTitle()%>
+		<img src="./netflix_img/<%=contents.get(i).getTitle() %>.jpg"/><%=contents.get(i).getTitle()%>
 		<%if(i/5==0) {%>
 		<br>
 		<%}%>
