@@ -21,7 +21,7 @@
 				stove : 시놉시스
 				c_score : 평점
 				age_class : 방송 연령 등급
-	
+				img : 24개 6개씩 4개
 			 -->
 
 	<div id="movie-content-container">
@@ -31,10 +31,11 @@
 		</div>
 	</div>
 	<!-- contentDTO-> Object down casting 필수 -->
-	<% List<contentDTO> contents= (List<contentDTO>)session.getAttribute("contents"); %>
-	<% for (int j=0; j<4; j++) {%>
+	<% List<contentDTO> contents= (List)session.getAttribute("contents"); %>
+	<% for (int j=0; j<contents.size(); j++) {%>
 		<div id="movie-image<%=j%>">
 			<%for(int i=0; i<contents.size(); i++){%>
+
 			<a href="#"> 
 				<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
 			</a>

@@ -5,11 +5,15 @@ body{
 
 }
 
-div{
-    width: 100%;
-    height:330PX;
-}
-img{
+ #front{
+            height: 300px;
+            width:1600px;
+        }
+#middle{
+            display: block;
+            width:1600px;
+        }
+.logo_img{
     display:block;
     margin:auto;
     border-bottom:40px;
@@ -17,7 +21,7 @@ img{
 
 .btn_link{
     text-decoration: none !important;
-    color:white !important;
+    color: white !important;
 }
 
 .btn-outline-warning {
@@ -71,3 +75,56 @@ img{
     background-color: var(--bs-btn-bg);
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+#combox div:nth-child(1){
+            margin-left: 10px;
+        }
+#combox{	
+			margin-top: 100px;
+            margin-left: 20px;
+            width: 1600px;
+        }
+body{
+        background-color: #000000;
+        color: white;
+        }
+#middle{
+	width:1600px;
+}
+.contain{
+            width: 510px;
+            height:400px;
+            background-color: #000000;
+            display: inline-block;
+            margin-right: 10px;
+            
+        }
+        .contain img{
+            position: relative;
+            border-radius: 7px;
+
+        }
+        .contain .p{
+            margin-top: 70px;
+            text-align: center;
+            color:white;
+
+        }
+        .contain p{
+            text-align: center;
+            color:white;
+        }
+        .a{
+            
+            left:120px;
+            top: 30px;
+            z-index: 2;
+        }
+        .b{
+            z-index: 4;
+        }
+        .c{
+            right:110px;
+            top: 50px;
+            z-index: 1;
+        }
