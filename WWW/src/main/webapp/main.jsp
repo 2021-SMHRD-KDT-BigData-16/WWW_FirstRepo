@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./styles/test.css">
+<link rel="stylesheet" href="./styles/scroll.css"><!-- 스크롤 css 파일 -->
 <title>Insert title here</title>
 </head>
 <body>
@@ -34,9 +34,11 @@
 	<%
 	List<contentDTO> contents = (List) session.getAttribute("contents");
 	%>
+	<!-- 컨텐츠 이미지 박스(가장 큰 틀) -->
 	<div class="warpper">
-		
+		<!-- 이미지 6개씩 한박스에 포장 -->	
 		<%for(int i=0; i<(contents.size()/6); i++){%>
+			<!-- 먼저 보여줄 리스트 3줄 설정-->
 			<% if(i<3) { %>
 				<div class="none">
 					<span> 
@@ -48,6 +50,7 @@
 					</span>
 				</div>
 			<% } else{%>
+			<!-- 나머지 줄은 숨겨서 애니메이션 효과 작용-->
 				<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
@@ -167,9 +170,10 @@
 					<% }%>
 					</span>
 				</div>
-	</div> <!-- 컨텐츠 박스 끝 지우면 애니메이션 효과 x -->
+	</div> 
+	<!-- 컨텐츠 박스 끝 지우면 애니메이션 효과 x -->
 
 
-	<script type="text/javascript" src="./Js/contentsScoll.js"></script>
+	<script type="text/javascript" src="./Js/contentsScoll.js"></script><!-- 스크롤기능 js -->
 </body>
 </html>
