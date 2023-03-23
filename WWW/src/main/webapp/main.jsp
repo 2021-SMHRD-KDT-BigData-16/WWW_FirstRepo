@@ -27,7 +27,7 @@
 	<div id="movie-content-container">
 		<div id="movie-title">영화</div>
 		<div id="community-title">
-			<a href="communitySerach">커뮤니티</a>
+			<a href="#">커뮤니티</a>
 		</div>
 	</div>
 	<!-- contentDTO-> Object down casting 필수 -->
@@ -37,7 +37,7 @@
 	<div class="warpper">
 		
 		<%for(int i=0; i<(contents.size()/6); i++){%>
-			<% if(i<1) { %>
+			<% if(i<3) { %>
 				<div class="none">
 					<span> 
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
