@@ -8,8 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./styles/test.css">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./styles/content.css">
 </head>
 <body>
 	<!-- 
@@ -31,16 +31,145 @@
 		</div>
 	</div>
 	<!-- contentDTO-> Object down casting 필수 -->
-	<% List<contentDTO> contents= (List)session.getAttribute("contents"); %>
-	<% for (int j=0; j<contents.size(); j++) {%>
-		<div id="movie-image<%=j%>">
-			<%for(int i=0; i<contents.size(); i++){%>
+	<%
+	List<contentDTO> contents = (List) session.getAttribute("contents");
+	%>
+	<div class="warpper">
+		
+		<%for(int i=0; i<(contents.size()/6); i++){%>
+			<% if(i<1) { %>
+				<div class="none">
+					<span> 
+					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+			<% } else{%>
+				<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+			<% }%>
+		<% }%>
+		<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+					<div class="list_cont">
+					<span class="animatable"> 
+					<%for (int j = 6; j < 12; j++) {%> 
+						<a href="#<%=contents.get(j).getTitle()%>>">
+						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						</a> 
+					<% }%>
+					</span>
+				</div>
+	</div> <!-- 컨텐츠 박스 끝 지우면 애니메이션 효과 x -->
 
-			<a href="#"> 
-				<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
-			</a>
-			<%};%>
-		</div>
-	<%}; %>
+
+	<script type="text/javascript" src="./Js/contentsScoll.js"></script>
 </body>
 </html>
