@@ -1,29 +1,35 @@
 @charset "UTF-8";
+/* WWW 첫 화면 CSS */
+
 body{
     background-color:black !important;
     color : white;
 
 }
 
+/* WWW 위에 빈 공간 */
  #front{
             height: 300px;
             width:1600px;
         }
+/* WWW 담는 공간  */
 #middle{
             display: block;
             width:1600px;
         }
+        
+/* 로고 이미지 CSS*/        
 .logo_img{
     display:block;
     margin:auto;
     border-bottom:40px;
 }
-
+/*부트 스크랩 BUTTON*/
 .btn_link{
     text-decoration: none !important;
     color: white !important;
 }
-
+/*부트 스크랩 BUTTON*/
 .btn-outline-warning {
     --bs-btn-color: #f8f7f6 !important;
     --bs-btn-border-color: #ff7600 !important;
@@ -40,6 +46,7 @@ body{
     --bs-btn-disabled-border-color: #ff7600 !important;
     --bs-gradient: none;
 }
+/*부트 스크랩 BUTTON*/
 .btn {
     --bs-btn-padding-x: 1.0rem !important;
     --bs-btn-padding-y: 0.6rem !important;
@@ -75,22 +82,21 @@ body{
     background-color: var(--bs-btn-bg);
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
+/*로고 담는 박스 div*/
+#middle{
+	width:1600px;
+}
+/*플레이 리스트 담는 div(combox)의 첫번째 자식 div(.contain)*/
 #combox div:nth-child(1){
             margin-left: 10px;
         }
+/*플레이 리스트 담는 div(combox)*/     
 #combox{	
 			margin-top: 100px;
             margin-left: 20px;
             width: 1600px;
         }
-body{
-        background-color: #000000;
-        color: white;
-        }
-#middle{
-	width:1600px;
-}
+
 .contain{
             width: 510px;
             height:400px;

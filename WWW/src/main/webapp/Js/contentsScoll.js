@@ -1,3 +1,5 @@
+// 이미지 페이드 인 효과
+
 window.onload = function () {
     window.addEventListener("scroll", function (e) {
         scrollEvent();

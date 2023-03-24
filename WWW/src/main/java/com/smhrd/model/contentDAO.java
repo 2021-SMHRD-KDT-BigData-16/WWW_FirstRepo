@@ -39,7 +39,7 @@ public class contentDAO {
 		// 1. SqlSession 빌려오기
 		SqlSession session = factory.openSession(true);
 		try {
-			// 2. session을 활용해서 구문 실행(로그인 기능)
+			// 2. session을 활용해서 검색 기능 실시
 			content_list = (ArrayList)session.selectList("Search");
 		} finally {
 			// 3. session 결과값 반납
