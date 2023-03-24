@@ -42,7 +42,9 @@
 			<!-- 먼저 보여줄 리스트 3줄 설정-->
 			<% if(i<3) { %>
 				<div class="none">
-					<span> 
+				<!-- 클래스 none에는 애니메이션 효과 x -->
+					<span>
+					<!-- i는 행단위라고 생각하고 j는 0부터 6전까지 반복 -->	 
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
 						<a href="detailContent?data=<%=contents.get(j).getTitle() %>">						
 						
@@ -54,7 +56,10 @@
 			<% } else{%>
 			<!-- 나머지 줄은 숨겨서 애니메이션 효과 작용-->
 				<div class="list_cont">
+				<!-- div 클래스 list_cont에는 애니메이션 효과 o -->
 					<span class="animatable"> 
+						<!-- span animatalbe에 css 애니메이션 효과 o -->
+						<!-- i는 행단위라고 생각하고 j는 6부터 12전까지 반복 -->	
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
 						<a href="#<%=contents.get(j).getTitle()%>">
 						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
@@ -64,6 +69,7 @@
 				</div>
 			<% }%>
 		<% }%>
+		<!--여긴 임시 데이터 -->
 		<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
@@ -147,7 +153,7 @@
 				</div>
 					<div class="list_cont">
 					<span class="animatable"> 
-					<%for (int j = 6; j < 12; j++) {%> 
+					<% for (int j = 6; j < 12; j++) {%> 
 						<a href="#<%=contents.get(j).getTitle()%>">
 						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
 						</a> 

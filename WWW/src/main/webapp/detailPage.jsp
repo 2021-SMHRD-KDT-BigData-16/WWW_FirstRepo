@@ -24,10 +24,13 @@
 				age_class : 방송 연령 등급
 		-->
 	<% 
-		
+		// session에서 꺼내올 때 강제 형변환 해주기
 		String data = (String)session.getAttribute("data");
+	
+		// 세션에 담긴 컨텐츠 항목 불러오기
 		ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents");%>
 		<%for (int i=0; i<contents.size(); i++){%>
+		<!-- 컨텐츠 크기만큼 반복해서 입력받은 data와 같은지 비교하기-->
 			<%if(contents.get(i).getTitle().equals(data)){%>
 				<h2>제목 : <%=contents.get(i).getTitle()%></h2>
 				<br>
@@ -40,7 +43,6 @@
 				<h2>평점 : <%=contents.get(i).getC_score()%></h2>
 				<br>
 				<h2>연령등급 : <%=contents.get(i).getAge_class()%></h2>
-
 			<%}%>
 		<%}%>
 	
