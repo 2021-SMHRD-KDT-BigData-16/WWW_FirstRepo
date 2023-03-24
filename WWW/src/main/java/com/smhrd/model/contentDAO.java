@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -33,13 +34,13 @@ public class contentDAO {
 		return cnt;
 	}
 	
-	public List<contentDTO> search() {
-		List<contentDTO> content_list= null;
+	public ArrayList<contentDTO> search() {
+		ArrayList<contentDTO> content_list= null;
 		// 1. SqlSession 빌려오기
 		SqlSession session = factory.openSession(true);
 		try {
 			// 2. session을 활용해서 구문 실행(로그인 기능)
-			content_list = session.selectList("Search");
+			content_list = (ArrayList)session.selectList("Search");
 		} finally {
 			// 3. session 결과값 반납
 			session.close();

@@ -26,7 +26,7 @@ public class communitySearch extends HttpServlet {
 		if (list != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("community", list);
-			response.sendRedirect("community.jsp");
+			response.sendRedirect("detailContent");
 		}else {
 			response.sendRedirect("main.jsp");
 		}

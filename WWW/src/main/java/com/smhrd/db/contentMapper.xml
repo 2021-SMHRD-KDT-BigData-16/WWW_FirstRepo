@@ -9,5 +9,6 @@
 	<select id="Search" parameterType="com.smhrd.model.contentDTO" resultType="com.smhrd.model.contentDTO">
 		select *
 		from test_table
+		order by c_score desc
 	</select>
 </mapper>
