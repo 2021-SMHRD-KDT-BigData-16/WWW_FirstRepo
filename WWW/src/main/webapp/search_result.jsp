@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Search_result</title>
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 	<link rel="stylesheet" href="./styles/footer,header.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,9 +26,7 @@
 </head>
 <body>
 
-
-<!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
+	 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
@@ -74,116 +72,28 @@
             </div>
         </div>
     </nav>
-    <!-- 헤더 끝 -->
-
-<%
+	<%
 	ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents"); // contents(영화전체)
-	ArrayList<contentDTO> horror = (ArrayList) session.getAttribute("horror"); // horror(공포 영화)
-	ArrayList<contentDTO> action = (ArrayList) session.getAttribute("action"); // actions(액션 영화)
-	//String path = "detailContent"
+	String result = (String) session.getAttribute("search_result"); 
 	%>
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <!-- 영화 -->
-        <div class="movie_tag"><h3>영화</h3></div>
-        <div class="slide_wrapper" id="movie">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
-            <ul class="slides">
-            <%for(int i = 0 ; i < contents.size(); i++){ %>
-				<li>	
-					<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2 style="color:white"><%= result %>에 대한 검색 결과</h2>
+	<% for(int i=0; i<contents.size(); i++) {%>
+			<%if(contents.get(i).getTitle().equals(result)) {%>	
+				<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
 						<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
-					</a> 
-				</li> 
-            <%} %>
-            </ul>
-        </div>
-        
-        <!-- 장르별 영화 -->
-        <div class="movie_tag"><h3>호러</h3></div>
-		<div class="slide_wrapper" id="movie1">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
-            <ul class="slides">
-            <%for(int i = 0 ; i < horror.size(); i++){ %>
-            	<li>	
-					<a href="detailContent?data=<%=horror.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=horror.get(i).getTitle()%>.jpg" />
-					</a> 
-				</li> 
-            <%} %>
-            </ul>
-        </div>
-        
-        <!-- 장르별 영화 -->
-        <div class="movie_tag"><h3>액션</h3></div>
-                <div class="slide_wrapper" id="movie2">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
-            <ul class="slides">
-            <%for(int i = 0 ; i < action.size(); i++){ %>
-				<li>	
-					<a href="detailContent?data=<%=action.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=action.get(i).getTitle()%>.jpg" />
-					</a> 
-				</li> 
-            <%} %>
-            </ul>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <!-- 플레이 리스트 (커뮤니티 ) -->
-        <div class="movie3_introduce"><h2>다양한 유저들의 플레이리스트를 즐겨보세요</h2></div>
-        <br>
-        <br>
-        <br>
-        <div class="movie_tag" id="movie3_tag"><h3>커뮤니티</h3></div>
-            <div class="slide_wrapper" id="movie3">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
-            <ul class="slides">
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">ooo의 플레이리스트</p>
-			<p>좋아요 80</p>
-		</div></a>
-				</li> 
-            <%} %>
-            </ul>
-        </div>
-
-		<!-- 	
-				Session 안에 들어있는 "contents","horror","action"이름에 저장되어있는 데이터는 ArrayList<contentDTO> 타입이다.
-				contents안에 담긴 객체(일단 예시)
-				content_index: 영화
-				title : 영화제목
-				genre : 장르
-				year : 방송년도
-				stove : 시놉시스
-				c_score : 평점
-				age_class : 방송 연령 등급
-		-->
-			 
-
-
-
-			 		 			
-		
-			 <script type="text/javascript" src="./Js/main.js"></script>
-			 
+					</a>
+				<a href="detailContent?data=<%=contents.get(i).getTitle()%>">						
+						<h2><%=contents.get(i).getTitle()%></h2>
+					</a>
+		<%} %>
+	<%} %>
+	<script type="text/javascript" src="./Js/main.js"></script>
 </body>
 </html>

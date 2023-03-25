@@ -52,17 +52,17 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="https://www.naver.com">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="main.jsp">홈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="https://www.naver.com">TV프로그램</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="https://www.naver.com">커뮤니티</a>
                     </li>
                 </ul>
 
-                <form class="d-flex" role="search" align="center" action ="">
+                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
 
                     <button type="button" class="btn btn-outline-warning">
@@ -126,7 +126,7 @@
         <div id="a">
           <section class="poster_img">
 
-            <img src="http://placehold.it/592X841/" width="100%">
+            <img src="./thumbnail_img/<%=contents.get(i).getTitle()%>.jpg" width="100%">
 
             <table border="1" class="information">
               <tr>
@@ -168,7 +168,7 @@
           
           <br>
           <h3>영상 시청하기</h3> 
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/LsLUz7ArmGI"
+          <iframe width="340" height="315" src="https://www.youtube.com/embed/LsLUz7ArmGI"
             title="치즈 (CHEEZE) - 무드 인디고 (Mood Indigo) [MV]" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
