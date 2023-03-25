@@ -21,7 +21,7 @@ body{
 /* 로고 이미지 CSS*/        
 .logo_img{
     display:block;
-    margin:auto;
+    margin: 0 auto;
     border-bottom:40px;
 }
 /*부트 스크랩 BUTTON*/

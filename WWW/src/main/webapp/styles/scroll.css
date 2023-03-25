@@ -1,7 +1,9 @@
+
+/*영화 담는 왼쪽 공간 마진 주기*/
 .warpper {
     margin-left: 450px;
 }
-
+/*화면에 표출되기 전*/
 .animatable {
     visibility: hidden;
     animation-play-state: paused;
@@ -16,6 +18,7 @@
     animation-play-state: running;
 }
 
+/* 건들지 마세요..ㅎ!*/ 
 @keyframes fadeInUp {
     0% {
         opacity: 0;
