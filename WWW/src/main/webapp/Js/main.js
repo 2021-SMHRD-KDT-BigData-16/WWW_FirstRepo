@@ -1,6 +1,3 @@
-
-
-// 액션 영화
 var slides = document.querySelector('#movie .slides'),
             slide = document.querySelectorAll('#movie .slides li'),
             currentIdx = 0,
@@ -27,9 +24,6 @@ var slides = document.querySelector('#movie .slides'),
             }
         });
         
-        
-        
-// 영화 메인
 var slides1 = document.querySelector('#movie1 .slides'),
             slide1 = document.querySelectorAll('#movie1 .slides li'),
             currentIdx1 = 0,
@@ -55,7 +49,7 @@ var slides1 = document.querySelector('#movie1 .slides'),
                 moveSlide1(currentIdx1 - 1);
             }
         });
-// 호러 영화
+
         var slides2 = document.querySelector('#movie2 .slides'),
             slide2 = document.querySelectorAll('#movie2 .slides li'),
             currentIdx2 = 0,
@@ -75,6 +69,7 @@ var slides1 = document.querySelector('#movie1 .slides'),
             if (currentIdx2 < slideCount2 - 6) {
                 moveSlide2(currentIdx2 + 1);
             }
+           
         });
         prevBtn2.addEventListener('click', function () {
             if (currentIdx2 > 0) {
@@ -82,29 +77,29 @@ var slides1 = document.querySelector('#movie1 .slides'),
             }
         });
 
-
         var slides3 = document.querySelector('#movie3 .slides'),
-            slide3 = document.querySelectorAll('#movie3 .slides li'),
-            currentIdx3 = 0,
-            slideCount3 = slide3.length,
-            slideWidth3 = 300,
-            slideMargin3 = 30,
-            prevBtn3 = document.querySelector('#movie3 .prev'),
-            nextBtn3 = document.querySelector('#movie3 .next');
+        slide3 = document.querySelectorAll('#movie3 .slides li'),
+        currentIdx3 = 0,
+        slideCount3 = slide3.length,
+        slideWidth3 = 535,
+        slideMargin3 = 0,
+        prevBtn3 = document.querySelector('#movie3 .prev'),
+        nextBtn3 = document.querySelector('#movie3 .next');
 
-        slides3.style.width = (slideWidth3 + slideMargin3) * slideCount3 - slideMargin3 + 'px';
+    slides3.style.width = (slideWidth3 + slideMargin3) * slideCount3 - slideMargin3 + 'px';
 
-        function moveSlide3(num) {
-            slides3.style.left = (slideWidth3 + slideMargin3) * -num + "px";
-            currentIdx3 = num;
+    function moveSlide3(num) {
+        slides3.style.left = (slideWidth3 + slideMargin3) * -num + "px";
+        currentIdx3 = num;
+    }
+    nextBtn3.addEventListener('click', function () {
+        if (currentIdx3 < slideCount3 - 3) {
+            moveSlide3(currentIdx3 + 1);
         }
-        nextBtn3.addEventListener('click', function () {
-            if (currentIdx3 < slideCount3 - 6) {
-                moveSlide3(currentIdx3 + 1);
-            }
-        });
-        prevBtn3.addEventListener('click', function () {
-            if (currentIdx3 > 0) {
-                moveSlide3(currentIdx3 - 1);
-            }
-        });
+    });
+    prevBtn3.addEventListener('click', function () {
+        if (currentIdx3 > 0) {
+            moveSlide3(currentIdx3 - 1);
+        }
+    });
+        
