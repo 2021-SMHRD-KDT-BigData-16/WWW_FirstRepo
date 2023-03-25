@@ -84,6 +84,7 @@
 	<br>
 	<br>
 	<h2 style="color:white"><%= result %>에 대한 검색 결과</h2>
+	<% boolean isResult = false; %>
 	<% for(int i=0; i<contents.size(); i++) {%>
 			<%if(contents.get(i).getTitle().equals(result)) {%>	
 				<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
@@ -92,7 +93,11 @@
 				<a href="detailContent?data=<%=contents.get(i).getTitle()%>">						
 						<h2><%=contents.get(i).getTitle()%></h2>
 					</a>
+					<%isResult = true; %>
 		<%} %>
+<%} %>	
+	<%if (isResult != true){ %>
+		<h2 style="color:white">"<%=result%>" 검색된 결과가 없습니다.</h2>
 	<%} %>
 	<script type="text/javascript" src="./Js/main.js"></script>
 </body>
