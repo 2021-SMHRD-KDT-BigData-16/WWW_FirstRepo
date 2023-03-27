@@ -9,7 +9,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
   <link rel="stylesheet" href="./styles/footer,header.css">
-  <link rel="stylesheet" href="./styles/커뮤니티상세_page copy.css">
+  <link rel="stylesheet" href="./styles/community_detail.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
@@ -39,7 +39,7 @@
 
   <!-- js쓸라고 -->
   <!-- 체크박스에 쓴 아이들 -->
-  <script src="./Js/커뮤니티상세_page.js"></script>
+  <script src="./Js/community_detail.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- 메인꺼 -->
@@ -62,13 +62,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="https://www.naver.com">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="main.jsp">홈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="https://www.naver.com">TV프로그램</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="https://www.naver.com">커뮤니티</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="community.jsp">커뮤니티</a>
                     </li>
                 </ul>
 

@@ -48,7 +48,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="https://www.naver.com">커뮤니티</a>
+                            href="community.jsp">커뮤니티</a>
                     </li>
                 </ul>
 

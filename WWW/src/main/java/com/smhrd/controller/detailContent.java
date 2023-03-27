@@ -30,7 +30,7 @@ public class detailContent extends HttpServlet {
 		session.setAttribute("data", data);
 		
 		// 넣은 결과창을 보여줘야 하니까 jsp파일로 이동
-		response.sendRedirect("detailPage.jsp");
+		response.sendRedirect("movie_detail.jsp");
 	}
 
 }

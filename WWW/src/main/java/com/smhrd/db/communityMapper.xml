@@ -8,6 +8,6 @@
 <mapper namespace="com.smhrd.model.communityDAO">
 	<select id="SearchAll" resultType="com.smhrd.model.communityDTO">
 		<!-- select *
-		from community -->
+		from tb_community -->
 	</select>
 </mapper>
