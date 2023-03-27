@@ -15,7 +15,6 @@ body{
 /* WWW 담는 공간  */
 #middle{
             display: block;
-            width:1600px;
         }
         
 /* 로고 이미지 CSS*/        
@@ -24,6 +23,7 @@ body{
     margin: 0 auto;
     border-bottom:40px;
 }
+
 /*부트 스크랩 BUTTON*/
 .btn_link{
     text-decoration: none !important;
@@ -83,18 +83,11 @@ body{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 /*로고 담는 박스 div*/
-#middle{
-	width:1600px;
-}
-/*플레이 리스트 담는 div(combox)의 첫번째 자식 div(.contain)*/
-#combox div:nth-child(1){
-            margin-left: 10px;
-        }
+
 /*플레이 리스트 담는 div(combox)*/     
-#combox{	
-			margin-top: 100px;
-            margin-left: 20px;
-            width: 1600px;
+#combox{
+	margin: 0 auto;
+            width: 1548px;
         }
 
 .contain{
@@ -102,7 +95,6 @@ body{
             height:400px;
             background-color: #000000;
             display: inline-block;
-            margin-right: 10px;
             
         }
         .contain img{
@@ -134,3 +126,9 @@ body{
             top: 50px;
             z-index: 1;
         }
+        
+        /* 로그인 회원가입 버튼 가운데로 옮김*/
+.btn.btn-outline-warning{
+	margin-right: 10px;
+}
+        
