@@ -1,10 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.model.communityDAO;
+import com.smhrd.model.communityDTO;
 import com.smhrd.model.contentDAO;
 import com.smhrd.model.contentDTO;
 
@@ -32,12 +31,14 @@ public class contentSearch extends HttpServlet {
 		// 액션 영화 리스트를 담을 변수 지정
 		ArrayList<contentDTO> action_list = new ArrayList<contentDTO>();
 		
+		// 커뮤니티 글을 담을 변수 지정
+		
 		// dao 객체 불러주기
-		contentDAO dao = new contentDAO();
-		
+		contentDAO c_dao = new contentDAO();
+		communityDAO cm_dao = new communityDAO();
 		//dao의 search 메소드를 사용하여 영화 컨텐츠 전부 contentDTO를 담는 배열에 저장
-		ArrayList<contentDTO> content_list = dao.search();
-		
+		ArrayList<contentDTO> content_list = c_dao.search();
+		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
 		if (content_list != null) {
 			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
 			
@@ -77,7 +78,17 @@ public class contentSearch extends HttpServlet {
 				}
 			}
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
-			response.sendRedirect("main.jsp");
 		}
+		if (comm_list != null) {
+			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
+			
+			// 세션을 불러오기
+			HttpSession session = request.getSession();
+			
+			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+			session.setAttribute("conmmunity", comm_list);
+			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
+		}
+		response.sendRedirect("main.jsp");
 	}
 }

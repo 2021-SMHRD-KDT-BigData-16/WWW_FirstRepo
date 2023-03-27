@@ -1,12 +1,19 @@
 package com.smhrd.model;
 
 public class communityDTO {
-	private int c_index;
-	private String nickname;
-	private String content;
-	private String hashtag;
-	private int like_count;
-	private String cdate;
+	private int c_idx;
+    // 글 내용 
+    private String c_content;
+    // 글 작성일자 
+    private String c_date;
+    // 글 좋아요수 
+    private int c_likes;
+
+    // 글 해시태그 
+    private String c_hashtag;
+
+    // 글 작성자 
+    private String user_id;
 	
 	// 기본 생성자
 	
@@ -15,64 +22,66 @@ public class communityDTO {
 	}
 	// 생성자
 
-	public communityDTO(int c_index, String nickname, String content, String hashtag, int like_count, String cdate) {
+	public communityDTO(int c_idx, String c_content, String c_date, int c_likes, String c_hashtag, String user_id) {
 		super();
-		this.c_index = c_index;
-		this.nickname = nickname;
-		this.content = content;
-		this.hashtag = hashtag;
-		this.like_count = like_count;
-		this.cdate = cdate;
+		this.c_idx = c_idx;
+		this.c_content = c_content;
+		this.c_date = c_date;
+		this.c_likes = c_likes;
+		this.c_hashtag = c_hashtag;
+		this.user_id = user_id;
 	}
 
-	// getter, setter method
-	public int getC_index() {
-		return c_index;
+	public int getC_idx() {
+		return c_idx;
 	}
 
-	public void setC_index(int c_index) {
-		this.c_index = c_index;
+	public void setC_idx(int c_idx) {
+		this.c_idx = c_idx;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getC_content() {
+		return c_content;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setC_content(String c_content) {
+		this.c_content = c_content;
 	}
 
-	public String getContent() {
-		return content;
+	public String getC_date() {
+		return c_date;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setC_date(String c_date) {
+		this.c_date = c_date;
 	}
 
-	public String getHashtag() {
-		return hashtag;
+	public int getC_likes() {
+		return c_likes;
 	}
 
-	public void setHashtag(String hashtag) {
-		this.hashtag = hashtag;
+	public void setC_likes(int c_likes) {
+		this.c_likes = c_likes;
 	}
 
-	public int getLike_count() {
-		return like_count;
+	public String getC_hashtag() {
+		return c_hashtag;
 	}
 
-	public void setLike_count(int like_count) {
-		this.like_count = like_count;
+	public void setC_hashtag(String c_hashtag) {
+		this.c_hashtag = c_hashtag;
 	}
 
-	public String getCdate() {
-		return cdate;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setCdate(String cdate) {
-		this.cdate = cdate;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
+	
+	
+	
 	
 	
 

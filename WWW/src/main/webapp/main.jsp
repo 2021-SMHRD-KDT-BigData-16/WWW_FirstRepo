@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
+<%@page import="com.smhrd.model.communityDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -80,6 +81,7 @@
 	ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents"); // contents(영화전체)
 	ArrayList<contentDTO> horror = (ArrayList) session.getAttribute("horror"); // horror(공포 영화)
 	ArrayList<contentDTO> action = (ArrayList) session.getAttribute("action"); // actions(액션 영화)
+	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("conmmunity"); // actions(액션 영화)
 	//String path = "detailContent"
 	%>
 
@@ -151,6 +153,21 @@
             <button class="prev">prev</button>
             <button class="next">next</button>
             <ul class="slides">
+            <%for(int i=0; i<community.size(); i++){ %>
+            	<% String[] content = community.get(i).getC_content().split(",");%>
+            	<% for(int j = 0 ; j < 1; j++){%>
+            		<li>	
+					<a href=""><div class="contain">
+					<br>
+					<img class="a" src="netflix_img/<%=content[j]%>.jpg" alt="<%=content[j]%>">
+					<img class="b" src="netflix_img/<%=content[j+1]%>.jpg" alt="<%=content[j+1]%>">
+					<img class="c" src="netflix_img/<%=content[j+2]%>.jpg" alt="<%=content[j+2]%>">
+					<p class="p"><%=community.get(i).getUser_id()%>의 플레이리스트</p>
+					<p><%=community.get(i).getC_likes()%></p>
+					</div></a>
+				</li>
+            	<% }%>
+            <% }%>
             <%for(int i = 0 ; i < 5; i++){ %>
 				<li>	
 					<a href=""><div class="contain">
