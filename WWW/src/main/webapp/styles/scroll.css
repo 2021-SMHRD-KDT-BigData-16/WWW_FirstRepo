@@ -5,7 +5,6 @@
 }
 /*화면에 표출되기 전*/
 .animatable {
-    visibility: hidden;
     animation-play-state: paused;
 }
 
