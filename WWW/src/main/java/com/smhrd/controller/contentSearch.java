@@ -49,7 +49,7 @@ public class contentSearch extends HttpServlet {
 			
 			// 컨텐츠의 크기만큼 (0 ~ 컨텐츠 길이까지 반복문) 
 			for (int i = 0; i < content_list.size(); i++) {
-				if (content_list.get(i).getGenre().contains("공포") == true) { // 공포 장르 영화 조건 if 문 시작
+				if (content_list.get(i).getV_genre().contains("공포") == true) { // 공포 장르 영화 조건 if 문 시작
 					// 컨텐츠 리스트 안에 객체에 접근하여 객체가 가지고있는 장르가 공포를 포함하면
 					// .contain("문자열") = 문자열이 포함되어있는
 					// 우리의 데이터의 장르는 "드라마, 공포, 액션" 이련 형태이므로 contains로 해야한다!! 
@@ -65,7 +65,7 @@ public class contentSearch extends HttpServlet {
 				}//공포 장르 영화 조건 if 문 끝
 			}
 			for (int i = 0; i < content_list.size(); i++) {
-				if (content_list.get(i).getGenre().contains("액션") == true) {
+				if (content_list.get(i).getV_genre().contains("액션") == true) {
 					
 					// 조건문이 참이다--> 장르에 액션이 포함된다
 					// action_list에 추가하려면 contentDTO로 담아야 하므로 

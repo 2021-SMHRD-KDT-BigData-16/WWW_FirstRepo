@@ -98,8 +98,8 @@
             <ul class="slides">
             <%for(int i = 0 ; i < contents.size(); i++){ %>
 				<li>	
-					<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
+					<a href="detailContent?data=<%=contents.get(i).getV_title() %>">						
+						<img src="./netflix_img/<%=contents.get(i).getV_title()%>.jpg" />
 					</a> 
 				</li> 
             <%} %>
@@ -114,8 +114,8 @@
             <ul class="slides">
             <%for(int i = 0 ; i < horror.size(); i++){ %>
             	<li>	
-					<a href="detailContent?data=<%=horror.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=horror.get(i).getTitle()%>.jpg" />
+					<a href="detailContent?data=<%=horror.get(i).getV_title()%>">						
+						<img src="./netflix_img/<%=horror.get(i).getV_title()%>.jpg" />
 					</a> 
 				</li> 
             <%} %>
@@ -130,8 +130,8 @@
             <ul class="slides">
             <%for(int i = 0 ; i < action.size(); i++){ %>
 				<li>	
-					<a href="detailContent?data=<%=action.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=action.get(i).getTitle()%>.jpg" />
+					<a href="detailContent?data=<%=action.get(i).getV_title() %>">						
+						<img src="./netflix_img/<%=action.get(i).getV_title()%>.jpg" />
 					</a> 
 				</li> 
             <%} %>
@@ -169,14 +169,16 @@
 		<!-- 	
 				Session 안에 들어있는 "contents","horror","action"이름에 저장되어있는 데이터는 ArrayList<contentDTO> 타입이다.
 				contents안에 담긴 객체(일단 예시)
-				content_index: 영화
-				title : 영화제목
-				genre : 장르
-				year : 방송년도
-				stove : 시놉시스
-				c_score : 평점
-				age_class : 방송 연령 등급
-		-->
+				
+						contents안에 담긴 객체(일단 예시)
+						v_title : 영화 제목
+						v_genre : 영화 장르
+						v_year : 방송 년도
+						v_synopsis : 시놉시스
+						rating : 평점
+						v_grade : 연령 등급
+						v_iframe : 아이프레임
+					-->
 			 
 
 

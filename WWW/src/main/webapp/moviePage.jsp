@@ -86,16 +86,15 @@
     
     
 	<!-- 
-				contents안에 담긴 객체(일단 예시)
-				content_index: 영화
-				title : 영화제목
-				genre : 장르
-				year : 방송년도
-				stove : 시놉시스
-				c_score : 평점
-				age_class : 방송 연령 등급
-				img : 24개 6개씩 4개
-			 -->
+		contents안에 담긴 객체(일단 예시)
+			v_title : 영화 제목
+			v_genre : 영화 장르
+			v_year : 방송 년도
+			v_synopsis : 시놉시스
+			rating : 평점
+			v_grade : 연령 등급
+			v_iframe : 아이프레임
+	-->
 
 	<div id="movie-content-container">
 		<div id="movie-title">영화</div>
@@ -119,9 +118,9 @@
 					<span>
 					<!-- i는 행단위라고 생각하고 j는 0부터 6전까지 반복 -->	 
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
-						<a href="detailContent?data=<%=contents.get(j).getTitle() %>">						
+						<a href="detailContent?data=<%=contents.get(j).getV_title() %>">						
 						
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -134,8 +133,8 @@
 						<!-- span animatalbe에 css 애니메이션 효과 o -->
 						<!-- i는 행단위라고 생각하고 j는 6부터 12전까지 반복 -->	
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -146,8 +145,8 @@
 		<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -155,8 +154,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>" />
 						</a> 
 					<% }%>
 					</span>
@@ -164,8 +163,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -173,8 +172,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -182,8 +181,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -191,8 +190,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg"alt="<%=contents.get(j).getV_title()%>" />
 						</a> 
 					<% }%>
 					</span>
@@ -200,8 +199,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -209,8 +208,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -218,8 +217,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -227,8 +226,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<% for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -236,8 +235,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>
@@ -245,8 +244,8 @@
 					<div class="list_cont">
 					<span class="animatable"> 
 					<%for (int j = 6; j < 12; j++) {%> 
-						<a href="#<%=contents.get(j).getTitle()%>">
-						<img src="./netflix_img/<%=contents.get(j).getTitle()%>.jpg" />
+						<a href="#<%=contents.get(j).getV_title()%>">
+						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 
 					<% }%>
 					</span>

@@ -87,12 +87,12 @@
 	<h2 style="color:white"><%= result %>에 대한 검색 결과</h2>
 	<% boolean isResult = false; %>
 	<% for(int i=0; i<contents.size(); i++) {%>
-			<%if(contents.get(i).getTitle().equals(result)) {%>	
-				<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
-						<img src="./netflix_img/<%=contents.get(i).getTitle()%>.jpg" />
+			<%if(contents.get(i).getV_title().equals(result)) {%>	
+				<a href="detailContent?data=<%=contents.get(i).getV_title() %>">						
+						<img src="./netflix_img/<%=contents.get(i).getV_title()%>.jpg" />
 					</a>
-				<a href="detailContent?data=<%=contents.get(i).getTitle()%>">						
-						<h2><%=contents.get(i).getTitle()%></h2>
+				<a href="detailContent?data=<%=contents.get(i).getV_title()%>">						
+						<h2><%=contents.get(i).getV_title()%></h2>
 					</a>
 					<%isResult = true; %>
 		<%} %>

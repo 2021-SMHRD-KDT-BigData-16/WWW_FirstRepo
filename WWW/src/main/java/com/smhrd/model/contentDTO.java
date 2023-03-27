@@ -3,86 +3,79 @@ package com.smhrd.model;
 public class contentDTO {
 	
 	//content table columns
-	private String content_index;
-	private String title;
-	private String genre;
-	private int year;
-	private String stove;
-	private int c_score;
-	private String age_class;
+	private int v_idx;
+	private String v_title;
+	private String v_genre;
+	private int v_year;
+	private String v_synopsis;
+	private double rating;
+	private int v_grade;
+	private String v_iframe;
 	
-	// 기본 생성자
 	public contentDTO() {
 		
 	}
-
-	public contentDTO(String content_index, String title, String genre, int year, String stove, int c_score,
-			String age_class) {
+	
+	public contentDTO(int v_idx, String v_title, String v_genre, int v_year, String v_synopsis, double rating,
+			int v_grade, String v_iframe) {
 		super();
-		this.content_index = content_index;
-		this.title = title;
-		this.genre = genre;
-		this.year = year;
-		this.stove = stove;
-		this.c_score = c_score;
-		this.age_class = age_class;
-	}
-	// Getter/Setter Method
-
-	public String getContent_index() {
-		return content_index;
+		this.v_idx = v_idx;
+		this.v_title = v_title;
+		this.v_genre = v_genre;
+		this.v_year = v_year;
+		this.v_synopsis = v_synopsis;
+		this.rating = rating;
+		this.v_grade = v_grade;
+		this.v_iframe = v_iframe;
 	}
 
-	public void setContent_index(String content_index) {
-		this.content_index = content_index;
+	public int getV_idx() {
+		return v_idx;
 	}
-
-	public String getTitle() {
-		return title;
+	public void setV_idx(int v_idx) {
+		this.v_idx = v_idx;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	public String getV_title() {
+		return v_title;
 	}
-
-	public String getGenre() {
-		return genre;
+	public void setV_title(String v_title) {
+		this.v_title = v_title;
 	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
+	public String getV_genre() {
+		return v_genre;
 	}
-
-	public int getYear() {
-		return year;
+	public void setV_genre(String v_genre) {
+		this.v_genre = v_genre;
 	}
-
-	public void setYear(int year) {
-		this.year = year;
+	public int getV_year() {
+		return v_year;
 	}
-
-	public String getStove() {
-		return stove;
+	public void setV_year(int v_year) {
+		this.v_year = v_year;
 	}
-
-	public void setStove(String stove) {
-		this.stove = stove;
+	public String getV_synopsis() {
+		return v_synopsis;
 	}
-
-	public int getC_score() {
-		return c_score;
+	public void setV_synopsis(String v_synopsis) {
+		this.v_synopsis = v_synopsis;
 	}
-
-	public void setC_score(int c_score) {
-		this.c_score = c_score;
+	public double getRating() {
+		return rating;
 	}
-
-	public String getAge_class() {
-		return age_class;
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
-
-	public void setAge_class(String age_class) {
-		this.age_class = age_class;
+	public int getV_grade() {
+		return v_grade;
+	}
+	public void setV_grade(int v_grade) {
+		this.v_grade = v_grade;
+	}
+	public String getV_iframe() {
+		return v_iframe;
+	}
+	public void setV_iframe(String v_iframe) {
+		this.v_iframe = v_iframe;
 	}
 	
 	
