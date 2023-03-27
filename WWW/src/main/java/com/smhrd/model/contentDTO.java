@@ -8,7 +8,7 @@ public class contentDTO {
 	private String v_genre;
 	private int v_year;
 	private String v_synopsis;
-	private double rating;
+	private double v_rating;
 	private int v_grade;
 	private String v_iframe;
 	
@@ -16,7 +16,7 @@ public class contentDTO {
 		
 	}
 	
-	public contentDTO(int v_idx, String v_title, String v_genre, int v_year, String v_synopsis, double rating,
+	public contentDTO(int v_idx, String v_title, String v_genre, int v_year, String v_synopsis, double v_rating,
 			int v_grade, String v_iframe) {
 		super();
 		this.v_idx = v_idx;
@@ -24,7 +24,7 @@ public class contentDTO {
 		this.v_genre = v_genre;
 		this.v_year = v_year;
 		this.v_synopsis = v_synopsis;
-		this.rating = rating;
+		this.v_rating = v_rating;
 		this.v_grade = v_grade;
 		this.v_iframe = v_iframe;
 	}
@@ -59,12 +59,15 @@ public class contentDTO {
 	public void setV_synopsis(String v_synopsis) {
 		this.v_synopsis = v_synopsis;
 	}
-	public double getRating() {
-		return rating;
+	
+	public double getV_rating() {
+		return v_rating;
 	}
-	public void setRating(double rating) {
-		this.rating = rating;
+
+	public void setV_rating(double v_rating) {
+		this.v_rating = v_rating;
 	}
+
 	public int getV_grade() {
 		return v_grade;
 	}

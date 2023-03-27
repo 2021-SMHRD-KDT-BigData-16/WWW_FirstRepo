@@ -140,7 +140,7 @@
             <table border="1" class="information">
               <tr>
                 <td> 평점</td>
-                <td> <%=contents.get(i).getRating()%></td>
+                <td> <%=contents.get(i).getV_rating()%></td>
               </tr>
               <tr>
                 <td> 장르  </td>
