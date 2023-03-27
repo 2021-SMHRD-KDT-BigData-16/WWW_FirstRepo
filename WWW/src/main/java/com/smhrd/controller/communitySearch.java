@@ -19,16 +19,6 @@ public class communitySearch extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 1. 한글 인코딩 잡아주기
-		communityDTO dto = new communityDTO();
-		communityDAO dao = new communityDAO();
-		List<communityDTO> list = dao.selectAll();
-		if (list != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("community", list);
-			response.sendRedirect("detailContent");
-		}else {
-			response.sendRedirect("main.jsp");
-		}
+//		
 	}
 }
