@@ -35,7 +35,7 @@
 
 
     <!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "z-index: 1 !important;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "z-index: 9 !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
@@ -57,7 +57,7 @@
                 </ul>
 
                 <form class="d-flex" role="search" align="center" action ="">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 10;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
                         검색
                     </button>
@@ -84,122 +84,86 @@
     <br>
     <br>
 
+		
+		<h2 style ="color:white;margin-left : 160px">커뮤니티</h2>
+		<button><a href ="community_detail.jsp">작성하기</a></button>
+		<br>
+       <h3 style ="color:white;margin-left : 160px">호러</h3>		
+		
+        <div class="movie_tag" id="movie3_tag"></div>
+            <div class="slide_wrapper" id="movie3">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div></a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+        
+        <hr>
+        <h3 style ="color:white;margin-left : 160px">액션</h3>
+        
+        <div class="movie_tag" id="movie4_tag"></div>
+            <div class="slide_wrapper" id="movie4">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+        
+        <hr>
+       <h3 style ="color:white;margin-left : 160px">로맨스코미디</h3>        
+        <div class="movie_tag" id="movie5_tag"></div>
+            <div class="slide_wrapper" id="movie5">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
 
 
-
-    <div class="movie_tag" id="movie3_tag"><h3>커뮤니티</h3></div>
-    <div class="slide_wrapper" id="movie3">
-        <button class="prev">prev</button>
-        <button class="next">next</button>
-        <ul class="slides">
-
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-            <li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p style = "bottom: 5px;">좋아요 80</p>
-                    
-                </div>
-
-            </li>
-
-
-
-
-        </ul>
-    </div>
 
 
 

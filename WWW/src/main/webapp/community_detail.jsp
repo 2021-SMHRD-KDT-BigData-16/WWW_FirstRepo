@@ -7,51 +7,48 @@
 <title>Insert title here</title>
 
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
-  <link rel="stylesheet" href="./styles/footer,header.css">
-  <link rel="stylesheet" href="./styles/community_detail.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
+    <link rel="stylesheet" href="./styles/footer,header.css">
+    <link rel="stylesheet" href="./styles/community_detail.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 
-  <!-- header꺼 -->
-  <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/navbar-fixed/">
+    <!-- header꺼 -->
+    <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/navbar-fixed/">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- 검색창용 -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="./Js/fh_auto_search.js"></script>
+	<script src="./Js/footer,header_auto_search.js"></script>
+    
+    <!-- 드래그 앤 드랍용 검색창 -->
+    <script src="./Js/dragndrop.js"></script>
 
 
+    <!-- 메인꺼 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 
-  <!-- 메인꺼 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
 
-
-  <!-- js쓸라고 -->
-  <!-- 체크박스에 쓴 아이들 -->
-  <script src="./Js/community_detail.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <!-- 메인꺼 -->
-  
-  
- 
-
+    <!-- js쓸라고 -->
+    <!-- 체크박스에 쓴 아이들 -->
+    <script src="./Js/community_detail.js"></script>
+    
+    
+    
 </head>
 <body>
 
     <!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "z-index: 1 !important;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 1 !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
@@ -62,21 +59,24 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="main.jsp">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="main.jsp">홈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="moviePage.jsp">영화</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="community.jsp">커뮤니티</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="community.jsp">커뮤니티</a>
                     </li>
                 </ul>
 
-                <form class="d-flex" role="search" align="center" action ="">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
 
-                    <button type="button" class="btn btn-outline-warning">
-                        <a class="btn_link" style="color: white !important" href="#">검색</a>
+                <form class="d-flex" role="search" align="center" action="">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;" name="search"
+                        placeholder=" 검색어를 입력해주세요.">
+                    <button type="submit" class="btn btn-outline-warning">
+                        검색
                     </button>
                 </form>
 
@@ -96,166 +96,193 @@
         </div>
     </nav>
     <!-- 헤더 끝 -->
-  
-  
-  
-  
-  <!-- main -->
-
-  <main>
-    <div class="wrapper">
-      <!--상단 이미지-->
-      <section id="top_img">
-        <div class="background">
-          <img src="http://placehold.it/1500X300/" alt="">
-        </div>
-      </section>
 
 
-      <div class=contents_wrap>
-
-        <div id="title">
-          <!-- 체크박스에서 넣은 결과 출력해주는 공간 -->
-          <h3 style="color:white">
-            <div id="hash_result"></div>
-          </h3>
-        </div>
-        <!-- 체크박스에서 넣은 결과 출력해주는 공간 -->
 
 
-        <!-- 버튼 정렬때문에 테이블 안으로 넣음 -->
-      <table class = "hash_tb" >
-        <td>
-          <tr>
-        <div class="hashtag">
-          <form action="" name="hashtag_form">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <strong>장르</strong>
-                  </button>
-                </h2>
+    <!-- main -->
+
+    <main>
+        <div class="wrapper">
+            <!--상단 이미지-->
+            <section id="top_img">
+                <div class="background">
+                    <img src="http://placehold.it/1500X300/" alt="">
+                </div>
+            </section>
 
 
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
+            <div class=contents_wrap>
 
-                    <!-- getCheckboxValue()가 체크박스 클릭했을때 위로 보내주는 JS임! -->
-                    <input class="hash_check" type="checkbox" name="hash_name" value="코미디"
-                      onclick='getCheckboxValue(),checkStr()'> 코미디
-                    <input class="hash_check" type="checkbox" name="hash_name" value="액션"
-                      onclick='getCheckboxValue(),checkStr()'> 액션
-                    <input class="hash_check" type="checkbox" name="hash_name" value="가족"
-                      onclick='getCheckboxValue(),checkStr()'> 가족
-                    <input class="hash_check" type="checkbox" name="hash_name" value="SF"
-                      onclick='getCheckboxValue(),checkStr()'> SF
-                    <input class="hash_check" type="checkbox" name="hash_name" value="공포"
-                      onclick='getCheckboxValue(),checkStr()'> 공포
-                    <input class="hash_check" type="checkbox" name="hash_name" value="범죄"
-                      onclick='getCheckboxValue(),checkStr()'> 범죄
-                    <input class="hash_check" type="checkbox" name="hash_name" value="로맨스코미디"
-                      onclick='getCheckboxValue(),checkStr()'> 로맨스코미디
-                    <input class="hash_check" type="checkbox" name="hash_name" value="미스터리"
-                      onclick='getCheckboxValue(),checkStr()'> 미스터리
+                <div id="title">
+                    <!-- 체크박스에서 넣은 결과 출력해주는 공간 -->
+                    <h3 style="color:white">
+                        <div id="hash_result"></div>
+                    </h3>
+                </div>
+                <!-- 체크박스에서 넣은 결과 출력해주는 공간 -->
 
 
-                  </div>
+                <!-- 버튼 정렬때문에 테이블 안으로 넣음 -->
+                <table class="hash_tb">
+                    <td>
+                        <tr>
+                            <div class="hashtag">
+                                <form action="" name="hashtag_form">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    <strong>장르</strong>
+                                                </button>
+                                            </h2>
+
+
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <!-- getCheckboxValue()가 체크박스 클릭했을때 위로 보내주는 JS임! -->
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="코미디" onclick='getCheckboxValue(),checkStr()'> 코미디
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="액션" onclick='getCheckboxValue(),checkStr()'> 액션
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="가족" onclick='getCheckboxValue(),checkStr()'> 가족
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="SF" onclick='getCheckboxValue(),checkStr()'> SF
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="공포" onclick='getCheckboxValue(),checkStr()'> 공포
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="범죄" onclick='getCheckboxValue(),checkStr()'> 범죄
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="로맨스코미디" onclick='getCheckboxValue(),checkStr()'> 로맨스코미디
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="미스터리" onclick='getCheckboxValue(),checkStr()'> 미스터리
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed"
+                                                    style="background-color: black;color: white; " type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    <strong>감정</strong>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="슬픔" onclick='getCheckboxValue(),checkStr()'> 슬픔
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="재미" onclick='getCheckboxValue(),checkStr()'> 재미
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="통쾌" onclick='getCheckboxValue(),checkStr()'> 통쾌
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="사랑" onclick='getCheckboxValue(),checkStr()'> 사랑
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="그리움" onclick='getCheckboxValue(),checkStr()'>
+                                                    그리움
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed"
+                                                    style="background-color:#ff7600 ; color: white; " type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    <strong>연령</strong>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="성인" onclick='getCheckboxValue(),checkStr()'> 성인
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="학생" onclick='getCheckboxValue(),checkStr()'> 학생
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="어린이" onclick='getCheckboxValue(),checkStr()'> 어린이
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="2030" onclick='getCheckboxValue(),checkStr()'> 2030
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="7080" onclick='getCheckboxValue(),checkStr()'> 7080
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </tr>
+                    </td>
+
+                    <!-- 버튼만 모아두는 행 -->
+                    <tr>
+                        <td>
+
+                            <!-- 체크박스 값 보내기 -->
+                            <button class="btn btn-primary" type="submit"
+                                style="background-color : #ff7600; border:none">SUBMIT</button>
+
+                            </form>
+                            <!-- 전체 리셋 버튼 -->
+                            <button class="btn btn-prsimary" type="button" onclick='reset()'
+                                style="background-color : #ff7600; color:white ">ALLRESET</button>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+
+
+
+
+
+
+                <div class="dd_container" >
+                <br>
+                    <div class="d_container" >
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" />
+                        </button>
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                    </div>
+                    <div class="d_container" style = "height : 350px" >
+
+
+                        <form class="d-flex" role="search" align="left" action="">
+                            <input id="searchInput_2" style="margin-right: 10px; width: 400px; z-index: 2;"
+                                name="search" placeholder=" 검색어를 입력해주세요.">
+                            <button type="submit" class="btn btn-outline-warning">
+                                검색
+                            </button>
+                        </form>
+
+
+
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                    </div>
                 </div>
 
 
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" style="background-color: black;color: white; "
-                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                    aria-controls="collapseTwo">
-                    <strong>감정</strong>
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <input class="hash_check" type="checkbox" name="hash_name" value="슬픔"
-                      onclick='getCheckboxValue(),checkStr()'> 슬픔
-                    <input class="hash_check" type="checkbox" name="hash_name" value="재미"
-                      onclick='getCheckboxValue(),checkStr()'> 재미
-                    <input class="hash_check" type="checkbox" name="hash_name" value="통쾌"
-                      onclick='getCheckboxValue(),checkStr()'> 통쾌
-                    <input class="hash_check" type="checkbox" name="hash_name" value="사랑"
-                      onclick='getCheckboxValue(),checkStr()'> 사랑
-                    <input class="hash_check" type="checkbox" name="hash_name" value="그리움"
-                      onclick='getCheckboxValue(),checkStr()'>
-                    그리움
 
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" style="background-color:#ff7600 ; color: white; "
-                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                    aria-controls="collapseThree">
-                    <strong>연령</strong>
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <input class="hash_check" type="checkbox" name="hash_name" value="성인"
-                      onclick='getCheckboxValue(),checkStr()'> 성인
-                    <input class="hash_check" type="checkbox" name="hash_name" value="학생"
-                      onclick='getCheckboxValue(),checkStr()'> 학생
-                    <input class="hash_check" type="checkbox" name="hash_name" value="어린이"
-                      onclick='getCheckboxValue(),checkStr()'> 어린이
-                    <input class="hash_check" type="checkbox" name="hash_name" value="2030"
-                      onclick='getCheckboxValue(),checkStr()'> 2030
-                    <input class="hash_check" type="checkbox" name="hash_name" value="7080"
-                      onclick='getCheckboxValue(),checkStr()'> 7080
 
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </tr>
-          </td>
 
-          <!-- 버튼만 모아두는 행 -->
-          <tr >
-            <td >
 
-            <!-- 체크박스 값 보내기 -->
-            <button class="btn btn-primary" type="submit"
-              style="background-color : #ff7600; border:none">SUBMIT</button>
-            
-            </form>
-            <!-- 전체 리셋 버튼 -->
-            <button class="btn btn-prsimary" type="button" onclick='reset()'
-              style="background-color : #ff7600; color:white ">ALLRESET</button>
-            </td>
-            </tr>
-              
-            </table>
 
-        </div>
-
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       
       
       
@@ -315,8 +342,56 @@
   </div>
       
       
+   <script type="text/javascript"> 
 
 
+   const draggables = document.querySelectorAll(".draggable");
+   const containers = document.querySelectorAll(".d_container");
+
+   draggables.forEach(draggable => {
+       draggable.addEventListener("dragstart", () => {
+           draggable.classList.add("dragging");
+       });
+
+       draggable.addEventListener("dragend", () => {
+           draggable.classList.remove("dragging");
+       });
+   });
+
+   containers.forEach(container => {
+       container.addEventListener("dragover", e => {
+           e.preventDefault();
+           const afterElement = getDragAfterElement(container, e.clientX);
+           const draggable = document.querySelector(".dragging");
+           if (afterElement === undefined) {
+               container.appendChild(draggable);
+           } else {
+               container.insertBefore(draggable, afterElement);
+           }
+       });
+   });
+
+   function getDragAfterElement(container, x) {
+       const draggableElements = [
+           ...container.querySelectorAll(".draggable:not(.dragging)"),
+       ];
+
+       return draggableElements.reduce(
+           (closest, child) => {
+               const box = child.getBoundingClientRect();
+               const offset = x - box.left - box.width / 2;
+               // console.log(offset);
+               if (offset < 0 && offset > closest.offset) {
+                   return { offset: offset, element: child };
+               } else {
+                   return closest;
+               }
+           },
+           { offset: Number.NEGATIVE_INFINITY}
+       ).element;
+   }
+
+   </script> 
 
 
 

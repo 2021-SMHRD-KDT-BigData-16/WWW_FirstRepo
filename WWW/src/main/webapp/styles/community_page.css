@@ -14,6 +14,8 @@ li {
     height: 243px;
     overflow: hidden;
 }
+
+
 /* 영화 list 설정 */
 .slides {
     padding: 0 !important;
@@ -27,9 +29,9 @@ li {
     float: left;
     margin-right: 30px;
 }
-/* prev 버튼 설정 */
+
+/* prev 버튼 공통 설정 */
 .prev {
-    top: 97px;
     position: absolute;
     text-align: center;
     z-index: 5;
@@ -38,10 +40,9 @@ li {
     padding: 10px 20px;
     margin: 0 10px;
 }
-/* next 버튼 설정 */
+/* next 버튼 공통 설정 */
 .next {
-    top: 97px;
-    left: 1055px;
+
     position: absolute;
     text-align: center;
     z-index: 5;
@@ -51,27 +52,46 @@ li {
     margin: 0 6px;
 }
 
+/* 플레이리스트 버튼 위치 설정 */
+.slide_wrapper >button{
+	    top: 200px;
+}
+.nextbtn{
+    left: 1491px;
+}
+.prevbtn{
+    left: 5px;
+}
+
+
+
+
 /* 플레이리스트 div */
 #movie3 {
     position: relative;
-    width: 1600px;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+
+#movie4 {
+    position: relative;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+#movie5 {
+    position: relative;
+    width: 1605px;
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
 }
 
 
-/* 플레이리스트 버튼 위치 설정 */
-#movie3 button{
-    top: 200px;
-    
-}
-#movie3 .next{
-    left: 1491px;
-}
-#movie3 .prev{
-    left: 5px;
-}
+
 
 /* 플레이리스트 포스터 z-index 및 위치 설정 */
 .a{
@@ -107,11 +127,6 @@ p{
     color:white
 }
 
-/* 플레이리스트 간 마진 */
-#movie3 li{
-    margin-right: 20px;
-}
-
 /* 플레이리스트 테두리 */
 .contain{
     margin-top: 10px;
@@ -124,32 +139,11 @@ p{
     
 }
 
-/* 플레이리스트_모음 마진 */
-#movie3{
-    width: 1605px !important;
+hr{
+	border: solid 1px white !important; 
+	width : 1700px !important;
+	margin-left : 100px !important;
+	
 }
 
- /* 영화 장르 및 플레이리스트 제목 */
-.movie_tag{
-    color: white !important;
-    width: 1136px;
-    margin: auto;
-}
-#movie3_tag{
-    width: 1590px;
-}
-
-#movie3_tag h3{
-    margin: 0;
-}
-
-.movie3_introduce{
-    width: 100%;
-}
-.movie3_introduce h2{
-    color: white;
-    text-align: center;
-}
-
-/* main 전부 가져온부분 */
 
