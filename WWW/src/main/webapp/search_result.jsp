@@ -83,7 +83,9 @@
 	<br>
 	<br>
 	<br>
-	<h2 style="color:white"><%= result %>에 대한 검색 결과</h2>
+	<h2 style="color:white">"<%= result %>"에 대한 검색 결과</h2>
+	<hr>
+	<h2>영화</h2>
 	<% for(int i=0; i<contents.size(); i++) {%>
 			<%if(contents.get(i).getTitle().equals(result)) {%>	
 				<a href="detailContent?data=<%=contents.get(i).getTitle() %>">						
