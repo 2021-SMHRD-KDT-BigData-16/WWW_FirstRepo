@@ -1,4 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- ArrayList import  -->
+<%@page import="com.smhrd.model.communityDTO"%>
+<%@page import="java.util.ArrayList"%>
+<!-- contentSearch import-->
+<%@page import="com.smhrd.controller.contentSearch"%>
+<!-- contentDTO 자료형 import-->
+<%@page import="com.smhrd.model.contentDTO"%>
+<!-- jstl import-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
  
 <!DOCTYPE html>
 <html>
@@ -56,8 +66,8 @@
                     </li>
                 </ul>
 
-                <form class="d-flex" role="search" align="center" action ="">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 10;"  name = "search" placeholder=" 검색어를 입력해주세요.">
+                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
                         검색
                     </button>
@@ -124,26 +134,29 @@
 		
 		<!-- 3 -->
 		<hr>
-       <h3 style ="color:white;margin-left : 160px">드라마</h3>		
-		
-        <div class="movie_tag" id="movie3_tag"></div>
+        <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>		
+       <h3 style ="color:white;margin-left : 160px">드라마</h3>				
             <div class="slide_wrapper" id="movie3">
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div></a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#드라마")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>
@@ -151,25 +164,27 @@
         <hr>
         <h3 style ="color:white;margin-left : 160px">액션</h3>
         
-        <div class="movie_tag" id="movie4_tag"></div>
-            <div class="slide_wrapper" id="movie4">
+        <div class="slide_wrapper" id="movie4">
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div>
-		</a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#액션")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>
@@ -184,20 +199,23 @@
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div>
-		</a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#판타지")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>
@@ -210,20 +228,23 @@
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div>
-		</a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#공포")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>
@@ -237,20 +258,23 @@
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div>
-		</a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#스릴러")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>
@@ -262,20 +286,23 @@
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
-			
-		</div>
-		</a>
-				</li> 
+    		<%for(int i=0; i<c_list.size(); i++){ %>
+    	   		<%if(c_list.get(i).getC_hashtag().contains("#가족")){%>
+    	   			<%int j=0;%>
+    	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
+					<li>	
+						<a href="">
+						<div class="contain">
+						<br>
+							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
+							<img class="b" src="./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>">
+							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
+							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						</div>
+						</a>
+					</li>
+    	   		<%}%>     
             <%} %>
             </ul>
         </div>

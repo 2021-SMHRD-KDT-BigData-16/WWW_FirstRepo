@@ -72,9 +72,8 @@
                 </ul>
 
 
-                <form class="d-flex" role="search" align="center" action="">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;" name="search"
-                        placeholder=" 검색어를 입력해주세요.">
+                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
                         검색
                     </button>
