@@ -1,5 +1,7 @@
 
-
+.comm_top{
+	display : flex;
+}
 /* main 전부 가져온부분 */
 /* 리스트 점 제거 */
 li {
@@ -67,6 +69,16 @@ li {
 
 
 /* 플레이리스트 div */
+
+#movie2{
+	position: relative;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+
+
 #movie3 {
     position: relative;
     width: 1605px;
@@ -77,23 +89,42 @@ li {
 
 #movie4 {
     position: relative;
-    width: 1630px;
+    width: 1605px;
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
 }
 #movie5 {
     position: relative;
-    width: 1630px;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+#movie6 {
+    position: relative;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+#movie7 {
+    position: relative;
+    width: 1605px;
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+#movie8 {
+    position: relative;
+    width: 1605px;
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
 }
 
 
-#movie3_tag{
-	width: 1590px;
-}
+
 
 /* 플레이리스트 포스터 z-index 및 위치 설정 */
 .a{

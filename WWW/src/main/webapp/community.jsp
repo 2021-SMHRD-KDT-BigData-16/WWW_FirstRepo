@@ -84,11 +84,47 @@
     <br>
     <br>
 
-		
 		<h2 style ="color:white;margin-left : 160px">커뮤니티</h2>
-		<button><a href ="community_detail.jsp">작성하기</a></button>
-		<br>
-       <h3 style ="color:white;margin-left : 160px">호러</h3>		
+		<button class="btn btn-outline-warning" style="margin-left : 500px !important;">
+		<a class="btn_link" style="color: white !important; " href ="community_detail.jsp">
+					작성하기</a>
+		</button>
+		
+		
+		
+		<hr>
+		
+        <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
+        
+        <div class="movie_tag" id="movie2_tag"></div>
+            <div class="slide_wrapper" id="movie2">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+		
+		
+		
+		
+		<!-- 3 -->
+		<hr>
+       <h3 style ="color:white;margin-left : 160px">드라마</h3>		
 		
         <div class="movie_tag" id="movie3_tag"></div>
             <div class="slide_wrapper" id="movie3">
@@ -111,7 +147,7 @@
             <%} %>
             </ul>
         </div>
-        
+        <!-- 4 -->
         <hr>
         <h3 style ="color:white;margin-left : 160px">액션</h3>
         
@@ -138,10 +174,91 @@
             </ul>
         </div>
         
-        <hr>
-       <h3 style ="color:white;margin-left : 160px">로맨스코미디</h3>        
+        <!-- 5 -->
+		<hr>
+		
+        <h3 style ="color:white;margin-left : 160px">판타지</h3>
+        
         <div class="movie_tag" id="movie5_tag"></div>
             <div class="slide_wrapper" id="movie5">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+        
+        <!-- 6 -->
+        <hr>
+       <h3 style ="color:white;margin-left : 160px">공포</h3>        
+        <div class="movie_tag" id="movie6_tag"></div>
+            <div class="slide_wrapper" id="movie6">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+        
+        
+        <!-- 7 -->
+        <hr>
+       <h3 style ="color:white;margin-left : 160px">스릴러</h3>        
+        <div class="movie_tag" id="movie7_tag"></div>
+            <div class="slide_wrapper" id="movie7">
+            <button class="prev prevbtn">prev</button>
+            <button class="next nextbtn">next</button>
+            <ul class="slides">
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
+		</div>
+		</a>
+				</li> 
+            <%} %>
+            </ul>
+        </div>
+        <!-- 8 -->
+        <hr>
+       <h3 style ="color:white;margin-left : 160px">가족</h3>        
+        <div class="movie_tag" id="movie8_tag"></div>
+            <div class="slide_wrapper" id="movie8">
             <button class="prev prevbtn">prev</button>
             <button class="next nextbtn">next</button>
             <ul class="slides">
