@@ -5,16 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="test" method = "post">
-<p>아이디 <input type = "text" name = id><br>
-비밀번호 <input type = "text" name = pw><br>
-비밀번호 확인 <input type = "text" name = pwcheck><br>
-닉네임 <input type = "text" name = nick>
+<form action="signupService" method = "post">
+<p>아이디 <input type = "text" name = user_id><br>
+비밀번호 <input type = "text" name = user_pw><br>
+닉네임 <input type = "text" name = user_nick>
 <h3>성별</h3>
-<input type = "radio" name = "gender" value="m">남자
-<input type = "radio" name = "gender" value="w">여자
+<input type = "radio" name = "user_gender" value="m">남자
+<input type = "radio" name = "user_gender" value="w">여자
 <h3>생년월일</h3>
-날짜 선택 : <input type="date" name = "birthday">
+날짜 선택 : <input type="date" name = "user_birthdate">
 <br><br>
 <input type = "submit" value = "완료">
 

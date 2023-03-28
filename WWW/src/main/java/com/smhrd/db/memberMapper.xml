@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.smhrd.model.memberDAO">
+	<insert id="signup" parameterType="com.smhrd.model.memberDTO">
+		INSERT INTO tb_user
+		    (user_id, 
+		    user_pw, 
+		    user_nick, 
+		    user_gender, 
+		    user_birthdate, 
+		    user_joindate, 
+		    user_type)
+		VALUES
+		    (
+		    #{user_id},
+			#{user_pw},
+			#{user_nick},
+			#{user_gender},
+			#{user_birthdate},
+			#{user_joindate},
+			#{user_type}
+		    )
+	</insert>
+</mapper>
