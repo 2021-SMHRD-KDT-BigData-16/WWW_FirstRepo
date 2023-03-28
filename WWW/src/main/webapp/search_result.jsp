@@ -1,4 +1,5 @@
 <!-- ArrayList import  -->
+<%@page import="com.smhrd.model.communityDTO"%>
 <%@page import="java.util.ArrayList"%>
 <!-- contentSearch import-->
 <%@page import="com.smhrd.controller.contentSearch"%>
@@ -81,6 +82,7 @@
     </nav>
 	<%
 	ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents"); // contents(영화전체)
+	ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
 	String result = (String) session.getAttribute("search_result"); 
 	%>
 	<br>
@@ -112,69 +114,65 @@
 <%} %>	
 <hr id="line">
 <h2 class ="search_title">커뮤니티</h2>
-	<%if (isResult != true){ %>
+	<% boolean isCommResult = false; %>
+		<div class = "none">
+			<span>
+				<ul class = "scroll_serach">
+		<% int cnt = 0; %>
+		
+	<%for(int i=0; i<c_list.size(); i++){ %>
+		<%if(c_list.get(i).getC_content().contains(result)) {%>
+			<%String[] comm =  c_list.get(i).getC_content().split(",");%>
+			<%isCommResult = true; %>
+			<%if(cnt<3) {%>
+					<%cnt++; %>
+					<%int j = 0; %>
+							<li>
+								<div class='contain'>
+									<a href ="#">
+										<br>
+										<img class="a" src = "./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>"/>
+										<img class="b" src = "./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>"/>
+										<img class="c" src = "./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>"/>
+									</a>
+									 <p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+									 <p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+	                    			<br>
+								</div>
+							</li>
+			<%}else{%>
+					</ul>
+				</span>
+			</div>
+			<div class = "list_cont">
+				<span>
+					<ul class = "animatable">
+					<%int j = 0; %>
+							<li>
+								<div class='contain'>
+									<a href ="#">
+										<br>
+										<img class="a" src = "./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>"/>
+										<img class="b" src = "./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>"/>
+										<img class="c" src = "./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>"/>
+									</a>
+									 <p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
+									 <p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+	                    			<br>
+								</div>
+							</li>
+				<%cnt=1;%>
+					<%} %>
+				<%} %>
+			<%} %>
+				</ul>
+				</span>
+			</div>
+	
+		
+	<%if (isCommResult != true){ %>
 		<h2 style="color:white">"<%=result%>" 검색된 결과가 없습니다.</h2>
 	<%} %>
-	
-	
-	<%for(int i=0; i<9; i++){%>
-			<!-- 먼저 보여줄 리스트 3줄 설정-->
-			
-			<% if(i<3) { %>
-				<div class="none">
-				<!-- 클래스 none에는 애니메이션 효과 x -->
-					<span>
-					<ul class="scroll_search">
-					<!-- i는 행단위라고 생각하고 j는 0부터 6전까지 반복 -->	 
-					<%for (int j = 0; j < 3; j++) {%> 
-						<li>
-                <div class="contain">
-                    <a href="">
-                        <br>
-                        <img class="a" src="http://placehold.it/166x243" alt="">
-                        <img class="b" src="http://placehold.it/166x243" alt="">
-                        <img class="c" src="http://placehold.it/166x243" alt="">
-                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-            </li>
-					<% }%>
-					</ul>
-					</span>
-				</div>
-			<% } else{%>
-			<!-- 나머지 줄은 숨겨서 애니메이션 효과 작용-->
-				<div class="list_cont">
-				<!-- div 클래스 list_cont에는 애니메이션 효과 o -->
-					<span class="animatable"> 
-						<ul class="scroll_search">
-					<!-- i는 행단위라고 생각하고 j는 0부터 6전까지 반복 -->	 
-					<%for (int j = 0; j < 3; j++) {%> 
-						<li>
-                			<div class="contain">
-			                    <a href="">
-			                        <br>
-			                        <img class="a" src="http://placehold.it/166x243" alt="">
-			                        <img class="b" src="http://placehold.it/166x243" alt="">
-			                        <img class="c" src="http://placehold.it/166x243" alt="">
-			                    </a>
-                    <p class="p">ooo의 플레이리스트</p>
-                    <p>좋아요 80</p>
-                    <br>
-                </div>
-
-           				 </li>
-					<% }%>
-					</ul>
-					</span>
-				</div>
-			<% }%>
-		<% }%>
-		
-		
 	<script type="text/javascript" src="./Js/main.js"></script>
 	<script type="text/javascript" src="./Js/CommunityScoll.js"></script><!-- 스크롤기능 js -->
 </body>

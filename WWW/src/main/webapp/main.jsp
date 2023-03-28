@@ -81,7 +81,7 @@
 	ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents"); // contents(영화전체)
 	ArrayList<contentDTO> horror = (ArrayList) session.getAttribute("horror"); // horror(공포 영화)
 	ArrayList<contentDTO> action = (ArrayList) session.getAttribute("action"); // actions(액션 영화)
-	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("conmmunity"); // actions(액션 영화)
+	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("conmmunity"); // 커뮤니티 글
 	//String path = "detailContent"
 	%>
 
@@ -163,7 +163,8 @@
 					<img class="b" src="netflix_img/<%=content[j+1]%>.jpg" alt="<%=content[j+1]%>">
 					<img class="c" src="netflix_img/<%=content[j+2]%>.jpg" alt="<%=content[j+2]%>">
 					<p class="p"><%=community.get(i).getUser_id()%>의 플레이리스트</p>
-					<p><%=community.get(i).getC_likes()%></p>
+					<p><%=community.get(i).getC_hashtag()%>   <%=community.get(i).getC_likes()%></p>
+					<p></p>
 					</div></a>
 				</li>
             	<% }%>
