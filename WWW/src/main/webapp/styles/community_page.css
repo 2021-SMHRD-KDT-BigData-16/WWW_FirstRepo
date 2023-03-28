@@ -77,21 +77,23 @@ li {
 
 #movie4 {
     position: relative;
-    width: 1605px;
+    width: 1630px;
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
 }
 #movie5 {
     position: relative;
-    width: 1605px;
+    width: 1630px;
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
 }
 
 
-
+#movie3_tag{
+	width: 1590px;
+}
 
 /* 플레이리스트 포스터 z-index 및 위치 설정 */
 .a{
