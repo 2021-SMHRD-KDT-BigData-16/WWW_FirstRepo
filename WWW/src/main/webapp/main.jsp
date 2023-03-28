@@ -81,7 +81,7 @@
 	ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents"); // contents(영화전체)
 	ArrayList<contentDTO> horror = (ArrayList) session.getAttribute("horror"); // horror(공포 영화)
 	ArrayList<contentDTO> action = (ArrayList) session.getAttribute("action"); // actions(액션 영화)
-	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("conmmunity"); // 커뮤니티 글
+	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("community"); // 커뮤니티 글
 	//String path = "detailContent"
 	%>
 

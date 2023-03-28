@@ -86,7 +86,7 @@ public class contentSearch extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
-			session.setAttribute("conmmunity", comm_list);
+			session.setAttribute("community", comm_list);
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}
 		response.sendRedirect("main.jsp");
