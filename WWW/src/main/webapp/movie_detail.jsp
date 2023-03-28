@@ -148,7 +148,15 @@
               </tr>
               <tr>
                 <td> 연령 </td>
-                <td> <%=contents.get(i).getV_grade()%></td>
+                <td>
+                <%if(contents.get(i).getV_grade()==12){%>
+                	<img alt="" src="./logo_img/12.png">
+                <%}else if(contents.get(i).getV_grade()==19){ %>
+                	<img alt="" src="./logo_img/19.png">
+                <%}else{ %>
+                	<img alt="" src="./logo_img/15.png">
+                <%} %>
+                </td>
               </tr>
               <tr>
                 <td> 방송년도 </td>
