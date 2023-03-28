@@ -9,5 +9,6 @@
 	<select id="CommunityAllSearch" resultType="com.smhrd.model.communityDTO">
 		select *
 		from tb_community
+		order by c_likes desc
 	</select>
 </mapper>

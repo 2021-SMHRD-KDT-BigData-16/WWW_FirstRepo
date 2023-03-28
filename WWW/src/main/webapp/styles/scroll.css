@@ -1,4 +1,6 @@
-
+div a{
+	text-decoration: none !important;
+}
 /*영화 담는 왼쪽 공간 마진 주기*/
 .warpper {
     margin-left: 450px;
