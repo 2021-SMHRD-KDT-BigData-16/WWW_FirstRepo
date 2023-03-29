@@ -29,9 +29,9 @@
 	</insert>
 	
 	<!-- loing(로그인) -->
-	<select id="login" resultType="com.smhrd.model.memberDTO" parameterType="com.smhrd.model.memberDTO">
+	<select id="Login" resultType="com.smhrd.model.memberDTO" parameterType="com.smhrd.model.memberDTO">
 		SELECT * FROM TB_USER
-    		WHERE (USER_ID =#{user_id} AND USER_PW = #{user_pw});
+    WHERE (USER_ID =#{user_id} AND USER_PW =#{user_pw})
 
 	</select>
 	

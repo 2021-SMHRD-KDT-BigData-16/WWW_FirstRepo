@@ -22,8 +22,8 @@ public class loginService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		// 데이터불러오기
-		String loginId = request.getParameter("loginId");
-		String loginPw = request.getParameter("loginPw");
+		String loginId = request.getParameter("id");
+		String loginPw = request.getParameter("pw");
 		
 		// 데이터 이뿌게 묶기
 		memberDTO dto = new memberDTO();
@@ -32,8 +32,13 @@ public class loginService extends HttpServlet {
 		
 		// 로그인 기능 수행하기
 		memberDAO dao = new memberDAO();
+		
 		memberDTO loginLogic = dao.login(dto);
 		
+		System.out.println("로그인아이디 >>"+ dto.getUser_id());
+		System.out.println("로그인비밀번호 >>"+ dto.getUser_pw());
+		
+		System.out.println(loginLogic);
 		
 		if (loginLogic != null) {
 			
@@ -49,9 +54,6 @@ public class loginService extends HttpServlet {
 		}else {
 			System.out.println("로그인 실패");
 		}
-		
-		
-		
 		
 	}
 

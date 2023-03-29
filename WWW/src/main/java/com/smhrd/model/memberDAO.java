@@ -32,21 +32,22 @@ public class memberDAO {
 		
 		// 1.sql session 불러오기
 		SqlSession session = factory.openSession(true);
-		memberDTO loginLogic = null;
+		memberDTO result = null;
 		
 		try {
 			// 2. session 활용해서 sql구문 실행 (로그인기능)
-			loginLogic = session.selectOne("login", dto);
+			result = session.selectOne("Login", dto);
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+
+			e.printStackTrace();
 		}finally {
 			session.close();
 		}
 		
 		
-		return loginLogic;
+		return result;
 	}
 
 }

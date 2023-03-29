@@ -40,7 +40,8 @@ public class signupService extends HttpServlet {
 		String user_nick = request.getParameter("user_nick");
 		String user_gender = request.getParameter("user_gender");
 		String user_birthdate = request.getParameter("user_birthdate");
-		String test=user_birthdate.replace("20", "");
+		String test=user_birthdate.replace("20", "").replace("19","").replace("21","").replace("22","");
+		
 		
 		System.out.println(user_id);
 		System.out.println(user_pw);
@@ -66,9 +67,11 @@ public class signupService extends HttpServlet {
 		
 		if (cnt > 0) {
 			System.out.println("성공");
+			response.sendRedirect("first_window.html");
 		
 		}else {
 			System.out.println("실패");
+			response.sendRedirect("signup.html");
 		}
 		
 		
