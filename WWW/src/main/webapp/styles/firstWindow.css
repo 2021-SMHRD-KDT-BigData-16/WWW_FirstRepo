@@ -13,9 +13,6 @@ body{
             width:1600px;
         }
 /* WWW 담는 공간  */
-#middle{
-            display: block;
-        }
         
 /* 로고 이미지 CSS*/        
 .logo_img{
@@ -23,7 +20,19 @@ body{
     margin: 0 auto;
     border-bottom:40px;
 }
+#middle_btn{
+    position: relative;
+}
 
+button{
+    position: absolute;
+}
+#btn1{
+    left: 44.5%;
+}
+#btn2{
+    left: 50.6%;
+}
 /*부트 스크랩 BUTTON*/
 .btn_link{
     text-decoration: none !important;
