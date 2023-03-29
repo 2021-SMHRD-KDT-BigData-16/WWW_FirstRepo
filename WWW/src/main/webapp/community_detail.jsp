@@ -120,13 +120,8 @@
                         <div id="hash_result"></div>
                     </h3>
                 </div>
-                <!-- 체크박스에서 넣은 결과 출력해주는 공간 -->
 
 
-                <!-- 버튼 정렬때문에 테이블 안으로 넣음 -->
-                <table class="hash_tb">
-                    <td>
-                        <tr>
                             <div class="hashtag">
                                 <form action="" name="hashtag_form">
                                     <div class="accordion" id="accordionExample">
@@ -235,91 +230,39 @@
                                         </div>
                                     </div>
 
-                        </tr>
-                    </td>
-
-                    <!-- 버튼만 모아두는 행 -->
-                    <tr>
-                        <td>
-
-                            <!-- 체크박스 값 보내기 -->
-                            <button class="btn btn-primary" type="submit"
-                                style="background-color : #ff7600; border:none">SUBMIT</button>
-
-                            </form>
-                            <!-- 전체 리셋 버튼 -->
-                            <button class="btn btn-prsimary" type="button" onclick='reset()'
-                                style="background-color : #ff7600; color:white ">ALLRESET</button>
-                        </td>
-                    </tr>
-
-                </table>
 
 
 
+                 <!-- 전체 -->
+                <div class="dd_container">
+                    <br>
+                    <!-- 첫번째 -->
+                    <div class="d_container">
+                        <input id="movieInput" type="text" style="margin-right: 10px; width: 400px; z-index: 2;"
+                            data-cate="high" onkeyup="search(this);" placeholder="영화를 입력하세요">
+                        <!-- 연관검색 리스트가 출력되는곳 -->
+                        <div id="movieList"></div>
 
-
-
-
-
- 				<!-- 전체 -->
-                <div class="dd_container" >
-                <br>
-                 <!-- 첫번째 -->
-                    <div class="d_container" >
-                    <input id="movieInput" type="text" style="margin-right: 10px; width: 400px; z-index: 2;"
-                    data-cate="high" onkeyup="search(this);" placeholder="영화를 입력하세요">
-                  	<!-- 출력시키는 곳 -->
-       				<div id="selected"></div>
-                    
                     </div>
-                    
+
                     <!-- 두번째 -->
-                    <div class="d_container" style = "height : 350px" >
-			        <!-- 연관검색 리스트가 출력되는곳 -->
-			        <div id="movieList"></div>
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                    <div class="d_container" style="height : 350px">
+
+                        <!-- 출력시키는 곳 -->
+                        <div style="z-index: 3;" id="selected"></div>                        
                     </div>
                 </div>
 
 
+              <div style= "margin-left : 1123px;" >
+                <button class="btn btn-primary" type="button" onclick="sendData()"
+                style="background-color : #ff7600; border:none ;">SUBMIT</button>
+
+            <button class="btn btn-prsimary" type="button" onclick='reset()'
+                style="background-color : #ff7600; color:white ;  border:none ;">ALLRESET</button>
+            </div>
         
         
-              <!--  <div class="dd_container" >
-                <br>
-                    <div class="d_container" >
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" />
-                        </button>
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
-                    </div>
-                    <div class="d_container" style = "height : 350px" >
-
-
-                        <form class="d-flex" role="search" align="left" action="">
-                            <input id="searchInput_2" style="margin-right: 10px; width: 400px; z-index: 2;"
-                                name="search" placeholder=" 검색어를 입력해주세요.">
-                            <button type="submit" class="btn btn-outline-warning">
-                                검색
-                            </button>
-                        </form>
-
-
-
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
-                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
-                    </div>
-                </div> -->
-
-
-
-
-
-
-
-      
-      
-      
         <!-- 발바닥 -->
   <div class="container">
     <footer>
@@ -377,57 +320,86 @@
       
       
    <script type="text/javascript"> 
+   
 
-   function search(target){
-	    $.ajax({
-	        type: 'GET',
-	        // 어디에서 받아올껀지 데이터를
+   let checks = "";
+   let selectMoives = "";
 
-	        dataType: 'JSON',
-	        // 내가 받아올 데이터 
-	        url: `asset/movie.json`,
+   function sendData(){
 
-	        // 에러가날 경우에
-	        error: function(err){
-	            console.log(err);
-	        },
-	        //성공할경우에
-	        success: function(data){
-	            // 내가 입력한 글자 체크해줌
-	            var checkWord = $("#movieInput").val();
-	            console.log(checkWord);
-	            movieList = $("#movieList");
-	            movieList.empty();
-	            data.forEach((movie)=>{
-	                // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
-	                if(movie['src'].includes(checkWord)){
-	                    // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
-	                    // 나는 이미지랑 영화이름 뜨게 해둔거임
-	                    
-	                    movieList.append(`
-	                    <span style="cursor: pointer;" onclick="select(this);"> ${movie['src']} </span> <br/>`);
-	                }
-	            })
-	        }
-	    })
-	}    
+       let checkBoxs = document.getElementsByClassName("hash_check");
 
-	/* <img style="cursor: pointer;" onclick="select(this);" src = "/ajax_search-main/${movie['src']}.jpg "> <br/> */
+       for(let i=0; i<checkBoxs.length; i++){
+           if(checkBoxs[i].checked){
+               checks += "#"+ checkBoxs[i].value ;
+           }
+       }
 
-	const list = [];
-	function select(target){
+       $.ajax({
+           url:"http://localhost:8087/WWW/makePlayList",
+           type:"POST",
+           data:{genre:checks, movies:selectMoives},
+           success:function(){
+               // location.href="community.jsp"
+               console.log("성공");
+           }
+       });
+   }
+   
+   
+   
+   
 
-	    const selected = document.getElementById("selected");
-	    // 비어있는  div에 innertext를 출력시킬꺼야 target의 이너텍스트를 타겟은 위의 전체 함수에서
-	    // 받아온 친구인듯 
-	    console.log(selected);
+   function search(target) {
+       $.ajax({
+           type: 'GET',
+           // 어디에서 받아올껀지 데이터를
 
-	    selected.innerHTML += `<span>${target.innerText}</span>`;
-	    selected.innerHTML += `<img src ="/ajax_search-main/${target.innerText}.jpg">`;
-	    list.push(target.innerText);
-	    console.log(list);
-	}
+           dataType: 'JSON',
+           // 내가 받아올 데이터 
+           url: "./json/movie.json",
 
+           // 에러가날 경우에
+           error: function (err) {
+               console.log(err);
+           },
+           //성공할경우에
+           success: function (data) {
+               // 내가 입력한 글자 체크해줌
+               var checkWord = $("#movieInput").val();
+               console.log(checkWord);
+               movieList = $("#movieList");
+               movieList.empty();
+
+               data.forEach((movie) => {
+                   // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
+                   if (movie['src'].includes(checkWord)) {
+                       // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
+                       movieList.append( "<span style=\"cursor: pointer;\" onclick=\"select(this);\"> "+movie['src'] + "</span> <br/>");
+                   }
+               })
+           }
+       })
+   }
+
+   /* <img style="cursor: pointer;" onclick="select(this);" src = "/ajax_search-main/${movie['src']}.jpg "> <br/> */
+
+   const list = [];
+   function select(target) {
+
+       const selected = document.getElementById("selected");
+       // 비어있는  div에 innertext를 출력시킬꺼야 target의 이너텍스트를 타겟은 위의 전체 함수에서
+       // 받아온 친구인듯 
+       console.log(selected);
+
+       // selected.innerHTML += ``;
+       selected.innerHTML += "<div style = \"float : left;\">";
+       selected.innerHTML += "<img src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 250px;height : 300px; margin-right : 20px; z-index : 5;\">";
+    	selected.innerHTML += "<div>"+target.innerText+"</div> </div>";
+       
+    	
+       selectMoives+=target.innerText+",";
+   }
    
 /*드래그앤 드랍 주석처리
 const draggables = document.querySelectorAll(".draggable");

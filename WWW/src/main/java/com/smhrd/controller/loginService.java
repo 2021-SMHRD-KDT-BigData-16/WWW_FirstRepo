@@ -48,7 +48,7 @@ public class loginService extends HttpServlet {
 			session.setAttribute("user", loginLogic);
 			
 			
-			response.sendRedirect("first_window.html");
+			response.sendRedirect("contentSearch");
 			
 			System.out.println("로그인 성공");
 		}else {
