@@ -93,16 +93,16 @@ public class contentSearch extends HttpServlet {
 			session.setAttribute("community", comm_list);
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}
-		if (review_list != null) {
-			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
-			
-			// 세션을 불러오기
-			HttpSession session = request.getSession();
-			
-			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
-			session.setAttribute("review", review_list);
-			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
-		}
+//		if (review_list != null) {
+//			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
+//			
+//			// 세션을 불러오기
+//			HttpSession session = request.getSession();
+//			
+//			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+//			session.setAttribute("review", review_list);
+//			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
+//		}
 		response.sendRedirect("main.jsp");
 	}
 }

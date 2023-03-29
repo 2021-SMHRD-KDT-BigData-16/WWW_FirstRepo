@@ -336,7 +336,7 @@
        }
 
        $.ajax({
-           url:"http://localhost:8087/WWW/makePlayList",
+           url:"http://localhost:8081/WWW/makePlayList",
            type:"POST",
            data:{genre:checks, movies:selectMoives},
            success:function(){
