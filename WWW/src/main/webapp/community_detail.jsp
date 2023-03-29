@@ -72,8 +72,9 @@
                 </ul>
 
 
-                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
+                <form class="d-flex" role="search" align="center" action="">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;" name="search"
+                        placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
                         검색
                     </button>
@@ -145,21 +146,33 @@
 
                                                     <!-- getCheckboxValue()가 체크박스 클릭했을때 위로 보내주는 JS임! -->
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="코미디" onclick='getCheckboxValue(),checkStr()'> 코미디
+                                                        value="판타지" onclick='getCheckboxValue(),checkStr()'> 판타지
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="액션" onclick='getCheckboxValue(),checkStr()'> 액션
+                                                        value="애니메이션" onclick='getCheckboxValue(),checkStr()'> 애니메이션
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="가족" onclick='getCheckboxValue(),checkStr()'> 가족
+                                                        value="스릴러" onclick='getCheckboxValue(),checkStr()'> 스릴러
                                                     <input class="hash_check" type="checkbox" name="hash_name"
                                                         value="SF" onclick='getCheckboxValue(),checkStr()'> SF
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="공포" onclick='getCheckboxValue(),checkStr()'> 공포
+                                                        value="액션" onclick='getCheckboxValue(),checkStr()'> 액션
                                                     <input class="hash_check" type="checkbox" name="hash_name"
                                                         value="범죄" onclick='getCheckboxValue(),checkStr()'> 범죄
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="로맨스코미디" onclick='getCheckboxValue(),checkStr()'> 로맨스코미디
+                                                        value="로맨스" onclick='getCheckboxValue(),checkStr()'> 로맨스
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="미스터리" onclick='getCheckboxValue(),checkStr()'> 미스터리
+                                                        value="공포" onclick='getCheckboxValue(),checkStr()'> 공포
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="역사" onclick='getCheckboxValue(),checkStr()'> 역사
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="음악" onclick='getCheckboxValue(),checkStr()'> 음악
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="전쟁" onclick='getCheckboxValue(),checkStr()'> 전쟁
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="스포츠" onclick='getCheckboxValue(),checkStr()'> 스포츠
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="다큐멘터리" onclick='getCheckboxValue(),checkStr()'> 다큐멘터리
+                                                    <input class="hash_check" type="checkbox" name="hash_name"
+                                                        value="서부" onclick='getCheckboxValue(),checkStr()'> 서부
 
 
                                                 </div>
@@ -188,8 +201,8 @@
                                                     <input class="hash_check" type="checkbox" name="hash_name"
                                                         value="사랑" onclick='getCheckboxValue(),checkStr()'> 사랑
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="그리움" onclick='getCheckboxValue(),checkStr()'>
-                                                    그리움
+                                                        value="그리움" onclick='getCheckboxValue(),checkStr()'> 그리움
+                                                    
 
                                                 </div>
                                             </div>
@@ -249,8 +262,31 @@
 
 
 
-
+ 				<!-- 전체 -->
                 <div class="dd_container" >
+                <br>
+                 <!-- 첫번째 -->
+                    <div class="d_container" >
+                    <input id="movieInput" type="text" style="margin-right: 10px; width: 400px; z-index: 2;"
+                    data-cate="high" onkeyup="search(this);" placeholder="영화를 입력하세요">
+                  	<!-- 출력시키는 곳 -->
+       				<div id="selected"></div>
+                    
+                    </div>
+                    
+                    <!-- 두번째 -->
+                    <div class="d_container" style = "height : 350px" >
+			        <!-- 연관검색 리스트가 출력되는곳 -->
+			        <div id="movieList"></div>
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                        <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
+                    </div>
+                </div>
+
+
+        
+        
+              <!--  <div class="dd_container" >
                 <br>
                     <div class="d_container" >
                         <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" />
@@ -273,8 +309,7 @@
                         <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
                         <button class="draggable" draggable="true"><img src="http://placehold.it/160X230" /></button>
                     </div>
-                </div>
-
+                </div> -->
 
 
 
@@ -343,8 +378,59 @@
       
    <script type="text/javascript"> 
 
+   function search(target){
+	    $.ajax({
+	        type: 'GET',
+	        // 어디에서 받아올껀지 데이터를
 
-   const draggables = document.querySelectorAll(".draggable");
+	        dataType: 'JSON',
+	        // 내가 받아올 데이터 
+	        url: `asset/movie.json`,
+
+	        // 에러가날 경우에
+	        error: function(err){
+	            console.log(err);
+	        },
+	        //성공할경우에
+	        success: function(data){
+	            // 내가 입력한 글자 체크해줌
+	            var checkWord = $("#movieInput").val();
+	            console.log(checkWord);
+	            movieList = $("#movieList");
+	            movieList.empty();
+	            data.forEach((movie)=>{
+	                // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
+	                if(movie['src'].includes(checkWord)){
+	                    // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
+	                    // 나는 이미지랑 영화이름 뜨게 해둔거임
+	                    
+	                    movieList.append(`
+	                    <span style="cursor: pointer;" onclick="select(this);"> ${movie['src']} </span> <br/>`);
+	                }
+	            })
+	        }
+	    })
+	}    
+
+	/* <img style="cursor: pointer;" onclick="select(this);" src = "/ajax_search-main/${movie['src']}.jpg "> <br/> */
+
+	const list = [];
+	function select(target){
+
+	    const selected = document.getElementById("selected");
+	    // 비어있는  div에 innertext를 출력시킬꺼야 target의 이너텍스트를 타겟은 위의 전체 함수에서
+	    // 받아온 친구인듯 
+	    console.log(selected);
+
+	    selected.innerHTML += `<span>${target.innerText}</span>`;
+	    selected.innerHTML += `<img src ="/ajax_search-main/${target.innerText}.jpg">`;
+	    list.push(target.innerText);
+	    console.log(list);
+	}
+
+   
+/*드래그앤 드랍 주석처리
+const draggables = document.querySelectorAll(".draggable");
    const containers = document.querySelectorAll(".d_container");
 
    draggables.forEach(draggable => {
@@ -388,7 +474,7 @@
            },
            { offset: Number.NEGATIVE_INFINITY}
        ).element;
-   }
+   }*/
    
    
 	
@@ -430,23 +516,17 @@
 	
 	    if (vCnt > 2) {
 	
-	        alert(`💥 세개 선택 완료되었습니다 💥`);
+	        alert(`💥 세개만 선택이 가능합니다! 💥`);
 	
 	        return;
 	    }
 	}
 	
-	
-	
-	
-	
-	
-	
 	// 리셋버튼 누르면 실행되는거
 	function reset() {
 	
 	    $(".hash_check").prop("checked", false);
-	    alert(`💥 선택이 완료되었습니다. 💥`);
+	    alert(`💥 리셋되었습니다 💥`);
 	}
 	// ----------체크박스 끝---------------
 	
@@ -461,7 +541,7 @@
 
 
 
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </body>

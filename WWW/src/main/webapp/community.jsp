@@ -94,11 +94,12 @@
     <br>
     <br>
 
-		<h2 style ="color:white;margin-left : 160px">커뮤니티</h2>
-		<button class="btn btn-outline-warning" style="margin-left : 500px !important;">
-		<a class="btn_link" style="color: white !important; " href ="community_detail.jsp">
-					작성하기</a>
-		</button>
+    <h2 style ="color:white;margin-left : 160px">커뮤니티
+    <button class="btn btn-outline-warning" style= " margin-left:1300px">
+    <a class="btn_link" style="color: white !important; " href ="community_detail.jsp">
+                작성하기</a>
+    </button>
+    </h2>
 		
 		
 		
