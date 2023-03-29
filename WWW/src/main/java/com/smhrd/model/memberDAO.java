@@ -11,10 +11,6 @@ public class memberDAO {
 
 	public int signup(memberDTO dto) {
 		
-		
-
-		
-		
 		int cnt = 0;
 
 		SqlSession session = factory.openSession(true);
@@ -30,6 +26,27 @@ public class memberDAO {
 		}
 
 		return cnt;
+	}
+
+	public memberDTO login(memberDTO dto) {
+		
+		// 1.sql session 불러오기
+		SqlSession session = factory.openSession(true);
+		memberDTO loginLogic = null;
+		
+		try {
+			// 2. session 활용해서 sql구문 실행 (로그인기능)
+			loginLogic = session.selectOne("login", dto);
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			session.close();
+		}
+		
+		
+		return loginLogic;
 	}
 
 }
