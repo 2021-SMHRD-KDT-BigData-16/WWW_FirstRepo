@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.smhrd.model.contentDTO;
 
 
 @WebServlet("/detailContent")
@@ -28,7 +31,14 @@ public class detailContent extends HttpServlet {
 		
 		// 세션에 data 이름으로 data의 값  넣어주기
 		session.setAttribute("data", data);
-		
+		ArrayList<contentDTO> contents = (ArrayList)session.getAttribute("contents");
+		int idx=0;
+		for(int i=0; i<contents.size(); i++) {
+			if(contents.get(i).getV_title().equals(data)) {
+				idx =contents.get(i).getV_idx();
+				session.setAttribute("idx", idx);
+			}
+		}
 		// 넣은 결과창을 보여줘야 하니까 jsp파일로 이동
 		response.sendRedirect("movie_detail.jsp");
 	}

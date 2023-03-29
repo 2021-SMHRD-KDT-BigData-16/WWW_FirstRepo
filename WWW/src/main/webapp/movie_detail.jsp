@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
+<%@page import="com.smhrd.model.reviewDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -92,9 +93,12 @@
 	<% 
 		// session에서 꺼내올 때 강제 형변환 해주기
 		String data = (String)session.getAttribute("data");
+		int idx = (int)session.getAttribute("idx");
 	
 		// 세션에 담긴 컨텐츠 항목 불러오기
-		ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents");%>
+		ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents");
+		ArrayList<reviewDTO> reviews = (ArrayList) session.getAttribute("review");
+		%>
 		
 
 
@@ -176,6 +180,7 @@
           <!-- 오른쪽  -->
 
           <h2>제목 : <%=contents.get(i).getV_title()%></h2>
+          
           <h3>시놉시스</h3>
           <p><%=contents.get(i).getV_synopsis()%></p>
           
@@ -197,14 +202,15 @@
             <legend>
               <h3>게시판</h3>
             </legend>
-            댓글<br>
-            댓글<br>
-            댓글<br>
-            댓글<br>
-            댓글<br>
-            댓글<br>
-            댓글<br>
-            댓글<br>
+            <% for (int i=0; i<reviews.size(); i++){%>
+            	<%if(reviews.get(i).getV_idx()==idx) {%>
+            		<h3><%=reviews.get(i).getReview_content()%></h3>
+            	<%}else{ %>
+            		<h3>등록된 리뷰가 없습니다.</h3>
+            		<h3><%=idx %></h3>
+            		<h3><%=reviews.size()%></h3>
+            	<%} %>
+            <%}%>
 
           </fieldset>
 
