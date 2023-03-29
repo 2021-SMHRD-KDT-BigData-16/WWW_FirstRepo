@@ -156,11 +156,12 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
+            <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
             <%for(int i=0; i<community.size(); i++){ %>
             	<% String[] content = community.get(i).getC_content().split(",");%>
             	<% for(int j = 0 ; j < 1; j++){%>
             		<li>	
-					<a href=""><div class="contain">
+					<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>"><div class="contain">
 					<br>
 					<img class="a" src="netflix_img/<%=content[j]%>.jpg" alt="<%=content[j]%>">
 					<img class="b" src="netflix_img/<%=content[j+1]%>.jpg" alt="<%=content[j+1]%>">

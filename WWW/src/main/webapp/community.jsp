@@ -104,7 +104,8 @@
 		
 		
 		<hr>
-		
+		<br>
+		<br>
         <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
         
         <div class="movie_tag" id="movie2_tag"></div>
@@ -146,7 +147,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
@@ -174,7 +175,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
@@ -205,7 +206,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
@@ -234,7 +235,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
@@ -264,7 +265,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">
@@ -292,7 +293,7 @@
     	   			<%int j=0;%>
     	   			<%String[] comm =  c_list.get(i).getC_content().split(",");%>	
 					<li>	
-						<a href="">
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 						<div class="contain">
 						<br>
 							<img class="a" src="./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>">

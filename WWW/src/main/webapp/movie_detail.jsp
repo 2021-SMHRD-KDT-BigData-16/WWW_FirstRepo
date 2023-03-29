@@ -92,7 +92,7 @@
 
 	<% 
 		// session에서 꺼내올 때 강제 형변환 해주기
-		String data = (String)session.getAttribute("data");
+		String data = (String)session.getAttribute("title");
 		int idx = (int)session.getAttribute("idx");
 	
 		// 세션에 담긴 컨텐츠 항목 불러오기

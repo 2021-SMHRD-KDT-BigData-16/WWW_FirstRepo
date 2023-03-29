@@ -118,7 +118,7 @@
 					<span>
 					<!-- i는 행단위라고 생각하고 j는 0부터 6전까지 반복 -->	 
 					<%for (int j = i*6; j < (i+1)*6; j++) {%> 
-						<a href="detailContent?data=<%=contents.get(j).getV_title() %>">						
+						<a href="detailContent?data=<%=contents.get(j).getV_title()%>">						
 						
 						<img src="./netflix_img/<%=contents.get(j).getV_title()%>.jpg" alt="<%=contents.get(j).getV_title()%>"/>
 						</a> 

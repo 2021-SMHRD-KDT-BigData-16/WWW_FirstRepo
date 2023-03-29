@@ -30,7 +30,7 @@ public class detailContent extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		// 세션에 data 이름으로 data의 값  넣어주기
-		session.setAttribute("data", data);
+		session.setAttribute("title", data);
 		ArrayList<contentDTO> contents = (ArrayList)session.getAttribute("contents");
 		int idx=0;
 		for(int i=0; i<contents.size(); i++) {
@@ -39,6 +39,8 @@ public class detailContent extends HttpServlet {
 				session.setAttribute("idx", idx);
 			}
 		}
+		System.out.println("인덱스 번호"+idx);
+		System.out.println("데이터 내용 :"+data);
 		// 넣은 결과창을 보여줘야 하니까 jsp파일로 이동
 		response.sendRedirect("movie_detail.jsp");
 	}

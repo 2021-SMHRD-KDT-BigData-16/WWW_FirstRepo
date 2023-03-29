@@ -1,5 +1,15 @@
+<!-- ArrayList import  -->
+<%@page import="com.smhrd.model.communityDTO"%>
+<%@page import="java.util.ArrayList"%>
+<!-- contentSearch import-->
+<%@page import="com.smhrd.controller.contentSearch"%>
+<!-- contentDTO 자료형 import-->
+<%@page import="com.smhrd.model.contentDTO"%>
+<%@page import="com.smhrd.model.communityDTO"%>
+<!-- jstl import-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,25 +85,35 @@
     <br>
     <br>
     <div>
+    <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
+    
+    
+    
+            	<%
+    				String temp = (String) session.getAttribute("playIdx"); 
+    				int row = Integer.parseInt(temp);
+    				int idx = 0;
+    				for(int i=0; i<c_list.size(); i++){
+    					if(c_list.get(i).getC_idx()==row){
+    						idx=i;
+    					}
+    				}
+    				%>
         <div id="playlist_tag">
-            <h3 style="color : white">OOO의 플레이리스트</h3>
-            <h3 style="color : white">#2030 #연인</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getUser_id()%>의 플레이 리스트</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
-                <li><a href="https://www.daum.net"><img src="http://placehold.it/166x243" alt=""></a></li>
+    				<% String[] content = c_list.get(idx).getC_content().split(","); %>
+    				<%for(int j=0; j<content.length; j++) {%>
+    				<li><a href="detailContent?data=<%=content[j]%>">
+    					<img src="./netflix_img/<%=content[j]%>.jpg" alt="">
+    					</a>
+    				</li>
+	    		<%}%>
             </ul>
         </div>
         <br>
