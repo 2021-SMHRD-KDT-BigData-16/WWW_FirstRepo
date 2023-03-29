@@ -241,21 +241,21 @@
                         <input id="movieInput" type="text" style="margin-right: 10px; width: 400px; z-index: 2;"
                             data-cate="high" onkeyup="search(this);" placeholder="영화를 입력하세요">
                         <!-- 연관검색 리스트가 출력되는곳 -->
-                        <div id="movieList"></div>
+                        <div id="movieList" style="overflow:scroll; width:1350px; height:250px;"></div>
 
                     </div>
 
                     <!-- 두번째 -->
-                    <div class="d_container" style="height : 350px">
+                    <div class="d_container" style="height : 350px; ">
 
                         <!-- 출력시키는 곳 -->
-                        <div style="z-index: 3;" id="selected"></div>                        
+                        <div style="z-index: 3; overflow:scroll; width:1350px; height:330px; " id="selected" ></div>                        
                     </div>
                 </div>
 
 
-              <div style= "margin-left : 1123px;" >
-                <button class="btn btn-primary" type="button" onclick="sendData()"
+              <div style= "margin-left : 1191px; margin-top : 10px;" >
+                <button class="btn btn-primary" type="button" onclick="sendData() ;return false;"
                 style="background-color : #ff7600; border:none ;">SUBMIT</button>
 
             <button class="btn btn-prsimary" type="button" onclick='reset()'
@@ -340,7 +340,7 @@
            type:"POST",
            data:{genre:checks, movies:selectMoives},
            success:function(){
-               // location.href="community.jsp"
+               location.href="makePlayList"
                console.log("성공");
            }
        });
@@ -349,7 +349,7 @@
    
    
    
-
+   const list = [];
    function search(target) {
        $.ajax({
            type: 'GET',
@@ -375,7 +375,7 @@
                    // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
                    if (movie['src'].includes(checkWord)) {
                        // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
-                       movieList.append( "<span style=\"cursor: pointer;\" onclick=\"select(this);\"> "+movie['src'] + "</span> <br/>");
+                       movieList.append( "<span style=\"cursor: pointer;margin-left : 50px; margin-top : 200px;\" onclick=\"select(this);\">"+movie['src'] + "</span> <br/>");
                    }
                })
            }
@@ -384,7 +384,7 @@
 
    /* <img style="cursor: pointer;" onclick="select(this);" src = "/ajax_search-main/${movie['src']}.jpg "> <br/> */
 
-   const list = [];
+
    function select(target) {
 
        const selected = document.getElementById("selected");
@@ -392,14 +392,13 @@
        // 받아온 친구인듯 
        console.log(selected);
 
-       // selected.innerHTML += ``;
-       selected.innerHTML += "<div style = \"float : left;\">";
-       selected.innerHTML += "<img src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 250px;height : 300px; margin-right : 20px; z-index : 5;\">";
-    	selected.innerHTML += "<div>"+target.innerText+"</div> </div>";
-       
-    	
+       selected.innerHTML += "<div style = 'float : left;'> <img src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 166px;height : 236px; margin-right : 20px; margin-top : 20px ; z-index : 5;\">  </div>";
        selectMoives+=target.innerText+",";
+
+       
+       
    }
+	 
    
 /*드래그앤 드랍 주석처리
 const draggables = document.querySelectorAll(".draggable");
@@ -488,7 +487,7 @@ const draggables = document.querySelectorAll(".draggable");
 	
 	    if (vCnt > 2) {
 	
-	        alert(`💥 세개만 선택이 가능합니다! 💥`);
+	        alert(`💥 세개만 선택해주세요! 💥`);
 	
 	        return;
 	    }
