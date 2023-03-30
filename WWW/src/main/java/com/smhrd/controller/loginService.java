@@ -52,6 +52,7 @@ public class loginService extends HttpServlet {
 			
 			
 			System.out.println("로그인 성공");
+			System.out.println("아이디 생성 날짜 : " + loginLogic.getUser_joindate());
 			response.sendRedirect("contentSearch");
 		}else {
 			System.out.println("로그인 실패");

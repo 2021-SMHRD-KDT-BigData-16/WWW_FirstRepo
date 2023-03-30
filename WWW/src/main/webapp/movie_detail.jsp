@@ -213,9 +213,11 @@
                                                     <% boolean isReview=false; %>
                                                         <% for (int i=0; i<reviews.size(); i++){%>
                                                             <%if(reviews.get(i).getV_idx()==idx) {%>
-                                                                <h3>
+                                                                <p>
+                                                                    <%=reviews.get(i).getUser_id()%> : 
                                                                     <%=reviews.get(i).getReview_content()%>
-                                                                </h3>
+                                                                </p>
+                                                                    <p>작성 일자 : <%=reviews.get(i).getReivew_dt()%></p>
                                                                 <%isReview=true; %>
                                                                     <%}%>
                                                                         <%}%>

@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.contentDTO;
+import com.smhrd.model.reviewDTO;
 
 
 @WebServlet("/detailContent")
@@ -39,8 +41,22 @@ public class detailContent extends HttpServlet {
 				session.setAttribute("idx", idx);
 			}
 		}
-		System.out.println("인덱스 번호"+idx);
-		System.out.println("데이터 내용 :"+data);
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("영화 인덱스 번호 : "+idx);
+		System.out.println("데이터 내용 : "+data);
+		System.out.println("---------------------------------------------------------------------");
+		ArrayList<reviewDTO> reviews = (ArrayList) session.getAttribute("review");
+		for(int i=0; i<reviews.size(); i++) {
+			if(reviews.get(i).getV_idx()==idx) {
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("영화 번호 : " +reviews.get(i).getV_idx());
+				System.out.println("작성자 : " +reviews.get(i).getUser_id());
+				System.out.println("글 순서 : " +reviews.get(i).getReview_idx());
+				System.out.println("작성 내용 : " +reviews.get(i).getReview_content());
+				System.out.println("작성 날짜 : " +reviews.get(i).getReivew_dt());
+				System.out.println("---------------------------------------------------------------------");
+			}
+		}
 		// 넣은 결과창을 보여줘야 하니까 jsp파일로 이동
 		response.sendRedirect("movie_detail.jsp");
 	}
