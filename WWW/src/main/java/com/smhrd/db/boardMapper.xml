@@ -13,9 +13,10 @@
 		where no_number = #{no_number} and user_id = #{user_id}
 	</select>
 	<insert id= "likeUp" parameterType="com.smhrd.model.boardDTO" >
-		insert into board
-		(no_number, user_id)
-		values(#{no_number},#{user_id})
+		INSERT INTO board
+		(no_number, 
+		user_id)
+		VALUES(#{no_number},#{user_id})
 	</insert>
 	<delete id="likeDown">
 		delete from board

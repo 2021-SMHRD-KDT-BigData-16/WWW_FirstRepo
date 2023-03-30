@@ -99,8 +99,9 @@
     <br>
 
     <h2 style ="color:white;margin-left : 160px">커뮤니티
-    <button class="btn btn-outline-warning" style= "margin-left:1300px">
-    	<a class="btn_link" style="color: white !important; " href ="community_detail.jsp">작성하기</a>
+    <button class="btn btn-outline-warning" style= " margin-left:1300px">
+    <a class="btn_link" style="color: white !important; " href ="community_detail.jsp">
+                작성하기</a>
     </button>
     </h2>
       
@@ -132,7 +133,6 @@
             <a class="next">&#10095;</a>
             <ul class="slides">
             <%for (int i=0; i<c_list.size(); i++){%>
-
             <%if(c_list.get(i).getUser_id().equals(user.getUser_id())){%>
                <%String[] user_comm = c_list.get(i).getC_content().split(","); %>
                <%int k =0; %>
@@ -154,6 +154,7 @@
                   
                <% } %>   
             <% } %> 
+         <% } %>
 
             </ul>
         </div>
@@ -170,7 +171,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#드라마")){%>
                    <%int j=0;%>
@@ -203,7 +203,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#액션")){%>
                    <%int j=0;%>
@@ -239,7 +238,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#판타지")){%>
                    <%int j=0;%>
@@ -273,7 +271,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#공포")){%>
                    <%int j=0;%>
@@ -295,7 +292,6 @@
                   </a>
                </li>
                 <%}%>     
-
             <%} %>
             </ul>
         </div>
@@ -309,7 +305,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#스릴러")){%>
                    <%int j=0;%>
@@ -342,7 +337,6 @@
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-
           <%for(int i=0; i<c_list.size(); i++){ %>
                 <%if(c_list.get(i).getC_hashtag().contains("#가족")){%>
                    <%int j=0;%>
@@ -363,23 +357,10 @@
                   </div>
                   </a>
                </li>
-				<%} %>
-			<%} %>
-			<%} %>
+                <%}%>     
+            <%} %>
             </ul>
         </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
 	<!-- 커뮤니티 페이지 -->
 	<script src="./Js/community_page.js"></script>
 

@@ -49,6 +49,11 @@ public class likeUp extends HttpServlet {
 			session.setAttribute("like", 0);
 		}
 		int row2 = dao.checkLike(dto);
+		if(likeResult>0) {
+			System.out.println("community 저장 성공");
+		}else {
+			System.out.println("community 저장 실패");
+		}
 		session.setAttribute("likeCheck", row2);
 		ArrayList<communityDTO> comm_list = c_dao.selectAll();
 		if (comm_list != null) {

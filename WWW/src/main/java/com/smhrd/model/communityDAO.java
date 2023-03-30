@@ -46,8 +46,6 @@ public class communityDAO {
 		try {
 			row = session.update("UpLike", dto);
 			
-		} catch (Exception e) {
-			e.printStackTrace();
 		}finally {
 			session.close();
 		}
@@ -59,8 +57,6 @@ public class communityDAO {
 		try {
 			row = session.update("DownLike", dto);
 			
-		} catch (Exception e) {
-			e.printStackTrace();
 		}finally {
 			session.close();
 		}

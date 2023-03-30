@@ -53,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="main.jsp">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="contentSearch">홈</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>

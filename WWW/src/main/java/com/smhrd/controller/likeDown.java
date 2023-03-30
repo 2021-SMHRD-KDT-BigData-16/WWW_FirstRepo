@@ -42,11 +42,16 @@ public class likeDown extends HttpServlet {
 		int result = dao.likeDown(dto);
 		System.out.println(result);
 		if(result>0) {
-			System.out.println("DB 저장 성공");			
+			System.out.println("BOARD 테이블 저장 성공");			
 		}else {
-			System.out.println("DB 저장 실패");
+			System.out.println("BOARD 테이블 저장 실패");
 		}
 		int row2 = dao.checkLike(dto);
+		if(likeResult>0) {
+			System.out.println("COMMUNITY 테이블 저장 성공");
+		}else {
+			System.out.println("COMMUNITY 테이블 저장 실패");
+		}
 		session.setAttribute("likeCheck", row2);
 		ArrayList<communityDTO> comm_list = c_dao.selectAll();
 		if (comm_list != null) {

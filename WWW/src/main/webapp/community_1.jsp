@@ -47,7 +47,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="main.jsp">홈</a>
+                            href="contentSearch">홈</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
@@ -121,7 +121,6 @@
 				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
 			<%} else{ %>
     			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
-    			<h2><%=c_list.get(idx).getC_idx()%></h2>
     	<%} %>
 
         </div>
