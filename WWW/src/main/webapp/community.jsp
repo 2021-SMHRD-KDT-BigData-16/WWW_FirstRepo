@@ -1,11 +1,11 @@
 <!-- ArrayList import  -->
+<%@page import="com.smhrd.model.memberDTO"%>
 <%@page import="com.smhrd.model.communityDTO"%>
 <%@page import="java.util.ArrayList"%>
 <!-- contentSearch import-->
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
-<%@page import="com.smhrd.model.memberDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,6 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="icon" href="./logo_img/favicon.png">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
@@ -46,7 +47,7 @@
 
 
 
-    <!-- 헤더 시작 -->
+   <!-- 헤더 시작 -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
@@ -67,27 +68,25 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="community.jsp">커뮤니티</a>
+                            href="community.jsp">플레이리스트</a>
                     </li>
                 </ul>
-
+				
                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
-                    <button type="submit" class="btn btn-outline-warning">
+                    <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
                         <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
-
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">회원가입</a>
+				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<p class="header_nick"><%=user.getUser_nick() %></p>
+					<form action="logoutService" align="center" method = "post">
+                    <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
+                        <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
-                </form>
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 7px">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">로그인</a>
-                    </button>
-                </form>
+                	</form>
+				
+                
 
 
             </div>
@@ -108,59 +107,39 @@
 		
 		
 		
-		
-		<%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>	
-		<% 
-			boolean isUserComm = false;
-			int user_idx = 0;
-			int cnt=0;
-			memberDTO user =(memberDTO)session.getAttribute("user"); 
-			for (int i=0; i<c_list.size(); i++){
-				if(c_list.get(i).getUser_id().equals(user.getUser_id())){
-					isUserComm = true;
-					
-				}
-			}
-		%>
-		<% if(isUserComm){%>
 		<hr>
-		<h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
+		
+        <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
         
         <div class="movie_tag" id="movie2_tag"></div>
             <div class="slide_wrapper" id="movie2">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-            <%for (int i=0; i<c_list.size(); i++){%>
-				<%if(c_list.get(i).getUser_id().equals(user.getUser_id())){%>
-					<%String[] user_comm = c_list.get(i).getC_content().split(","); %>
-					<%int k =0; %>
-						<li>	
-						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>"><div class="contain">
-						<br>
-						<img class="a" src="./netflix_img/<%=user_comm[k+1]%>.jpg" alt="<%=user_comm[k+1]%>">
-						<img class="b" src="./netflix_img/<%=user_comm[k]%>.jpg" alt="<%=user_comm[k]%>">
-						<img class="c" src="./netflix_img/<%=user_comm[k+2]%>.jpg" alt="<%=user_comm[k+2]%>">
-						<p class="p"><%=user.getUser_nick()%>의 플레이리스트</p>
-						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+            
+            <%for(int i = 0 ; i < 5; i++){ %>
+				<li>	
+					<a href=""><div class="contain">
+					<br>
+			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
+			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
+			<img class="c" src="netflix_img/노바디.jpg" alt="">
+			<p class="p">구소현의 플레이리스트</p>
+			<p>좋아요 80</p>
+			
 		</div>
 		</a>
 				</li> 
-						
-					<% } %>	
-				<% } %> 
-			<% } %>
-
+            <%} %>
             </ul>
         </div>
-        
 		
 		
 		
 		
 		<!-- 3 -->
 		<hr>
-	
+        <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>		
        <h3 style ="color:white;margin-left : 160px">드라마</h3>				
             <div class="slide_wrapper" id="movie3">
             <a class="prev">&#10094;</a>
@@ -180,7 +159,7 @@
 							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
 							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
 						</div>
-						</a>			
+						</a>
 					</li>
     	   		<%}%>     
             <%} %>

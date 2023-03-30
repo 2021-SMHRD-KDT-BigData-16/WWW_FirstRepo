@@ -5,9 +5,8 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
-<%@page import="com.smhrd.model.communityDTO"%>
-<%@page import="com.smhrd.model.boardDTO"%>
 <%@page import="com.smhrd.model.memberDTO"%>
+<%@page import="com.smhrd.model.communityDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,6 +17,7 @@
 <meta charset="UTF-8">
     <title>Search_result</title>
     <link rel="icon" href="./logo_img/favicon.png">
+    <link rel="stylesheet" href="./styles/header_nick.css">
     <link rel="stylesheet" href="./styles/community.css">
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/search_result.css">
@@ -55,27 +55,25 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="community.jsp">커뮤니티</a>
+                            href="community.jsp">플레이리스트</a>
                     </li>
                 </ul>
-
+				
                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
-                    <button type="submit" class="btn btn-outline-warning">
+                    <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
                         <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
-
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">회원가입</a>
+				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<p class="header_nick"><%=user.getUser_nick() %></p>
+					<form action="logoutService" align="center" method = "post">
+                    <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
+                        <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
-                </form>
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 7px">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">로그인</a>
-                    </button>
-                </form>
+                	</form>
+				
+                
 
 
             </div>
@@ -88,11 +86,7 @@
     <br>
     <br>
     <div>
-    <%
-    ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
-    memberDTO user =(memberDTO)session.getAttribute("user");
-    int likeCheck= (Integer)session.getAttribute("likeCheck");
-    %>
+    <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
     
     
     
@@ -107,15 +101,8 @@
     				}
     				%>
         <div id="playlist_tag">
-            <h3 style="color : white"><%=user.getUser_nick()%>의 플레이 리스트</h3>
-            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
-            	<%if (likeCheck>0) {%> 
-				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
-			<%} else{ %>
-    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
-    	<%} %>
-            </h3>
-            
+            <h3 style="color : white"><%=c_list.get(idx).getUser_id()%>의 플레이 리스트</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>
