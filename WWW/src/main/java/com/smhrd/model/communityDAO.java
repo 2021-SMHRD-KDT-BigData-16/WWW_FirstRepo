@@ -40,5 +40,31 @@ public class communityDAO {
 		
 		
 	}
+	public int Uplike(communityDTO dto) {
+		SqlSession session = factory.openSession(true);
+		int row = 0;
+		try {
+			row = session.update("UpLike", dto);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return row;
+	}
+	public int Downlike(communityDTO dto) {
+		SqlSession session = factory.openSession(true);
+		int row = 0;
+		try {
+			row = session.update("DownLike", dto);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return row;
+	}
 
 }

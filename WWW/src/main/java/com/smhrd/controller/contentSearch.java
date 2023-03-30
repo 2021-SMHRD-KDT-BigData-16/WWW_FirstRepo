@@ -39,12 +39,10 @@ public class contentSearch extends HttpServlet {
 		
 		// dao 객체 불러주기
 		contentDAO c_dao = new contentDAO();
-		communityDAO cm_dao = new communityDAO();
 		reviewDAO re_dao = new reviewDAO();
 		memberDAO m_dao = new memberDAO();
 		ArrayList<memberDTO> user_list = m_dao.selectAll();
 		
-		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
 		//dao의 search 메소드를 사용하여 영화 컨텐츠 전부 contentDTO를 담는 배열에 저장
 		ArrayList<contentDTO> content_list = c_dao.search();
 		ArrayList<reviewDTO> review_list = re_dao.search();
@@ -89,6 +87,8 @@ public class contentSearch extends HttpServlet {
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}
 		//------------------------------------------------커뮤니티 글 ----------------------------------------------//
+		communityDAO cm_dao = new communityDAO();
+		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
 		if (comm_list != null) {
 			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
 			

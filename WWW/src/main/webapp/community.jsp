@@ -146,10 +146,10 @@
 						<img class="c" src="./netflix_img/<%=user_comm[k+2]%>.jpg" alt="<%=user_comm[k+2]%>">
 					<%for(int j=0; j<u_list.size(); j++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(j).getUser_id())) {%>
-						<p class="p"><%=u_list.get(j).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(j).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
-						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
+						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes()%></p>
 		</div>
 		</a>
 				</li> 
@@ -186,7 +186,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
@@ -218,7 +218,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
@@ -253,7 +253,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
@@ -286,7 +286,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
@@ -320,7 +320,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
@@ -352,7 +352,7 @@
 							<img class="c" src="./netflix_img/<%=comm[j+2]%>.jpg" alt="<%=comm[j+2]%>">
 							<%for(int k=0; k<u_list.size(); k++) {%>
 						<%if(c_list.get(i).getUser_id().equals(u_list.get(k).getUser_id())) {%>
-						<p class="p"><%=u_list.get(k).getUser_nick()%>의 플레이리스트</p>
+						<p class="p"><%=u_list.get(k).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>
 					<%} %>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>

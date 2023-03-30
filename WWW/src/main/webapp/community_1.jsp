@@ -91,6 +91,7 @@
     <%
     ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
     memberDTO user =(memberDTO)session.getAttribute("user");
+    ArrayList<memberDTO> user_list = (ArrayList) session.getAttribute("user_list"); // contents(커뮤전체)
     int likeCheck= (Integer)session.getAttribute("likeCheck");
     %>
     
@@ -100,22 +101,29 @@
     				String temp = (String) session.getAttribute("playIdx"); 
     				int row = Integer.parseInt(temp);
     				int idx = 0;
+    				int u_idx = 0;
     				for(int i=0; i<c_list.size(); i++){
     					if(c_list.get(i).getC_idx()==row){
     						idx=i;
     					}
     				}
+	    			String nickname = c_list.get(idx).getUser_id();					
+    				for(int i=0; i<user_list.size(); i++){
+    					if(user_list.get(i).getUser_id().equals(nickname)){
+    						u_idx = i;
+    					}
+    				}
+    				
     				%>
         <div id="playlist_tag">
-            <h3 style="color : white"><%=user.getUser_nick()%>의 플레이 리스트</h3>
-            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
-            	<%if (likeCheck>0) {%> 
+            <h3 style="color : white"><%=user_list.get(u_idx).getUser_nick() %>님의 플레이리스트</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
+            <%if (likeCheck>0) {%> 
 				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
 			<%} else{ %>
     			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
+    			<h2><%=c_list.get(idx).getC_idx()%></h2>
     	<%} %>
-            </h3>
-            
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>

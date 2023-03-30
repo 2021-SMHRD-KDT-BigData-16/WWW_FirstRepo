@@ -30,4 +30,11 @@
 			#{user_id}	
 		)
 	</insert>
+	<update id="UpLike" parameterType="com.smhrd.model.communityDTO">
+		update tb_community set c_likes = c_likes + 1 where c_idx = #{c_idx};
+	</update>
+	
+	<update id="DownLike" parameterType="com.smhrd.model.communityDTO">
+		update tb_community set c_likes = c_likes - 1 where c_idx = #{c_idx};
+	</update>
 </mapper>
