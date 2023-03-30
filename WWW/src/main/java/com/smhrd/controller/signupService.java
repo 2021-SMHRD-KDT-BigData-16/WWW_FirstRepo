@@ -1,9 +1,11 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.script.ScriptContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,41 +15,37 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.model.memberDAO;
 import com.smhrd.model.memberDTO;
 
-
 @WebServlet("/signupService")
 public class signupService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		Date date = new Date();
 		// date 객체는 형변환 없이도 바로 출력이 가능하다.
-		System.out.println(date.toString());	
-		
+		System.out.println(date.toString());
+
 		// SimpleDateFormat 이용해 출력형식 지정
 		SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd");
-		System.out.println(df.format(date)); // format은 String 객체 반환, 
-		
-		
-		
-		
+		System.out.println(df.format(date)); // format은 String 객체 반환,
+
 		request.setCharacterEncoding("UTF-8");
 //		response.setContentType("text/html; charset = UTF-8");
-		
+
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		String user_nick = request.getParameter("user_nick");
 		String user_gender = request.getParameter("user_gender");
-		String user_birthdate = request.getParameter("user_birthdate");
-		String test=user_birthdate.replace("20", "").replace("19","").replace("21","").replace("22","");
-		
-		
+		String user_birthdate[] = request.getParameterValues("user_birthdate");
+		String birthdate = user_birthdate[0].replace("20","").replace("19","")+"-"+user_birthdate[1]+"-"+user_birthdate[2];
+//		String test=user_birthdate.replace("20", "").replace("19","");
+
 		System.out.println(user_id);
 		System.out.println(user_pw);
 		System.out.println(user_nick);
 		System.out.println(user_gender);
-		System.out.println(test);
+		System.out.println(birthdate);
 		
 
 		memberDTO dto = new memberDTO();
@@ -55,7 +53,7 @@ public class signupService extends HttpServlet {
 		dto.setUser_pw(user_pw);
 		dto.setUser_nick(user_nick);
 		dto.setUser_gender(user_gender);
-		dto.setUser_birthdate(test);
+		dto.setUser_birthdate(birthdate);
 		dto.setUser_joindate(df.format(date));
 		dto.setUser_type('U');
 		
@@ -65,23 +63,23 @@ public class signupService extends HttpServlet {
 		
 		System.out.println("cnt : " + cnt);
 		
+
+		response.setContentType("text/html; charset=UTF-8");
 		if (cnt > 0) {
 			System.out.println("성공");
-			response.sendRedirect("login.html");
+			
+			PrintWriter out = response.getWriter();
+			
+			
+			out.println("<script>alert('회원가입이 완료되었습니다. 로그인 해주세요!'); location.href='login.html';</script>"); 
+			//response.sendRedirect("login.html");
+			out.close();
 		
 		}else {
 			System.out.println("실패");
 			response.sendRedirect("signup.html");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }
