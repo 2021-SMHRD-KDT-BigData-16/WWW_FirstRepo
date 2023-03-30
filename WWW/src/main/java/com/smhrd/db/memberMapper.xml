@@ -34,5 +34,9 @@
     WHERE (USER_ID =#{user_id} AND USER_PW =#{user_pw})
 
 	</select>
+	<select id = "selectAll" resultType="com.smhrd.model.memberDTO">
+		select *
+		from tb_user
+	</select>
 	
 </mapper>

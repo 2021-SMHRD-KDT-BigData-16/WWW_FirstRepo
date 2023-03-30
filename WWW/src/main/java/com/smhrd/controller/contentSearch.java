@@ -14,6 +14,8 @@ import com.smhrd.model.communityDAO;
 import com.smhrd.model.communityDTO;
 import com.smhrd.model.contentDAO;
 import com.smhrd.model.contentDTO;
+import com.smhrd.model.memberDAO;
+import com.smhrd.model.memberDTO;
 import com.smhrd.model.reviewDAO;
 import com.smhrd.model.reviewDTO;
 
@@ -38,8 +40,11 @@ public class contentSearch extends HttpServlet {
 		// dao 객체 불러주기
 		contentDAO c_dao = new contentDAO();
 		communityDAO cm_dao = new communityDAO();
-		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
 		reviewDAO re_dao = new reviewDAO();
+		memberDAO m_dao = new memberDAO();
+		ArrayList<memberDTO> user_list = m_dao.selectAll();
+		
+		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
 		//dao의 search 메소드를 사용하여 영화 컨텐츠 전부 contentDTO를 담는 배열에 저장
 		ArrayList<contentDTO> content_list = c_dao.search();
 		ArrayList<reviewDTO> review_list = re_dao.search();
@@ -103,6 +108,17 @@ public class contentSearch extends HttpServlet {
 			
 			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
 			session.setAttribute("review", review_list);
+			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
+		}
+		//------------------------------------------------사용자 전체 ----------------------------------------------//
+		if (user_list != null) {
+			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
+			
+			// 세션을 불러오기
+			HttpSession session = request.getSession();
+			
+			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+			session.setAttribute("user_list", user_list);
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}
 		response.sendRedirect("main.jsp");
