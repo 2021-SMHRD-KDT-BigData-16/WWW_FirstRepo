@@ -143,7 +143,6 @@
 						<img class="c" src="./netflix_img/<%=user_comm[k+2]%>.jpg" alt="<%=user_comm[k+2]%>">
 						<p class="p"><%=user.getUser_nick()%>의 플레이리스트</p>
 						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
-			
 		</div>
 		</a>
 				</li> 
@@ -181,7 +180,7 @@
 							<p class="p"><%=c_list.get(i).getUser_id()%>의 플레이 리스트</p>
 							<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
 						</div>
-						</a>
+						</a>			
 					</li>
     	   		<%}%>     
             <%} %>

@@ -12,5 +12,6 @@
 		select *
 		from tb_contents
 		order by v_rating desc
+		 
 	</select>
 </mapper>

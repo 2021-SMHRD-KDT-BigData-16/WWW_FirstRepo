@@ -6,6 +6,8 @@
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
 <%@page import="com.smhrd.model.communityDTO"%>
+<%@page import="com.smhrd.model.boardDTO"%>
+<%@page import="com.smhrd.model.memberDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -86,7 +88,11 @@
     <br>
     <br>
     <div>
-    <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
+    <%
+    ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
+    memberDTO user =(memberDTO)session.getAttribute("user");
+    int likeCheck= (Integer)session.getAttribute("likeCheck");
+    %>
     
     
     
@@ -101,8 +107,15 @@
     				}
     				%>
         <div id="playlist_tag">
-            <h3 style="color : white"><%=c_list.get(idx).getUser_id()%>의 플레이 리스트</h3>
-            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
+            <h3 style="color : white"><%=user.getUser_nick()%>의 플레이 리스트</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
+            	<%if (likeCheck>0) {%> 
+				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
+			<%} else{ %>
+    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
+    	<%} %>
+            </h3>
+            
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>
