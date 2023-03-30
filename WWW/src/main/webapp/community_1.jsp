@@ -66,7 +66,7 @@
                     </button>
                 </form>
 				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
-				<p class="header_nick"><%=user.getUser_nick() %></p>
+				<p class="header_nick"><%=user.getUser_nick()+"님"%></p>
 					<form action="logoutService" align="center" method = "post">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
                         <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
@@ -86,35 +86,45 @@
     <br>
     <br>
     <div>
-    <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
+    <%
+    ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
+    int likeCheck= (Integer)session.getAttribute("likeCheck");
+    %>
     
     
     
-            	<%
-    				String temp = (String) session.getAttribute("playIdx"); 
-    				int row = Integer.parseInt(temp);
-    				int idx = 0;
-    				for(int i=0; i<c_list.size(); i++){
-    					if(c_list.get(i).getC_idx()==row){
-    						idx=i;
-    					}
-    				}
-    				%>
+               <%
+                String temp = (String) session.getAttribute("playIdx"); 
+                int row = Integer.parseInt(temp);
+                int idx = 0;
+                for(int i=0; i<c_list.size(); i++){
+                   if(c_list.get(i).getC_idx()==row){
+                      idx=i;
+                   }
+                }
+                %>
         <div id="playlist_tag">
-            <h3 style="color : white"><%=c_list.get(idx).getUser_id()%>의 플레이 리스트</h3>
-            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
+            <h3 style="color : white"><%=user.getUser_nick()%>의 플레이 리스트</h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
+               <%if (likeCheck>0) {%> 
+            <a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
+         <%} else{ %>
+             <a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
+       <%} %>
+            </h3>
+            
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-    				<% String[] content = c_list.get(idx).getC_content().split(","); %>
-    				<%for(int j=0; j<content.length; j++) {%>
-    				<li><a href="detailContent?data=<%=content[j]%>">
-    					<img src="./netflix_img/<%=content[j]%>.jpg" alt="">
-    					</a>
-    				</li>
-	    		<%}%>
+                <% String[] content = c_list.get(idx).getC_content().split(","); %>
+                <%for(int j=0; j<content.length; j++) {%>
+                <li><a href="detailContent?data=<%=content[j]%>">
+                   <img src="./netflix_img/<%=content[j]%>.jpg" alt="">
+                   </a>
+                </li>
+             <%}%>
             </ul>
         </div>
         <br>
@@ -127,11 +137,11 @@
                             <input id="review" type="submit" value="등록">
                                 
                         </form>
-		<%for(int i=0; i<20; i++){%>
-			<% if(i<3) { %>
-				<div class="none">
-					<span>
-					 	<div class="d-flex mb-4">
+      <%for(int i=0; i<20; i++){%>
+         <% if(i<3) { %>
+            <div class="none">
+               <span>
+                   <div class="d-flex mb-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">소나무가삐지면칫솔</div>
@@ -139,12 +149,12 @@
                                 </div>
                                 <hr>
                             </div>
- 					</span>
-				</div>
-			<% } else{%>
-				<div class="list_cont">
-					<span class="animatable"> 
-						<div class="d-flex mb-4">
+                </span>
+            </div>
+         <% } else{%>
+            <div class="list_cont">
+               <span class="animatable"> 
+                  <div class="d-flex mb-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">소나무가삐지면칫솔</div>
@@ -152,10 +162,10 @@
                                 </div>
                                 <hr>
                             </div>
-					</span>
-				</div>
-			<% }%>
-		<% }%>
+               </span>
+            </div>
+         <% }%>
+      <% }%>
    </div>
     
     

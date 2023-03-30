@@ -69,7 +69,7 @@
                     </button>
                 </form>
 				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
-				<p class="header_nick"><%=user.getUser_nick() %></p>
+				<p class="header_nick"><%=user.getUser_nick()+"님"%></p>
 					<form action="logoutService" align="center" method = "post">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
                         <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
