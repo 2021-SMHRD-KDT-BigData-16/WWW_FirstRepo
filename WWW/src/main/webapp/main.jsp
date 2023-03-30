@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
+<%@page import="com.smhrd.model.memberDTO"%>
 <%@page import="com.smhrd.model.communityDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -14,7 +15,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="icon" href="./logo_img/favicon.png">
 <link href="https://fonts.googleapis.com/
     icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
     rel="stylesheet">
@@ -35,7 +35,7 @@
 <!-- 헤더 시작 -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
+            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
@@ -56,24 +56,33 @@
                             href="community.jsp">커뮤니티</a>
                     </li>
                 </ul>
-
+				
                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
                         <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
-
-                <form action="" align="center">
+				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<% if(user!=null) {%>
+					<form action="" align="center">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">회원가입</a>
+                        <a class="btn_link" style="color: white !important" href="logout">로그아웃</a>
                     </button>
-                </form>
-                <form action="" align="center">
+                	</form>
+				<%}else{ %>
+					<form action="" align="center">
+                    <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
+                        <a class="btn_link" style="color: white !important" href="signup.html">회원가입</a>
+                    </button>
+                	</form>
+               		<form action="" align="center">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 7px">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">로그인</a>
+                        <a class="btn_link" style="color: white !important" href="login.html">로그인</a>
                     </button>
                 </form>
+				<%} %>
+                
 
 
             </div>
@@ -209,6 +218,7 @@
 			 		 			
 		
 			 <script type="text/javascript" src="./Js/main.js"></script>
-			 
+			 <script type="text/javascript">alter("test")</script>
+	
 </body>
 </html>
