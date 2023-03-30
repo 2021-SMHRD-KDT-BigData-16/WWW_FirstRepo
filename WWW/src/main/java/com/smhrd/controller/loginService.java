@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,7 @@ public class loginService extends HttpServlet {
 		// 데이터불러오기
 		String loginId = request.getParameter("id");
 		String loginPw = request.getParameter("pw");
-		
+		PrintWriter out = response.getWriter();
 		// 데이터 이뿌게 묶기
 		memberDTO dto = new memberDTO();
 		dto.setUser_id(loginId);
@@ -48,11 +50,13 @@ public class loginService extends HttpServlet {
 			session.setAttribute("user", loginLogic);
 			
 			
-			response.sendRedirect("contentSearch");
 			
 			System.out.println("로그인 성공");
+			response.sendRedirect("contentSearch");
 		}else {
 			System.out.println("로그인 실패");
+			response.sendRedirect("login.html");
+
 		}
 		
 	}
