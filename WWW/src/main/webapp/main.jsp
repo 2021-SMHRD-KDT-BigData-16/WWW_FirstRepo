@@ -163,19 +163,22 @@
             <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>
             <%for(int i=0; i<community.size(); i++){ %>
             	<% String[] content = community.get(i).getC_content().split(",");%>
-            	<% for(int j = 0 ; j < 1; j++){%>
             		<li>	
 					<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>"><div class="contain">
 					<br>
-					<img class="a" src="netflix_img/<%=content[j]%>.jpg" alt="<%=content[j]%>">
-					<img class="b" src="netflix_img/<%=content[j+1]%>.jpg" alt="<%=content[j+1]%>">
-					<img class="c" src="netflix_img/<%=content[j+2]%>.jpg" alt="<%=content[j+2]%>">
-					<p class="p"><%=community.get(i).getUser_id()%>의 플레이리스트</p>
-					<p><%=community.get(i).getC_hashtag()%>   <%=community.get(i).getC_likes()%></p>
+					<img class="a" src="netflix_img/<%=content[0]%>.jpg" alt="<%=content[0]%>">
+					<img class="b" src="netflix_img/<%=content[1]%>.jpg" alt="<%=content[1]%>">
+					<img class="c" src="netflix_img/<%=content[2]%>.jpg" alt="<%=content[2]%>">
+					<%for (int j=0; j<u_list.size(); j++) {%>
+						<%if(community.get(i).getUser_id().equals(u_list.get(j).getUser_id())) {%>
+							<p class="p"><%=u_list.get(j).getUser_nick()%>님의 플레이리스트</p>
+						<%} %>	
+					<%} %>
+					<p><%=community.get(i).getC_hashtag()%>   ❤ : <%=community.get(i).getC_likes()%></p>
 					<p></p>
 					</div></a>
 				</li>
-            	<% }%>
+            	
             <% }%>
             <%for(int i = 0 ; i < 5; i++){ %>
 				<li>	
