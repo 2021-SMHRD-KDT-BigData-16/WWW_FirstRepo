@@ -65,9 +65,9 @@
                 </form>
 				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
 				<% if(user!=null) {%>
-					<form action="" align="center">
+					<form action="logoutService" align="center" method = "post">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="logout">로그아웃</a>
+                        <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
                 	</form>
 				<%}else{ %>
