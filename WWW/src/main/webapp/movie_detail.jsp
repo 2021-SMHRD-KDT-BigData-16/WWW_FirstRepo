@@ -198,24 +198,34 @@
 
 		
 		
-          <fieldset>
-           	<legend>
-              <h3>게시판</h3>
-            </legend>
-            <div style="overflow-y: scroll; height: 600px;">
+          
             <% boolean isReview = false; %>
             <% for (int i=0; i<reviews.size(); i++){%>
             	<%if(reviews.get(i).getV_idx()==idx) {%>
-            		<h3><%=reviews.get(i).getReview_content()%></h3>
             		<%isReview=true; %>
+            		  <%} %>
+           <%} %>
+           <%if(isReview) {%>
+            	<fieldset>
+           			<legend>
+              <h3>게시판</h3>
+            </legend>
+            <div style="overflow-y: scroll; height: 600px;">
+            <% for (int i=0; i<reviews.size(); i++){%>
+            	<%if(reviews.get(i).getV_idx()==idx) {%>
+            		<h3><%=reviews.get(i).getReview_content()%></h3>
+            		  
             	<%}%>
             <%}%>
-             </div>
+            </div>
+            </fieldset>
+            <%} %>
+            
             <%if(isReview != true) {%>
             	<h3>등록된 리뷰가 없습니다.</h3>
             <%} %>
 
-          </fieldset>
+          
 
           <br>
           <br>

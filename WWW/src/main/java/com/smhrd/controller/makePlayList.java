@@ -14,8 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.communityDAO;
 import com.smhrd.model.communityDTO;
-import com.smhrd.model.reviewDAO;
-import com.smhrd.model.reviewDTO;
+import com.smhrd.model.memberDTO;
 
 
 @WebServlet("/makePlayList")
@@ -41,14 +40,16 @@ public class makePlayList extends HttpServlet {
 		// SimpleDateFormat 이용해 출력형식 지정
 		SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd");
 //		System.out.println(df.format(date)); // format은 String 객체 반환, 
+		HttpSession session = request.getSession();
+		memberDTO user = (memberDTO)session.getAttribute("user");
 		
 		
 		dto.setC_content(movies);
 		dto.setC_date(df.format(date));
 		dto.setC_hashtag(genre);
 		dto.setC_likes(0);
-		dto.setUser_id("admin");
 		
+		dto.setUser_id(user.getUser_id());
 		communityDAO dao = new communityDAO();
 		
 		dao.sendCummunity(dto);
@@ -59,7 +60,6 @@ public class makePlayList extends HttpServlet {
 			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
 			
 			// 세션을 불러오기
-			HttpSession session = request.getSession();
 			
 			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
 			session.setAttribute("community", comm_list);

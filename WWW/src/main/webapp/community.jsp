@@ -5,6 +5,7 @@
 <%@page import="com.smhrd.controller.contentSearch"%>
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
+<%@page import="com.smhrd.model.memberDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -107,39 +108,60 @@
 		
 		
 		
-		<hr>
 		
-        <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
+		<%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>	
+		<% 
+			boolean isUserComm = false;
+			int user_idx = 0;
+			int cnt=0;
+			memberDTO user =(memberDTO)session.getAttribute("user"); 
+			for (int i=0; i<c_list.size(); i++){
+				if(c_list.get(i).getUser_id().equals(user.getUser_id())){
+					isUserComm = true;
+					
+				}
+			}
+		%>
+		<% if(isUserComm){%>
+		<hr>
+		<h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
         
         <div class="movie_tag" id="movie2_tag"></div>
             <div class="slide_wrapper" id="movie2">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
-            
-            <%for(int i = 0 ; i < 5; i++){ %>
-				<li>	
-					<a href=""><div class="contain">
-					<br>
-			<img class="a" src="netflix_img/23 아이덴티티.jpg" alt="">
-			<img class="b" src="netflix_img/500일의 썸머.jpg" alt="">
-			<img class="c" src="netflix_img/노바디.jpg" alt="">
-			<p class="p">구소현의 플레이리스트</p>
-			<p>좋아요 80</p>
+            <%for (int i=0; i<c_list.size(); i++){%>
+				<%if(c_list.get(i).getUser_id().equals(user.getUser_id())){%>
+					<%String[] user_comm = c_list.get(i).getC_content().split(","); %>
+					<%int k =0; %>
+						<li>	
+						<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>"><div class="contain">
+						<br>
+						<img class="a" src="./netflix_img/<%=user_comm[k+1]%>.jpg" alt="<%=user_comm[k+1]%>">
+						<img class="b" src="./netflix_img/<%=user_comm[k]%>.jpg" alt="<%=user_comm[k]%>">
+						<img class="c" src="./netflix_img/<%=user_comm[k+2]%>.jpg" alt="<%=user_comm[k+2]%>">
+						<p class="p"><%=user.getUser_nick()%>의 플레이리스트</p>
+						<p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
 			
 		</div>
 		</a>
 				</li> 
-            <%} %>
+						
+					<% } %>	
+				<% } %> 
+			<% } %>
+
             </ul>
         </div>
+        
 		
 		
 		
 		
 		<!-- 3 -->
 		<hr>
-        <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>		
+	
        <h3 style ="color:white;margin-left : 160px">드라마</h3>				
             <div class="slide_wrapper" id="movie3">
             <a class="prev">&#10094;</a>
