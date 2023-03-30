@@ -15,6 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link rel="icon" href="./logo_img/favicon.png">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
 
@@ -45,31 +46,34 @@
 
 
     <!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "z-index: 9 !important;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
+            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="main.jsp">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="main.jsp">홈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="moviePage.jsp">영화</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="community.jsp">커뮤니티</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="community.jsp">커뮤니티</a>
                     </li>
                 </ul>
 
-                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
+               <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning">
-                        검색
+                        <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
 
@@ -104,14 +108,13 @@
 		
 		
 		<hr>
-		<br>
-		<br>
+		
         <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
         
         <div class="movie_tag" id="movie2_tag"></div>
             <div class="slide_wrapper" id="movie2">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
             
             <%for(int i = 0 ; i < 5; i++){ %>
@@ -139,8 +142,8 @@
         <%ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)%>		
        <h3 style ="color:white;margin-left : 160px">드라마</h3>				
             <div class="slide_wrapper" id="movie3">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#드라마")){%>
@@ -167,8 +170,8 @@
         <h3 style ="color:white;margin-left : 160px">액션</h3>
         
         <div class="slide_wrapper" id="movie4">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#액션")){%>
@@ -198,8 +201,8 @@
         
         <div class="movie_tag" id="movie5_tag"></div>
             <div class="slide_wrapper" id="movie5">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#판타지")){%>
@@ -227,8 +230,8 @@
        <h3 style ="color:white;margin-left : 160px">공포</h3>        
         <div class="movie_tag" id="movie6_tag"></div>
             <div class="slide_wrapper" id="movie6">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#공포")){%>
@@ -257,8 +260,8 @@
        <h3 style ="color:white;margin-left : 160px">스릴러</h3>        
         <div class="movie_tag" id="movie7_tag"></div>
             <div class="slide_wrapper" id="movie7">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#스릴러")){%>
@@ -285,8 +288,8 @@
        <h3 style ="color:white;margin-left : 160px">가족</h3>        
         <div class="movie_tag" id="movie8_tag"></div>
             <div class="slide_wrapper" id="movie8">
-            <button class="prev prevbtn">prev</button>
-            <button class="next nextbtn">next</button>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <ul class="slides">
     		<%for(int i=0; i<c_list.size(); i++){ %>
     	   		<%if(c_list.get(i).getC_hashtag().contains("#가족")){%>

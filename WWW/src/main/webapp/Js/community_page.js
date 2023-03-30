@@ -6,7 +6,7 @@ var slides2 = document.querySelector('#movie2 .slides'),
     currentIdx2 = 0,
     slideCount2 = slide2.length,
     slideWidth2 = 515,
-    slideMargin2 = 30,
+    slideMargin2 = 20,
     prevBtn2 = document.querySelector('#movie2 .prev'),
     nextBtn2 = document.querySelector('#movie2 .next');
 
@@ -37,7 +37,7 @@ var slides3 = document.querySelector('#movie3 .slides'),
 	currentIdx3 = 0,
 	slideCount3 = slide3.length,
 	slideWidth3 = 515,
-	slideMargin3 = 30,
+	slideMargin3 = 20,
 	prevBtn3 = document.querySelector('#movie3 .prev'),
 	nextBtn3 = document.querySelector('#movie3 .next');
 
@@ -66,7 +66,7 @@ var slides4 = document.querySelector('#movie4 .slides'),
     currentIdx4 = 0,
     slideCount4 = slide4.length,
     slideWidth4 = 515,
-    slideMargin4 = 30,
+    slideMargin4 = 20,
     prevBtn4 = document.querySelector('#movie4 .prev'),
     nextBtn4 = document.querySelector('#movie4 .next');
 
@@ -94,7 +94,7 @@ var slides5 = document.querySelector('#movie5 .slides'),
     currentIdx5 = 0,
     slideCount5 = slide5.length,
     slideWidth5 = 515,
-    slideMargin5 = 30,
+    slideMargin5 = 20,
     prevBtn5 = document.querySelector('#movie5 .prev'),
     nextBtn5 = document.querySelector('#movie5 .next');
 
@@ -123,7 +123,7 @@ var slides6 = document.querySelector('#movie6 .slides'),
     currentIdx6 = 0,
     slideCount6 = slide6.length,
     slideWidth6 = 515,
-    slideMargin6 = 30,
+    slideMargin6 = 20,
     prevBtn6 = document.querySelector('#movie6 .prev'),
     nextBtn6 = document.querySelector('#movie6 .next');
 
@@ -152,7 +152,7 @@ var slides7 = document.querySelector('#movie7 .slides'),
     currentIdx7 = 0,
     slideCount7 = slide7.length,
     slideWidth7 = 515,
-    slideMargin7 = 30,
+    slideMargin7 = 20,
     prevBtn7 = document.querySelector('#movie7 .prev'),
     nextBtn7 = document.querySelector('#movie7 .next');
 
@@ -185,7 +185,7 @@ var slides8 = document.querySelector('#movie8 .slides'),
     currentIdx8 = 0,
     slideCount8 = slide8.length,
     slideWidth8 = 515,
-    slideMargin8 = 30,
+    slideMargin8 = 20,
     prevBtn8 = document.querySelector('#movie8 .prev'),
     nextBtn8 = document.querySelector('#movie8 .next');
 

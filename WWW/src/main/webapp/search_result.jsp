@@ -14,6 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Search_result</title>
+	<link rel="icon" href="./logo_img/favicon.png">
 	<link rel="stylesheet" type="text/css" href="./styles/search_result.css">
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 	<link rel="stylesheet" href="./styles/footer,header.css">
@@ -36,7 +37,7 @@
 
 	 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="/img/로고.png" alt=""
+            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
