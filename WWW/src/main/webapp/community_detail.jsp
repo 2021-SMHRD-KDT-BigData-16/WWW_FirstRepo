@@ -167,7 +167,7 @@
                                                     <input class="hash_check" type="checkbox" name="hash_name"
                                                         value="다큐멘터리" onclick='getCheckboxValue(),checkStr()'> 다큐멘터리
                                                     <input class="hash_check" type="checkbox" name="hash_name"
-                                                        value="서부" onclick='getCheckboxValue(),checkStr()'> 서부
+                                                        value="드라마" onclick='getCheckboxValue(),checkStr()'> 드라마
 
 
                                                 </div>
