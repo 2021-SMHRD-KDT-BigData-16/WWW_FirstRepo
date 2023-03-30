@@ -132,7 +132,7 @@
 					<%int j = 0; %>
 							<li>
 								<div class='contain'>
-									<a href ="#">
+									<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 										<br>
 										<img class="a" src = "./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>"/>
 										<img class="b" src = "./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>"/>
@@ -153,7 +153,7 @@
 					<%int j = 0; %>
 							<li>
 								<div class='contain'>
-									<a href ="#">
+									<a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>">
 										<br>
 										<img class="a" src = "./netflix_img/<%=comm[j+1]%>.jpg" alt="<%=comm[j+1]%>"/>
 										<img class="b" src = "./netflix_img/<%=comm[j]%>.jpg" alt="<%=comm[j]%>"/>
