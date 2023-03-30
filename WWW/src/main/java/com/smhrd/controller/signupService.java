@@ -67,7 +67,7 @@ public class signupService extends HttpServlet {
 		
 		if (cnt > 0) {
 			System.out.println("성공");
-			response.sendRedirect("first_window.html");
+			response.sendRedirect("login.html");
 		
 		}else {
 			System.out.println("실패");

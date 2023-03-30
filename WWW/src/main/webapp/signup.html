@@ -18,7 +18,8 @@
 
 
     <!-- header꺼 -->
-    <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/navbar-fixed/">
+    <link rel="canonical" href="htt
+    ps://getbootstrap.kr/docs/5.2/examples/navbar-fixed/">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -82,20 +83,20 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="name">아이디</label>
-              <input type="text" class="form-control" id="name" placeholder="" value="" required>
+              <input type="text" class="form-control" id="name"  required name = "user_id">
             </div>
             
             
             <div class="col-md-6 mb-3">
               <label for="password">비밀번호</label>
-              <input type="password" class="form-control" id="password" placeholder="" value="" required>
+              <input type="password" class="form-control" id="password"  required name ="user_pw">
             </div>
           </div>
 
 <div class="row">
             <div class="col-md-6 mb-3">
               <label for="name">닉네임</label>
-              <input type="text" class="form-control" id="name" placeholder="" value="" required>
+              <input type="text" class="form-control" id="name"  required name = "user_nick">
             </div>
             
             
@@ -103,12 +104,12 @@
               <label for="gender">성별</label>
               
 	            <div class="form-check">
-				  <input class="form-check-input" type="radio" name="gender" value = "여" id="flexRadioDefault1">
+				  <input class="form-check-input" type="radio" name="user_gender" value = "여" id="flexRadioDefault1">
 				  <label class="form-check-label" for="flexRadioDefault1">
 				    여성
 				  </label>
 				  <span style = "margin-left : 90px; width : 150px;">
-				  <input class="form-check-input" type="radio" name="gender" value="남" id="flexRadioDefault2"  checked>
+				  <input class="form-check-input" type="radio" name="user_gender" value="남" id="flexRadioDefault2"  checked>
 				  <label class="form-check-label" for="flexRadioDefault2">
 				    남성
 				  </label>
@@ -128,7 +129,7 @@
                 <label for="my_year">생년월일</label>
                 <div class="input-group">
                     <div class="input-group-prepend" >
-                        <input type="text" class="form-control" name="my_year" id="my_year" maxlength="4" placeholder="년도" style = "width : 162px;">
+                        <input type="text" class="form-control" name="user_birthdate" id="my_year" maxlength="4" placeholder="년도" style = "width : 162px;">
                         <span class="input-group-text" style = "margin-right :5px" >년</span>
                     </div>
                     
