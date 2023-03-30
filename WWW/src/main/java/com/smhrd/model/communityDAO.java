@@ -26,4 +26,19 @@ public class communityDAO {
 		return list;
 	}
 
+	public void sendCummunity(communityDTO dto) {
+		SqlSession session = factory.openSession(true);
+		
+		try {
+			session.insert("communityInsert", dto);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		
+	}
+
 }
