@@ -102,145 +102,148 @@
 		
 
 
+                
+
+
   <!-- main -->
+				
+                
+    <div class="wrapper" >
 
-  <div class="wrapper">
-    <main>
-
-      <!--상단 이미지-->
-      <section id="top_img">
-        <div class="background">
-          <img src="http://placehold.it/1500X300/" alt="">
-        </div>
-
-        <!-- <div class="background_blur">
-          </div> -->
-      </section>
-      
-      	<!-- 
-		contents안에 담긴 객체(일단 예시)
-			v_title : 영화 제목
-			v_genre : 영화 장르
-			v_year : 방송 년도
-			v_synopsis : 시놉시스
-			rating : 평점
-			v_grade : 연령 등급
-			v_iframe : 아이프레임
-	-->
-      		
-		<%for (int i=0; i<contents.size(); i++){%>
-		<!-- 컨텐츠 크기만큼 반복해서 입력받은 data와 같은지 비교하기-->
-			<%if(contents.get(i).getV_title().equals(data)){%>
+        <main>
 
 
-      <div class=contents_wrap>
+            <!-- 
+            contents안에 담긴 객체(일단 예시)
+                v_title : 영화 제목
+                v_genre : 영화 장르
+                v_year : 방송 년도
+                v_synopsis : 시놉시스
+                rating : 평점
+                v_grade : 연령 등급
+                v_iframe : 아이프레임
+            -->
 
-        <!-- 왼쪽-->
-        <div id="a">
-          <section class="poster_img">
+            <%for (int i=0; i<contents.size(); i++){%>
+                <!-- 컨텐츠 크기만큼 반복해서 입력받은 data와 같은지 비교하기-->
+                <%if(contents.get(i).getV_title().equals(data)){%>
 
-            <img src="./thumbnail_img/<%=contents.get(i).getV_title()%>.jpg" width="100%">
+                        <div class=contents_wrap>
 
-            <table border="1" class="information">
-              <tr>
-                <td> 평점</td>
-                <td> <%=contents.get(i).getV_rating()%></td>
-              </tr>
-              <tr>
-                <td> 장르  </td>
-                <td> <%=contents.get(i).getV_genre()%></td>
-              </tr>
-              <tr>
-                <td> 연령 </td>
-                <td>
-                <%if(contents.get(i).getV_grade()==12){%>
-                	<img alt="" src="./logo_img/12.png">
-                <%}else if(contents.get(i).getV_grade()==19){ %>
-                	<img alt="" src="./logo_img/19.png">
-                <%}else{ %>
-                	<img alt="" src="./logo_img/15.png">
-                <%} %>
-                </td>
-              </tr>
-              <tr>
-                <td> 방송년도 </td>
-                <td> <%=contents.get(i).getV_year()%></td>
-              </tr>
+                            <!-- 왼쪽-->
+                            <div id="a">
+                                <section class="poster_img">
+
+                                    <img src="./thumbnail_img/<%=contents.get(i).getV_title()%>.jpg" width="350px" height = "476px">
+									<hr style ="color : white ;">
+                                    <table class="information">
+                                    
+                                        <tr>
+                                            <td> 평점</td>
+                                            <td>
+                                                <%=contents.get(i).getV_rating()%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 장르 </td>
+                                            <td>
+                                                <%=contents.get(i).getV_genre()%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 연령 </td>
+                                            <td>
+                                                <%if(contents.get(i).getV_grade()==12){%>
+                                                    <img alt="" src="./logo_img/12.png">
+                                                    <%}else if(contents.get(i).getV_grade()==19){ %>
+                                                        <img alt="" src="./logo_img/19.png">
+                                                        <%}else{ %>
+                                                            <img alt="" src="./logo_img/15.png">
+                                                            <%} %>
+                                            </td>
+                                        </tr>
 
 
 
 
-            </table>
-          </section>
+                                    </table>
+                                </section>
 
 
-        </div>
-        <div id="b">
+                            </div>
+                            <div id="b">
 
-          <!-- 오른쪽  -->
+                                <!-- 오른쪽  -->
+								<div style ="float : left">
+                                <h2><%=contents.get(i).getV_title()%>
+                                </h2>
+                                </div>
+								<h4 style = "color:gray;">
+								 &nbsp(<%=contents.get(i).getV_year()%>)</h4>
+								
+								<br>
+								<br>
+								
+								
+                				<div style = "float : left; margin-right : 595.5px;"> <h4> 예고편 </h4></div>
+                				<div>
+                				 <button type="button" class="btn btn-outline-warning" >
+                        			<img src = "./logo_img/재생_1.png" width = 30px; height = 30px; >&nbsp지금시청하기
+                    			</button>
+                    			</div>
+                                <%=contents.get(i).getV_iframe()%>
+                                    
+                                <br>
+                                <br>
+                                <hr style ="color : white ;">
+                                
+                                                                <h4>시놉시스</h4>
+                                                                <br>
+								    <p><%=contents.get(i).getV_synopsis()%></p>
+								    
 
-          <h2>제목 : <%=contents.get(i).getV_title()%></h2>
-          
-          <h3>시놉시스</h3>
-          <p><%=contents.get(i).getV_synopsis()%></p>
-          
+                                <%}%>
+                                        <%}%>
+                                 <hr style ="color : white ;">
+                                
+                                <br>
 
-          
-          
-          <br>
-          <h3>영상 시청하기</h3> 
-          <%=contents.get(i).getV_iframe()%>
-          			<%}%>
-		<%}%>
-          <br>
-          <br>
-          
-
-		
-		
-          
-            <% boolean isReview = false; %>
-            <% for (int i=0; i<reviews.size(); i++){%>
-            	<%if(reviews.get(i).getV_idx()==idx) {%>
-            		<%isReview=true; %>
-            		  <%} %>
-           <%} %>
-           <%if(isReview) {%>
-            	<fieldset>
-           			<legend>
-              <h3>게시판</h3>
-            </legend>
-            <div style="overflow-y: scroll; height: 600px;">
-            <% for (int i=0; i<reviews.size(); i++){%>
-            	<%if(reviews.get(i).getV_idx()==idx) {%>
-            		<h3><%=reviews.get(i).getReview_content()%></h3>
-            		  
-            	<%}%>
-            <%}%>
-            </div>
-            </fieldset>
-            <%} %>
-            
-            <%if(isReview != true) {%>
-            	<h3>등록된 리뷰가 없습니다.</h3>
-            <%} %>
-
-          
-
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+                                                    <h3>리뷰</h3>
+                                                <div style="overflow-y: scroll; height: 600px;">
+                                                    <% boolean isReview=false; %>
+                                                        <% for (int i=0; i<reviews.size(); i++){%>
+                                                            <%if(reviews.get(i).getV_idx()==idx) {%>
+                                                                <h3>
+                                                                    <%=reviews.get(i).getReview_content()%>
+                                                                </h3>
+                                                                <%isReview=true; %>
+                                                                    <%}%>
+                                                                        <%}%>
+                                                
+                                                <%if(isReview !=true) {%>
+                                                	<br>
+                                                    <h3>등록된 리뷰가 없습니다.</h3>
+                                                    <%} %>
+                                                </div>
 
 
-        </div>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
 
-    </main>
-  </div>
+
+                            </div>
+                        </div>
+                
+
+        </main>
+    </div>
+
 
 
 

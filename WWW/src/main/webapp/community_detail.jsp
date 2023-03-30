@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- 
+ <%@page import="com.smhrd.model.memberDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+	<link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="icon" href="./logo_img/favicon.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="./styles/footer,header.css">
@@ -47,19 +47,20 @@
 </head>
 <body>
 
-    <!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 1 !important;">
+  <!-- 헤더 시작 -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="main.jsp">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="main.jsp">홈</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
@@ -67,29 +68,25 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="community.jsp">커뮤니티</a>
+                            href="community.jsp">플레이리스트</a>
                     </li>
                 </ul>
-
-
-                <form class="d-flex" role="search" align="center" action="">
-                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;" name="search"
-                        placeholder=" 검색어를 입력해주세요.">
-                    <button type="submit" class="btn btn-outline-warning">
-                        검색
+				
+               <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
+                    <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
+                    <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
+                        <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
-
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">회원가입</a>
+				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<p class="header_nick"><%=user.getUser_nick()+"님"%></p>
+					<form action="logoutService" align="center" method = "post">
+                    <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
+                        <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
-                </form>
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 7px">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">로그인</a>
-                    </button>
-                </form>
+                	</form>
+				
+                
 
 
             </div>

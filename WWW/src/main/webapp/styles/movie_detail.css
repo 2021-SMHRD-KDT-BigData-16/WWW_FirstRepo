@@ -11,35 +11,20 @@ body {
     background-color: black;
     width: 1500px;
     margin-left: 200px;
-
+    border-radius : 50px;
+	margin-top : 170px;
 }
 
 
 
 /*메인에 대표 포스터 이미지*/
 .background {
-
+	background: rgb(6,13,23);
+	background: linear-gradient(0deg, rgba(6,13,23,1) 0%, rgba(255,255,255,1) 100%);
     background-size: cover;
-    width: 1200px;
-    height: 300px;
-    display: block;
+    height : 500px;
     text-align: center;
-    position: relative;
 
-    margin-bottom: 50px;
-}
-
-#top_img {
-    position: relative;
-    /* background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0)10%
-        rgba(255,255,255,0.5)25%
-        rgba(255,255,255,0.7)40%
-        rgba(255,255,255,1)50%
-        rgba(255,255,255,1)75%
-        rgba(255,255,255,1)100%
-        ); */
 }
 
 
@@ -49,7 +34,7 @@ body {
     position: relative;
     /*대표이미지랑 겹치기*/
     margin-left: 100px;
-    width: 300px;
+    width: 360px;
     height: 500px;
     margin-top: 50px
 }
@@ -67,11 +52,15 @@ body {
 
 /* 오른쪽 왼쪽 묶는 부분*/
 .contents_wrap {
-    width: 1700px;
+	/*위오아왼*/
+	padding : 40px 0px 0px 0px;
+    width: 1500px;
     /* a랑 b의 부모요소에 inlineBlock을 넣어줘야지
     footer가 밑으로 내려감!! */
     display: inline-block;
-    background-color: black;
+    background-color: rgba(6,13,23);
+    border-radius : 50px;
+    box-shadow: 5px 5px 5px 5px rgba(6,13,23);
 
 }
 
@@ -81,13 +70,13 @@ body {
 }
 
 #b {
-    width: 50%;
+    width: 58%;
     float: left;
     /*마찬가지*/
     color: white;
     position: relative;
     /*배경 이미지 위에 쓸라면 이거 필요*/
-    margin-left: 100px;
+    margin-left: 60px;
 
 }
 
@@ -117,6 +106,10 @@ body {
     font-weight: 549 !important;
 }
 
+
+.play{
+	border: 2px solid gray;
+}
 /* .btn {
     --bs-btn-padding-x: 1.0rem !important;
     --bs-btn-padding-y: 0.6rem !important;
