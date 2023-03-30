@@ -21,7 +21,7 @@ public class logoutService extends HttpServlet {
 		try {
 			session.removeAttribute("user");
 			
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("first_window.html");
 			
 			System.out.println("로그아웃 성공");
 			
