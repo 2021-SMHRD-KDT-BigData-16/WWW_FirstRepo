@@ -98,13 +98,14 @@
     <br>
     <br>
 
-    <h2 style ="color:white;margin-left : 160px">커뮤니티
-    <button class="btn btn-outline-warning" style= " margin-left:1300px">
-    <a class="btn_link" style="color: white !important; " href ="community_detail.jsp">
-                작성하기</a>
+
+<div style="width:1585px; margin : 0 auto;  height : 40px;">
+    <h2 style ="color:white; display: inline;">플레이리스트</h2>
+    <button class="btn btn-outline-warning" style= "position : absolute; right : 9.2%;">
+    <a class="btn_link" style="color: white !important; " href ="community_detail.jsp">작성하기</a>
     </button>
-    </h2>
-      
+</div>
+       <hr>
       
       
       
@@ -123,8 +124,8 @@
             }
          }
       %>
+     
       <% if(isUserComm){%>
-      <hr>
       <h3 style ="color:white;margin-left : 160px">내가 작성한 플레이리스트</h3>
         
         <div class="movie_tag" id="movie2_tag"></div>
@@ -164,7 +165,6 @@
       
       
       <!-- 3 -->
-      <hr>
    
        <h3 style ="color:white;margin-left : 160px">드라마</h3>            
             <div class="slide_wrapper" id="movie3">
@@ -196,7 +196,6 @@
             </ul>
         </div>
         <!-- 4 -->
-        <hr>
         <h3 style ="color:white;margin-left : 160px">액션</h3>
         
         <div class="slide_wrapper" id="movie4">
@@ -229,7 +228,6 @@
         </div>
         
         <!-- 5 -->
-      <hr>
       
         <h3 style ="color:white;margin-left : 160px">판타지</h3>
         
@@ -264,7 +262,6 @@
         </div>
         
         <!-- 6 -->
-        <hr>
        <h3 style ="color:white;margin-left : 160px">공포</h3>        
         <div class="movie_tag" id="movie6_tag"></div>
             <div class="slide_wrapper" id="movie6">
@@ -298,7 +295,6 @@
         
         
         <!-- 7 -->
-        <hr>
        <h3 style ="color:white;margin-left : 160px">스릴러</h3>        
         <div class="movie_tag" id="movie7_tag"></div>
             <div class="slide_wrapper" id="movie7">
@@ -330,7 +326,6 @@
             </ul>
         </div>
         <!-- 8 -->
-        <hr>
        <h3 style ="color:white;margin-left : 160px">가족</h3>        
         <div class="movie_tag" id="movie8_tag"></div>
             <div class="slide_wrapper" id="movie8">
