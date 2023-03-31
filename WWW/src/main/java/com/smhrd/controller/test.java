@@ -7,18 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class test
- */
+
 @WebServlet("/test")
 public class test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String test = request.getParameter("birthday");
-		System.out.println(test);
+		
 	}
 
 }

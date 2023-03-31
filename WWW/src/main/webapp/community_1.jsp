@@ -1,4 +1,5 @@
 <!-- ArrayList import  -->
+<%@page import="java.awt.geom.Path2D"%>
 <%@page import="com.smhrd.model.communityDTO"%>
 <%@page import="java.util.ArrayList"%>
 <!-- contentSearch import-->
@@ -7,6 +8,7 @@
 <%@page import="com.smhrd.model.contentDTO"%>
 <%@page import="com.smhrd.model.memberDTO"%>
 <%@page import="com.smhrd.model.communityDTO"%>
+<%@page import="com.smhrd.model.commentDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -89,6 +91,7 @@
     <%
     ArrayList<communityDTO> c_list = (ArrayList) session.getAttribute("community"); // contents(커뮤전체)
     ArrayList<memberDTO> user_list = (ArrayList) session.getAttribute("user_list"); // contents(커뮤전체)
+    ArrayList<commentDTO> comment = (ArrayList) session.getAttribute("comment"); // contents(커뮤전체)
     int likeCheck= (Integer)session.getAttribute("likeCheck");
     %>
     
@@ -143,42 +146,79 @@
     </div>
     
 <div class="card bg-light">
-<form class="mb-4"><textarea style="resize: none;" class="form-control" rows="3" placeholder="감상평을 등록해주세요"></textarea>
+<form class="mb-4" action = "AddComment"><textarea style="resize: none;" class="form-control" rows="3" placeholder="감상평을 등록해주세요" name = "content"></textarea>
                             <input id="review" type="submit" value="등록">
                                 
                         </form>
-      <%for(int i=0; i<20; i++){%>
-         <% if(i<3) { %>
-            <div class="none">
+	 <%
+	 boolean isComment = false;
+	 int cnt = 0;
+	 %>
+     <%for (int i=0; i<comment.size(); i++) {%>
+    	<%if(comment.get(i).getC_idx() == row){%>
+    		<%
+    		isComment = true; 
+    		cnt++;
+    		%>
+    		<%if(cnt<4) {%>
+    		<div class="none">
                <span>
                    <div class="d-flex mb-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
                                 <div class="ms-3">
-                                    <div class="fw-bold">소나무가삐지면칫솔</div>
-                                    플레이리스트가 저랑 너무 잘맞았어요 감사해요
-                                </div>
+    			<%for (int j=0; j<user_list.size(); j++) {%>
+						<%if(comment.get(i).getUser_id().equals(user_list.get(j).getUser_id())) {%>
+							<div class="fw-bold"><%=user_list.get(j).getUser_nick()%></div>
+							<%} %>
+					<%} %>
+	    			<%=comment.get(i).getCmt_content()%>
+	    			<%if(comment.get(i).getUser_id().equals(user.getUser_id())){%>
+	    				<a href="deleteComment?data=<%=comment.get(i).getCmt_idx()%>" style="font-size : 20px; text-decoration: none">❌</a>
+	    			<%}%>
+	    				                </div>
                                 <hr>
                             </div>
                 </span>
             </div>
-         <% } else{%>
-            <div class="list_cont">
+    			<%}else{%>
+    				<div class="list_cont">
                <span class="animatable"> 
                   <div class="d-flex mb-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
                                 <div class="ms-3">
-                                    <div class="fw-bold">소나무가삐지면칫솔</div>
-                                    플레이리스트가 저랑 너무 잘맞았어요 감사해요
-                                </div>
-                                <hr>
+                                    <%for (int j=0; j<user_list.size(); j++) {%>
+						<%if(comment.get(i).getUser_id().equals(user_list.get(j).getUser_id())) {%>
+							<div class="fw-bold"><%=user_list.get(j).getUser_nick()%></div>
+							<%} %>	
+					<%} %>
+	    				<%=comment.get(i).getCmt_content()%>
+	    				<%if(comment.get(i).getUser_id().equals(user.getUser_id())){%>
+	    				<a href="deleteComment?data=<%=comment.get(i).getCmt_idx()%>" style="font-size : 20px; text-decoration: none">❌</a>
+	    			<%}%>
+   
                             </div>
                </span>
             </div>
-         <% }%>
-      <% }%>
-   </div>
-    
-    
+    				<%} %>
+    			<%} %>
+    		<%} %>
+    		
+    <%if(isComment != true) {%>
+    	<div class="none">
+               <span>
+                   <div class="d-flex mb-4">
+                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">관리자</div>
+                                    등록된 리뷰가 없습니다!
+                                </div>
+
+                            </div>
+                	</span>
+            	</div>
+    <%} %>             
+    	
+
     <section class="mb-5">
                     <div class="">
                         
@@ -194,7 +234,6 @@
 
         
     </div>
-
 
     <br>
     <br>
