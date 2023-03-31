@@ -134,7 +134,7 @@
                             <div id="a">
                                 <section class="poster_img">
 
-                                    <img src="./thumbnail_img/<%=contents.get(i).getV_title()%>.jpg" width="350px" height = "476px">
+                                    <img src="./thumbnail_img/<%=contents.get(i).getV_title()%>.jpg" width="300px" height = "426px">
 									<hr style ="color : white ;">
                                     <table class="information">
                                     
@@ -185,12 +185,14 @@
 								
 								<br>
 								<br>
+
 								
-								
-                				<div style = "float : left; margin-right : 595.5px;"> <h4> 예고편 </h4></div>
+                				<div style = "float : left; margin-right : 495px;"> <h4> 예고편 </h4></div>
                 				<div>
                 				 <button type="button" class="btn btn-outline-warning" >
-                        			<img src = "./logo_img/재생_1.png" width = 30px; height = 30px; >&nbsp지금시청하기
+                				 <a class="btn_link" style="color: white !important; " href ="#">
+                        			<img src = "./logo_img/재생_1.png" width = 30px; height = 30px; >
+									                &nbsp지금시청하기</a>
                     			</button>
                     			</div>
                                 <%=contents.get(i).getV_iframe()%>
@@ -211,15 +213,13 @@
                                 <br>
 
                                                     <h3>리뷰</h3>
-                                                <div style="overflow-y: scroll; height: 600px;">
+                                 <div class = "scroll_contatiner" style="overflow-y: scroll; width : 767px; height: 750px;">
                                                 
-                                               <form action = "reviewText" method = "post">
-											      <p ><textarea cols="100" rows="5"name = "review_content"></textarea></p>
-											      <p><input type="submit" value="Submit"></p>
-											    </form>
+                                 <form action = "reviewText" method = "post">
+									<p ><textarea cols="100" rows="5"name = "review_content"></textarea></p>
+									<p><input type="submit" value="Submit"></p>
+								</form>
 											    
-											    <!--  리뷰 데이터 불러오는거(기현이가 구현했어요!) - 작성일자는 구현하시다가
-											    안불러와지면 무시하셔도 돼요! -->
                                                     <% boolean isReview=false; %>
                                                         
 															
@@ -265,12 +265,6 @@
                                                 </div>
 
 
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <br>
                                             <br>
                                             <br>
 

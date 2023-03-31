@@ -10,7 +10,7 @@ body {
 .wrapper {
     background-color: black;
     width: 1500px;
-    margin-left: 200px;
+    margin-left: 290px;
     border-radius : 50px;
 	margin-top : 170px;
 }
@@ -34,7 +34,7 @@ body {
     position: relative;
     /*대표이미지랑 겹치기*/
     margin-left: 100px;
-    width: 360px;
+    width: 300px;
     height: 500px;
     margin-top: 50px
 }
@@ -54,7 +54,7 @@ body {
 .contents_wrap {
 	/*위오아왼*/
 	padding : 40px 0px 0px 0px;
-    width: 1500px;
+    width: 1300px;
     /* a랑 b의 부모요소에 inlineBlock을 넣어줘야지
     footer가 밑으로 내려감!! */
     display: inline-block;
@@ -110,6 +110,35 @@ body {
 .play{
 	border: 2px solid gray;
 }
+
+/*스크롤 하는 기능*/
+.scroll_contatiner {
+	width: 767px;
+	height: 140px;
+	overflow: auto;
+}
+
+.scroll_contatiner::-webkit-scrollbar {
+	width: 15px;
+}
+
+.scroll_contatiner::-webkit-scrollbar-thumb {
+	background-color:#1A1A3A;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 2px solid transparent;
+}
+
+.scroll_contatiner::-webkit-scrollbar-track {
+	background-color: rgba(6,13,23);
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px white;
+}
+/*스크롤 하는 기능*/
+
+
+
+
 /* .btn {
     --bs-btn-padding-x: 1.0rem !important;
     --bs-btn-padding-y: 0.6rem !important;
