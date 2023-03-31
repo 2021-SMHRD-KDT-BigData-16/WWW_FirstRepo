@@ -186,7 +186,7 @@
                   <div class="d-flex mb-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
                                 <div class="ms-3">
-                                    <%for (int j=0; j<user_list.size(); j++) {%>
+                        <%for (int j=0; j<user_list.size(); j++) {%>
 						<%if(comment.get(i).getUser_id().equals(user_list.get(j).getUser_id())) {%>
 							<div class="fw-bold"><%=user_list.get(j).getUser_nick()%></div>
 							<%} %>	

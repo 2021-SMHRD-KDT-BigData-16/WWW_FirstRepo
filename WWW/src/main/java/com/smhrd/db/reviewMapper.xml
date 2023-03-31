@@ -50,11 +50,9 @@
     	#{review_dt}, 
     	#{user_id}
     	)
-	
-	
-	
-	
-	
-	
 	</insert>
+	<delete id="reviewDelete" parameterType="com.smhrd.model.reviewDTO">
+		delete from tb_review
+		where review_idx = #{review_idx}
+	</delete>
 </mapper>

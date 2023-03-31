@@ -5,6 +5,7 @@
 <!-- contentDTO 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
 <%@page import="com.smhrd.model.reviewDTO"%>
+<%@page import="com.smhrd.model.memberDTO"%>
 <!-- jstl import-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -71,16 +72,13 @@
                     </button>
                 </form>
 
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 40px ">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">회원가입</a>
+                <% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<p class="header_nick"><%=user.getUser_nick()+"님"%></p>
+					<form action="logoutService" align="center" method = "post">
+                    <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
+                        <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
-                </form>
-                <form action="" align="center">
-                    <button type="button" class="btn btn-outline-warning" style="margin-left : 7px">
-                        <a class="btn_link" style="color: white !important" href="contentSearch">로그인</a>
-                    </button>
-                </form>
+                	</form>
 
 
             </div>
@@ -98,6 +96,8 @@
 		// 세션에 담긴 컨텐츠 항목 불러오기
 		ArrayList<contentDTO> contents = (ArrayList) session.getAttribute("contents");
 		ArrayList<reviewDTO> reviews = (ArrayList) session.getAttribute("review");
+		ArrayList<memberDTO> user_list = (ArrayList) session.getAttribute("user_list");
+		
 		%>
 		
 
@@ -141,7 +141,9 @@
                                         <tr>
                                             <td> 평점</td>
                                             <td>
+	
                                                 <%=contents.get(i).getV_rating()%>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
@@ -219,17 +221,43 @@
 											    <!--  리뷰 데이터 불러오는거(기현이가 구현했어요!) - 작성일자는 구현하시다가
 											    안불러와지면 무시하셔도 돼요! -->
                                                     <% boolean isReview=false; %>
-                                                        <% for (int i=0; i<reviews.size(); i++){%>
-                                                            <%if(reviews.get(i).getV_idx()==idx) {%>
-                                                                <p>
-                                                                    <%=reviews.get(i).getUser_id()%> : 
-                                                                    <%=reviews.get(i).getReview_content()%>
-                                                                </p>
-                                                                    <p>작성 일자 : <%=reviews.get(i).getReview_dt()%></p>
-                                                                <%isReview=true; %>
-                                                                    <%}%>
-                                                                        <%}%>
-                                                
+                                                        
+															
+									<div class="none">
+                                <% for (int i=0; i<reviews.size(); i++){%>
+                                <%if(reviews.get(i).getV_idx()==idx) {%>
+                                     <%isReview=true; %>
+                                               <span>					
+                   		<div class="d-flex mb-4">
+                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                                <div class="ms-3">
+                                	<%for (int j=0; j<user_list.size(); j++) {%>
+										<%if(reviews.get(i).getUser_id().equals(user_list.get(j).getUser_id())) {%>
+											<%if(reviews.get(i).getUser_id().equals("admin")) {%>
+											<div class="fw-bold">크롤링 데이터</div>
+											<%}else{%>
+												<div class="fw-bold"><%=user_list.get(j).getUser_nick()%></div>										
+											<%} %>
+										<%} %>
+									<%} %>
+									
+									<%=reviews.get(i).getReview_content()%>
+									(<%=reviews.get(i).getReview_dt()%>)
+	    							<%if(reviews.get(i).getUser_id().equals(user.getUser_id())){%>
+	    								<a href="deleteReview?data=<%=reviews.get(i).getReview_idx()%>" style="font-size : 20px; text-decoration: none">❌</a>
+	    							<%}%>
+    			
+	    				                </div>
+                                <hr>
+                            </div>
+                </span>
+                                <%} %>
+
+			<%} %>
+            </div>
+											
+                                                                        
+                                                                        
                                                 <%if(isReview !=true) {%>
                                                 	<br>
                                                     <h3>등록된 리뷰가 없습니다.</h3>
