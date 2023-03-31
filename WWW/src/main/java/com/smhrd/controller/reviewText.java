@@ -30,9 +30,13 @@ public class reviewText extends HttpServlet {
 		
 		// 데이터불러오기
 		String review_content = request.getParameter("review_content");
+		
+		// session 불러오기
 		HttpSession session = request.getSession();
 		
+		// 영화 인덱스 불러오기
 		int idx = (int)session.getAttribute("idx");
+		// 유저객체 불러오기 불러오기
 		memberDTO user= (memberDTO) session.getAttribute("user");
 		
 		// DTO로 데이터 묶기
@@ -51,17 +55,21 @@ public class reviewText extends HttpServlet {
 		dto.setV_idx(idx);
 		dto.setReview_content(review_content);
 		dto.setReview_dt(df.format(date));
-		dto.setUser_id(user.getUser_id());
+		dto.setUser_id(user.getUser_id()); // user_id불러오기
 		
 		// 구현하기
 		reviewDAO dao = new reviewDAO();
 		int cnt = dao.write(dto);
 		
+		// 정상적으로 작동하는지 확인
 		if (cnt >0) {
 			System.out.println("저장 성공");
 		}else{
 			System.out.println("저장 실패");
 		}
+		
+		
+		// 리뷰 리스트 
 		ArrayList<reviewDTO> review_list = dao.search();
 		if (review_list != null) {
 			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
