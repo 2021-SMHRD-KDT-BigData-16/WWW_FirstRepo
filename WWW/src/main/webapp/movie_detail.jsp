@@ -16,6 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>detail_page</title>
+
 	<link rel="icon" href="./logo_img/favicon.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="./styles/movie_detail.css">
@@ -215,8 +216,8 @@
                                                 <div style="overflow-y: scroll; height: 600px;">
                                                 
                                                <form action = "reviewText" method = "post">
-											      <p ><textarea cols="100" rows="5"name = "review_content"></textarea></p>
-											      <p><input type="submit" value="Submit"></p>
+											      <p><textarea cols="100" rows="5"name = "review_content" style="resize : none;"></textarea></p>
+											      <input id="review" type="submit" value="등록">
 											    </form>
 											    
 											    <!--  리뷰 데이터 불러오는거(기현이가 구현했어요!) - 작성일자는 구현하시다가
