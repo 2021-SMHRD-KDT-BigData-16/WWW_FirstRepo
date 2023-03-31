@@ -44,6 +44,7 @@
 		<mapper resource="com/smhrd/db/memberMapper.xml"/>
 		<mapper resource="com/smhrd/db/reviewMapper.xml"/>
 		<mapper resource="com/smhrd/db/boardMapper.xml"/>
+		<mapper resource="com/smhrd/db/commentMapper.xml"/>
 	</mappers>
 	
 	

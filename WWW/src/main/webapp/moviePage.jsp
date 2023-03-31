@@ -32,7 +32,27 @@
     
     
     
-    
+<style>
+.none, .list_cont {
+	width: 1146px;
+	margin : 0 auto;
+}
+
+.none:nth-child(n+2){
+margin-top: 35px;
+}
+.list_cont{
+margin-top: 35px;
+}
+
+span a{
+margin-right : 20px;
+}
+.jh{
+color:white;
+}
+
+</style>
 </head>
 <body>
 
@@ -85,7 +105,6 @@
     </nav>
     <!-- 헤더 끝 -->
     
-    
 	<!-- 
 		contents안에 담긴 객체(일단 예시)
 			v_title : 영화 제목
@@ -108,12 +127,17 @@
 	List<contentDTO> contents = (List) session.getAttribute("contents");
 	//String path = "detailContent"
 	%>
+    <br>   <br>
+        <br>
 	<!-- 컨텐츠 이미지 박스(가장 큰 틀) -->
-	<div class="warpper">
+	<div style="width : 1146px; margin : 0 auto;">
+	<h3 class="jh" style="font-size : 1.75em;">영화</h3>
+	</div>
+	<div>
 		<!-- 이미지 6개씩 한박스에 포장 -->	
 		<%for(int i=0; i<(contents.size()/6); i++){%>
 			<!-- 먼저 보여줄 리스트 3줄 설정-->
-			<% if(i<3) { %>
+			<% if(i<4) { %>
 				<div class="none">
 				<!-- 클래스 none에는 애니메이션 효과 x -->
 					<span>
@@ -251,7 +275,7 @@
 					<% }%>
 					</span>
 				</div>
-	</div> 
+				</div>
 	<!-- 컨텐츠 박스 끝 지우면 애니메이션 효과 x -->
 	<script type="text/javascript" src="./Js/contentsScoll.js"></script><!-- 스크롤기능 js -->
 		
