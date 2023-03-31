@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,16 +19,24 @@ public class logoutService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
+		response.setContentType("text/html; charset = UTF-8");
+		PrintWriter out = response.getWriter();
+		
 		// session 안에 들어있는 user정보 삭제
 		try {
+			
 			session.removeAttribute("user");
 			
-			response.sendRedirect("first_window.html");
-			
+//			response.sendRedirect("first_window.html");
+//			
 			System.out.println("로그아웃 성공");
 			
+			out.println("<script>alert('로그아웃에 정상적으로 성공하였습니다.'); location.href='first_window.html';</script>"); 
+			//response.sendRedirect("login.html");
+			out.close();
+			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 			System.out.println("로그아웃 실패");
 		}
 		

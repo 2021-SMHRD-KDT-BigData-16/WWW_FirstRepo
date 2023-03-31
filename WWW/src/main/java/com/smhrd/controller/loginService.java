@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Response;
+
 import com.smhrd.model.memberDAO;
 import com.smhrd.model.memberDTO;
 
@@ -22,6 +24,7 @@ public class loginService extends HttpServlet {
 		
 		// 한글인코딩
 		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		// 데이터불러오기
 		String loginId = request.getParameter("id");
@@ -43,17 +46,21 @@ public class loginService extends HttpServlet {
 		System.out.println(loginLogic);
 		
 		if (loginLogic != null) {
-			
+					
 			HttpSession session = request.getSession();
-			
 			
 			session.setAttribute("user", loginLogic);
 			
-			
-			
 			System.out.println("로그인 성공");
 			System.out.println("아이디 생성 날짜 : " + loginLogic.getUser_joindate());
-			response.sendRedirect("contentSearch");
+			
+
+			
+			out.println("<script>alert('로그인에 정상적으로 성공하였습니다.'); location.href='contentSearch';</script>"); 
+			//response.sendRedirect("login.html");
+			out.close();
+			
+		
 		}else {
 			System.out.println("로그인 실패");
 			response.sendRedirect("login.html");
