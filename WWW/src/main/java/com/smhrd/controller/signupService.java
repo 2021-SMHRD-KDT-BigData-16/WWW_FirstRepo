@@ -38,15 +38,28 @@ public class signupService extends HttpServlet {
 		String user_nick = request.getParameter("user_nick");
 		String user_gender = request.getParameter("user_gender");
 		String user_birthdate[] = request.getParameterValues("user_birthdate");
-		String birthdate = user_birthdate[0].replace("20","").replace("19","")+"-"+user_birthdate[1]+"-"+user_birthdate[2];
+		
+//		String year = user_birthdate[0];
+//		year = year.substring(2);
+//		System.out.println(year);
+//		String birthdate = year + "-" + user_birthdate[1] + "-" + user_birthdate[2];
+//		System.out.println(birthdate);
+		
+		String birthdate = user_birthdate[0].substring(2) +"-" + user_birthdate[1] +"-"+ user_birthdate[2];
+		
+		
+		
+		//		String birthdate = user_birthdate[0].replace("20","").replace("19","")+"-"+user_birthdate[1]+"-"+user_birthdate[2];
 //		String test=user_birthdate.replace("20", "").replace("19","");
 
 		System.out.println(user_id);
 		System.out.println(user_pw);
 		System.out.println(user_nick);
 		System.out.println(user_gender);
-		System.out.println(birthdate);
-		
+//		System.out.println(user_birthdate[0]);
+//		System.out.println(user_birthdate[1]);
+//		System.out.println(user_birthdate[2]);
+//		
 
 		memberDTO dto = new memberDTO();
 		dto.setUser_id(user_id);
@@ -64,13 +77,13 @@ public class signupService extends HttpServlet {
 		System.out.println("cnt : " + cnt);
 		
 
-		response.setContentType("text/html; charset=UTF-8");
+		
 		if (cnt > 0) {
 			System.out.println("성공");
 			
+			response.setContentType("text/html; charset=UTF-8");
+			
 			PrintWriter out = response.getWriter();
-			
-			
 			out.println("<script>alert('회원가입이 완료되었습니다. 로그인 해주세요!'); location.href='login.html';</script>"); 
 			//response.sendRedirect("login.html");
 			out.close();
