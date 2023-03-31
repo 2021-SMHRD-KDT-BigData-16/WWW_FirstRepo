@@ -210,6 +210,14 @@
 
                                                     <h3>리뷰</h3>
                                                 <div style="overflow-y: scroll; height: 600px;">
+                                                
+                                               <form action = "">
+											      <p><textarea cols="100" rows="5"></textarea></p>
+											      <p><input type="submit" value="Submit"></p>
+											    </form>
+											    
+											    <!--  리뷰 데이터 불러오는거(기현이가 구현했어요!) - 작성일자는 구현하시다가
+											    안불러와지면 무시하셔도 돼요! -->
                                                     <% boolean isReview=false; %>
                                                         <% for (int i=0; i<reviews.size(); i++){%>
                                                             <%if(reviews.get(i).getV_idx()==idx) {%>
