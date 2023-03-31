@@ -24,7 +24,7 @@ public class reviewDAO {
 			// session.delete
 			// selectAll
 			// selecton
-			cnt = session.insert("reviewWrite", dto);
+			cnt = session.insert("InsertReview", dto);
 		} finally {
 			// 3. sqlsession 반납
 			session.close();
@@ -46,5 +46,9 @@ public class reviewDAO {
 		// 4. 결과값 반환
 		return review_list;
 	}
+
+	
+
+
 
 }

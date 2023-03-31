@@ -32,4 +32,29 @@
     	#{review_dt}, 
     	#{user_id});
 	</insert>
+	
+	
+	<insert id="InsertReview" parameterType="com.smhrd.model.reviewDTO">
+
+		INSERT INTO tb_review
+    	(
+    	v_idx, 
+    	review_content, 
+    	review_dt, 
+    	user_id
+    	)
+		VALUES
+    	(
+    	#{v_idx}, 
+    	#{review_content}, 
+    	#{review_dt}, 
+    	#{user_id}
+    	)
+	
+	
+	
+	
+	
+	
+	</insert>
 </mapper>

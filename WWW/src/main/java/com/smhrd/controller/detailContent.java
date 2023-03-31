@@ -53,7 +53,7 @@ public class detailContent extends HttpServlet {
 				System.out.println("작성자 : " +reviews.get(i).getUser_id());
 				System.out.println("글 순서 : " +reviews.get(i).getReview_idx());
 				System.out.println("작성 내용 : " +reviews.get(i).getReview_content());
-				System.out.println("작성 날짜 : " +reviews.get(i).getReivew_dt());
+				System.out.println("작성 날짜 : " +reviews.get(i).getReview_dt());
 				System.out.println("---------------------------------------------------------------------");
 			}
 		}

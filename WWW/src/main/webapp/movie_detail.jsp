@@ -211,8 +211,8 @@
                                                     <h3>리뷰</h3>
                                                 <div style="overflow-y: scroll; height: 600px;">
                                                 
-                                               <form action = "">
-											      <p><textarea cols="100" rows="5"></textarea></p>
+                                               <form action = "reviewText" method = "post">
+											      <p ><textarea cols="100" rows="5"name = "review_content"></textarea></p>
 											      <p><input type="submit" value="Submit"></p>
 											    </form>
 											    
@@ -225,7 +225,7 @@
                                                                     <%=reviews.get(i).getUser_id()%> : 
                                                                     <%=reviews.get(i).getReview_content()%>
                                                                 </p>
-                                                                    <p>작성 일자 : <%=reviews.get(i).getReivew_dt()%></p>
+                                                                    <p>작성 일자 : <%=reviews.get(i).getReview_dt()%></p>
                                                                 <%isReview=true; %>
                                                                     <%}%>
                                                                         <%}%>
