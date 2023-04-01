@@ -116,6 +116,7 @@ body {
 	width: 767px;
 	height: 140px;
 	overflow: auto;
+	margin-top : 30px;
 }
 
 .scroll_contatiner::-webkit-scrollbar {
@@ -154,6 +155,9 @@ form{
 	border-radius: 0.375erm;
 }
 
+.btn.btn-outline-warning{
+	float : right;
+}
 /* .btn {
     --bs-btn-padding-x: 1.0rem !important;
     --bs-btn-padding-y: 0.6rem !important;
