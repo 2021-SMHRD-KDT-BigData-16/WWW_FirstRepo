@@ -15,7 +15,6 @@
 	
 	<insert id="communityInsert" parameterType="com.smhrd.model.communityDTO">
 		INSERT INTO TB_COMMUNITY (
-			C_IDX,
 			C_CONTENT,
 			C_DATE,
 			C_LIKES,
@@ -23,7 +22,6 @@
 			USER_ID
 		)
 		VALUES (
-			TB_COMMUNITY_SEQ.nextval,
 			#{c_content},
 			#{c_date},
 			#{c_likes},

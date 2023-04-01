@@ -125,9 +125,9 @@
             <h3 style="color : white"><%=user_list.get(u_idx).getUser_nick() %>님의 플레이리스트</h3>
             <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
             <%if (likeCheck>0) {%> 
-				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/빈1하트.png" style="width:40px"></a>
+				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/하1트.png" style="width:40px"></a>
 			<%} else{ %>
-    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/하1트.png" style="width:40px"></a>
+    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/빈1하트.png" style="width:40px"></a>
     	<%} %>
 			</h3>
         </div>
