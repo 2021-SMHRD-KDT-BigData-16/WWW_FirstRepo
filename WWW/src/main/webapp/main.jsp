@@ -38,10 +38,9 @@
         
     <style>
  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
- 
-*:not(.text){
+  
+*{
 font-family: 'Noto Sans KR', sans-serif;
-}
 }
 /*hover시작*/
         figure.snip1384 {
@@ -337,7 +336,7 @@ font-family: 'Noto Sans KR', sans-serif;
 							<p class="p"><%=u_list.get(j).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>	
 					<%} %>
-					<p class='text'><%=community.get(i).getC_hashtag()%>  ❤ <%=community.get(i).getC_likes()%></p>
+					<p><%=community.get(i).getC_hashtag()%>   ❤ : <%=community.get(i).getC_likes()%></p>
 					<p></p>
 					</div></a>
 				</li>
