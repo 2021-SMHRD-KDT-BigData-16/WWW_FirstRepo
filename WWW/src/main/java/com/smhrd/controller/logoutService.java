@@ -17,14 +17,15 @@ public class logoutService extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 0. 세션, printWriter 불러오기, 한글 인코딩
 		HttpSession session = request.getSession();
-		
-		response.setContentType("text/html; charset = UTF-8");
 		PrintWriter out = response.getWriter();
+		response.setContentType("text/html; charset = UTF-8");
 		
-		// session 안에 들어있는 user정보 삭제
-		try {
-			
+		
+		try {			
+			// session 안에 들어있는 user정보 삭제
 			session.removeAttribute("user");
 			
 //			response.sendRedirect("first_window.html");

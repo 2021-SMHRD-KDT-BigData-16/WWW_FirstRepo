@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <!-- contentSearch import-->
 <%@page import="com.smhrd.controller.contentSearch"%>
-<!-- contentDTO 자료형 import-->
+<!-- 자료형 import-->
 <%@page import="com.smhrd.model.contentDTO"%>
 <%@page import="com.smhrd.model.memberDTO"%>
 <%@page import="com.smhrd.model.communityDTO"%>
@@ -222,8 +222,7 @@
 	ArrayList<contentDTO> horror = (ArrayList) session.getAttribute("horror"); // horror(공포 영화)
 	ArrayList<contentDTO> action = (ArrayList) session.getAttribute("action"); // actions(액션 영화)
 	ArrayList<communityDTO> community = (ArrayList) session.getAttribute("community"); // 커뮤니티 글
-	ArrayList<memberDTO> u_list = (ArrayList) session.getAttribute("user_list");
-	//String path = "detailContent"
+	ArrayList<memberDTO> u_list = (ArrayList) session.getAttribute("user_list"); // 유저 전체
 	%>
 
 

@@ -329,14 +329,14 @@
             </ul>
         </div>
         <!-- 8 -->
-       <h3 style ="color:white;margin-left : 160px">가족</h3>        
+       <h3 style ="color:white;margin-left : 160px">로맨스</h3>        
         <div class="movie_tag" id="movie8_tag"></div>
             <div class="slide_wrapper" id="movie8">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
           <%for(int i=0; i<c_list.size(); i++){ %>
-                <%if(c_list.get(i).getC_hashtag().contains("#가족")){%>
+                <%if(c_list.get(i).getC_hashtag().contains("#로맨스")){%>
                    <%int j=0;%>
                    <%String[] comm =  c_list.get(i).getC_content().split(",");%>   
                <li>   

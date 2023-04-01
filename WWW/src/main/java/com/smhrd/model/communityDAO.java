@@ -29,7 +29,7 @@ public class communityDAO {
 		return list;
 	}
 
-	public int sendCummunity(communityDTO dto) {
+	public int sendCommunity(communityDTO dto) {
 		int row = 0;
 		SqlSession session = factory.openSession(true);
 		
