@@ -29,17 +29,17 @@ public class communityDAO {
 		return list;
 	}
 
-	public void sendCummunity(communityDTO dto) {
+	public int sendCummunity(communityDTO dto) {
+		int row = 0;
 		SqlSession session = factory.openSession(true);
 		
 		try {
-			session.insert("communityInsert", dto);
-			
+			row = session.insert("communityInsert", dto);
 		}finally {
 			session.close();
 		}
 		
-		
+		return row;
 	}
 	
 	//--------------------------------------------------------좋아요 시 커뮤니티 게시글 업데이트--------------------------------------------------------------//

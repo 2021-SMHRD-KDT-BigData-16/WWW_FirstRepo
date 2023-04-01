@@ -47,12 +47,26 @@ public class makePlayList extends HttpServlet {
 		dto.setC_content(movies);
 		dto.setC_date(df.format(date));
 		dto.setC_hashtag(genre);
-		dto.setC_likes(0);
-		
+		dto.setC_likes(0);	
 		dto.setUser_id(user.getUser_id());
-		communityDAO dao = new communityDAO();
 		
-		dao.sendCummunity(dto);
+		System.out.println("내용 : "+dto.getC_content());
+		System.out.println("날짜 : "+dto.getC_date());
+		System.out.println("해쉬태그 : "+dto.getC_hashtag());
+		System.out.println("좋아요 : "+dto.getC_likes());
+		System.out.println("작성자 : "+dto.getUser_id());
+		
+	
+		communityDAO dao = new communityDAO();
+		if(dto.getC_content() !=null) {
+			int row = dao.sendCummunity(dto);
+			if(row>0) {
+				System.out.println("DB 저장 성공");
+			}else {
+				System.out.println("DB 저장 실패");
+			}
+		}
+		
 //		--------------------------------------------------------다시 업데이트---------------------------------------------------------------------------//
 		communityDAO cm_dao = new communityDAO();
 		ArrayList<communityDTO> comm_list = cm_dao.selectAll();
@@ -62,6 +76,7 @@ public class makePlayList extends HttpServlet {
 			// 세션을 불러오기
 			
 			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+			
 			session.setAttribute("community", comm_list);
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}

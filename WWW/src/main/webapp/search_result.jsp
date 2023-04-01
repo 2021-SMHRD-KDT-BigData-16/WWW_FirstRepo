@@ -117,7 +117,11 @@
 					</div>
 					<%isResult = true; %>
 		<%} %>
-<%} %>	
+<%} %>
+		
+	<%if (isResult != true){ %>
+		<h2 style="color:white">"<%=result%>" 검색된 결과가 없습니다.</h2>
+	<%} %>
 <hr id="line">
 <h2 class ="search_title">커뮤니티</h2>
 	<% boolean isCommResult = false; %>
@@ -125,9 +129,8 @@
 			<span>
 				<ul class = "scroll_serach">
 		<% int cnt = 0; %>
-		
 	<%for(int i=0; i<c_list.size(); i++){ %>
-		<%if(c_list.get(i).getC_content().contains(result)) {%>
+		<%if((c_list.get(i).getC_content().contains(result))&& ! result.equals("")) {%>
 			<%String[] comm =  c_list.get(i).getC_content().split(",");%>
 			<%isCommResult = true; %>
 			<%if(cnt<3) {%>
@@ -176,7 +179,7 @@
 			</div>
 	
 		
-	<%if (isCommResult != true){ %>
+	<%if (isCommResult != true || result.equals("")){ %>
 		<h2 style="color:white">"<%=result%>" 검색된 결과가 없습니다.</h2>
 	<%} %>
 	<script type="text/javascript" src="./Js/main.js"></script>

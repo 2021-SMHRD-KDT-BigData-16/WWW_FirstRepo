@@ -151,7 +151,7 @@
     
 <div class="card bg-light">
 <form class="mb-4" action = "AddComment"><textarea style="resize: none;" id="summary"class="form-control" rows="3" placeholder="감상평을 등록해주세요" name = "content"></textarea>
-                            <input id="review" type="submit" value="등록"">
+                            <input id="review" type="submit" value="등록">
                                 
                         </form>
 	 <%
