@@ -208,7 +208,7 @@
 					</div>
 					<div>
 						<button type="button" class="btn btn-outline-warning">
-							<a class="btn_link" style="color: white !important;" href="#">
+							<a class="btn_link" style="color: white !important;" href="watch.jsp">
 								<img src="./logo_img/재생_1.png" width=30px; height=30px;>
 								&nbsp지금시청하기
 							</a>
