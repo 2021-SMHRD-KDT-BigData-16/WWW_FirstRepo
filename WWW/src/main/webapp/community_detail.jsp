@@ -261,7 +261,7 @@
 
 
                 <div style="margin-left : 1191px; margin-top : 10px;">
-                    <button class="btn btn-primary" type="button" onclick="sendData() ;return false;"
+                    <button class="btn btn-primary" type="button" onclick="sendData();"
                         style="background-color : #ff7600; border:none ;">SUBMIT</button>
 
                     <button class="btn btn-prsimary" type="button" onclick='reset()'
