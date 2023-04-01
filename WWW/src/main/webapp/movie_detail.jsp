@@ -214,9 +214,9 @@
 
                                                     <h3>리뷰</h3>
                                                 <div class = "scroll_contatiner" style="overflow-y: scroll; width : 767px; height: 750px;">
-                                                
+                                                <div style="margin-right : 20px;">
                                                <form action = "reviewText" method = "post">
-                                       <p><textarea cols="100" rows="5"name = "review_content" style="resize : none;"></textarea></p>
+                                       <textarea class="form-control" cols="100" rows="5"name = "review_content" style="resize : none;"></textarea>
                                        <input id="review" type="submit" value="등록">
                                      </form>
 											    
@@ -270,7 +270,7 @@
                                             <br>
                                             <br>
 
-
+</div>
                             </div>
                         </div>
                 

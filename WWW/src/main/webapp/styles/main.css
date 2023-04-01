@@ -72,6 +72,8 @@ li {
     margin: 0 auto;
     height: 440px;
     overflow: hidden;
+    box-shadow: 0px 0px 5px 5px #162336;
+    border-radius: 20px;
 }
 
 
@@ -81,7 +83,7 @@ li {
     
 }
 #movie3 .next{
-    left: 1530px;
+    left: 1550px;
 }
 #movie3 .prev{
 }
@@ -110,6 +112,8 @@ li {
 }
 /* 플레이 리스트 글자 */
 .p{
+	font-size : 20px;
+	font-weight : 500;
     margin-top: 70px;
     text-align: center;
     color:white ;
@@ -117,7 +121,8 @@ li {
 /* 좋아요 글자 */
 p{
     text-align: center;
-    color:white
+    color:white;
+    
 }
 
 /* 플레이리스트 간 마진 */
@@ -132,8 +137,6 @@ p{
     height:420px;
     background-color: #000000;
     display: inline-block;
-    border: #ff7600 1px solid;
-    border-radius: 6%;
     
 }
 

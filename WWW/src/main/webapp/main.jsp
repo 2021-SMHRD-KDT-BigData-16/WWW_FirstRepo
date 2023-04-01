@@ -318,7 +318,7 @@ font-family: 'Noto Sans KR', sans-serif;
         <br>
         <br>
         <div class="movie_tag" id="movie3_tag"><h3>플레이리스트</h3></div>
-            <div class="slide_wrapper" id="movie3">
+            <div class="slide_wrapper" id="movie3" style="margin-top : 20px;">
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <ul class="slides">
@@ -333,7 +333,7 @@ font-family: 'Noto Sans KR', sans-serif;
 					<img class="c" src="netflix_img/<%=content[2]%>.jpg" alt="<%=content[2]%>">
 					<%for (int j=0; j<u_list.size(); j++) {%>
 						<%if(community.get(i).getUser_id().equals(u_list.get(j).getUser_id())) {%>
-							<p class="p"><%=u_list.get(j).getUser_nick()%>님의 플레이리스트</p>
+							<p class="p" style="margin-bottom : 0;"><%=u_list.get(j).getUser_nick()%>님의 플레이리스트</p>
 						<%} %>	
 					<%} %>
 					<p><%=community.get(i).getC_hashtag()%>   ❤ : <%=community.get(i).getC_likes()%></p>
@@ -370,7 +370,7 @@ font-family: 'Noto Sans KR', sans-serif;
 						v_grade : 연령 등급
 						v_iframe : 아이프레임
 					-->
-			 
+			 <br>
     <!-- 발바닥 -->
     <div class="container">
         <footer>
