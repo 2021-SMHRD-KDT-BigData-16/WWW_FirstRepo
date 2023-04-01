@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>detail_page</title>
+<title>W.W.W</title>
 <link rel="stylesheet" type="text/css" href="./styles/font_style.css">
 <link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 <link rel="icon" href="./logo_img/favicon.png">

@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search_result</title>
+<title>W.W.W</title>
 <link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="icon" href="./logo_img/favicon.png">
 	<link rel="stylesheet" type="text/css" href="./styles/search_result.css">

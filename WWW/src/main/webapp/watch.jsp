@@ -9,8 +9,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="./logo_img/favicon.png">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>W.W.W</title>
 <style type="text/css">
 	iframe{
 		overflow:hidden;

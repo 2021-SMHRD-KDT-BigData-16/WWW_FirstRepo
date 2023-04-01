@@ -17,7 +17,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>Search_result</title>
+<title>W.W.W</title>
     	<link rel="stylesheet" type="text/css" href="./styles/font_style.css">
     <link rel="icon" href="./logo_img/favicon.png">
     <link rel="stylesheet" href="./styles/header_nick.css">
@@ -34,7 +34,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./Js/footer,header_auto_search.js"></script>
-<title>Insert title here</title>
 </head>
 <body>
 <a href="#top" style="position: fixed;

@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>WWW</title>
+<title>W.W.W</title>
 
 <link rel="icon" href="./logo_img/favicon.png">
 <link href="https://fonts.googleapis.com/
