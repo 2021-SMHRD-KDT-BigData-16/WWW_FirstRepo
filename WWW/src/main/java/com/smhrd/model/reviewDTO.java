@@ -1,18 +1,22 @@
 package com.smhrd.model;
 
 public class reviewDTO {
-	private	int review_idx; //리뷰 글 번호
-	private int v_idx; //컨텐츠 번호
-	private String review_content; //리뷰 내용
-	private String review_dt; // 작성 날짜
-	private String user_id; // 작성자
+	//리뷰 글 번호
+	private	int review_idx;
+	//컨텐츠 번호
+	private int v_idx; 
+	//리뷰 내용
+	private String review_content;
+	// 작성 날짜
+	private String review_dt;
+	// 작성자
+	private String user_id; 
 	
+	// 기본 생성자
 	public reviewDTO() {
 		
 	}
-	
-	
-
+	// 생성자
 	public reviewDTO(int review_idx, int v_idx, String review_content, String review_dt, String user_id) {
 		super();
 		this.review_idx = review_idx;
@@ -22,8 +26,7 @@ public class reviewDTO {
 		this.user_id = user_id;
 	}
 
-
-
+	//getter/setter 메소드
 	public int getReview_idx() {
 		return review_idx;
 	}
@@ -64,7 +67,5 @@ public class reviewDTO {
 		this.user_id = user_id;
 	}
 	
-	
-	
-	
+
 }

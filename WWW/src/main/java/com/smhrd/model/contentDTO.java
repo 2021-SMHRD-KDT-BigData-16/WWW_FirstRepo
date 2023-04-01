@@ -2,20 +2,28 @@ package com.smhrd.model;
 
 public class contentDTO {
 	
-	//content table columns
+	// 컨텐츠 번호
 	private int v_idx;
+	// 컨텐츠 제목(영화 제목)
 	private String v_title;
+	// 영화 장르
 	private String v_genre;
+	// 영화 방송 년도
 	private int v_year;
+	// 영화 시놉시스
 	private String v_synopsis;
+	// 영화 평점
 	private double v_rating;
+	// 영화 시청 등급
 	private int v_grade;
+	// 영화 iframe
 	private String v_iframe;
 	
+	// 기본 생성자
 	public contentDTO() {
 		
 	}
-	
+	// 생성자	
 	public contentDTO(int v_idx, String v_title, String v_genre, int v_year, String v_synopsis, double v_rating,
 			int v_grade, String v_iframe) {
 		super();
@@ -28,7 +36,8 @@ public class contentDTO {
 		this.v_grade = v_grade;
 		this.v_iframe = v_iframe;
 	}
-
+	
+	// getter/setter 메소드
 	public int getV_idx() {
 		return v_idx;
 	}

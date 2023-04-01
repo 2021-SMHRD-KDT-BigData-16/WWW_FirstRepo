@@ -8,20 +8,16 @@ public class communityDTO {
     private String c_date;
     // 글 좋아요수 
     private int c_likes;
-
     // 글 해시태그 
     private String c_hashtag;
-
     // 글 작성자 
     private String user_id;
-	
+
 	// 기본 생성자
-	
 	public communityDTO() {
 		
 	}
 	// 생성자
-
 	public communityDTO(int c_idx, String c_content, String c_date, int c_likes, String c_hashtag, String user_id) {
 		super();
 		this.c_idx = c_idx;
@@ -32,6 +28,7 @@ public class communityDTO {
 		this.user_id = user_id;
 	}
 
+	// getter/setter 메소드
 	public int getC_idx() {
 		return c_idx;
 	}

@@ -7,6 +7,7 @@
 
 <mapper namespace="com.smhrd.model.communityDAO">
 	<select id="CommunityAllSearch" resultType="com.smhrd.model.communityDTO">
+		<!-- 전체 커뮤니티 글 조회 (좋아요 순으로!) -->
 		select *
 		from tb_community
 		order by c_likes desc

@@ -26,16 +26,26 @@ public class AddComment extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //------------------------------------------------------DB에 추가할 데이터 불러오기--------------------------------------------------//
+		// 1. 한글 인코딩, 필요한 도구 꺼내기
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		String content = request.getParameter("content");
 		Date date = new Date();
-		//로그인 된 닉네임 출력
+		HttpSession session = request.getSession();
+		
+		// 2. 데이터 변수에 저장하기 (댓글 작성 내용이 넘어온다.)
+		String content = request.getParameter("content");
+		
+		// 3. commentDTO에 넣을 데이터 처리해주기
+		
+		// 3-1. 작성자 정보 빼오기
+		memberDTO user = (memberDTO) session.getAttribute("user");
+		
+		// 3-2. 작성일자 포멧팅 이용해서 작성일자 수정하기
 		SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd");
 		String day = df.format(date);
-		HttpSession session = request.getSession();
-		memberDTO user = (memberDTO) session.getAttribute("user");
+		
+		// 3-3 작성할 글 번호 불러오기 -> playIdx로 세션에 저장해놓음.(String 타입이므로 int형으로 형변환 해줘야한다.)
 		String data = (String) session.getAttribute("playIdx");
 		int idx = Integer.parseInt(data);
 //------------------------------------------------------데이터 불러온 데이터 확인 작업--------------------------------------------------//
@@ -48,23 +58,34 @@ public class AddComment extends HttpServlet {
 		System.out.println("---------------------------------------------------------------");
 		
 //------------------------------------------------------데이터 DB연결시키기--------------------------------------------------//
+		
+		// 4. commentDTO에 처리한 데이터 넣어주기
 		commentDTO dto = new commentDTO();
-		commentDAO dao = new commentDAO();
 		dto.setC_idx(idx);
 		dto.setCmt_content(content);
 		dto.setCmt_dt(day);
 		dto.setUser_id(user.getUser_id());
+		
+		// 5. commentDAO를 불러 댓글 등록 기능 수행하기
+		commentDAO dao = new commentDAO();
 		int row = dao.addComment(dto);
+		
+		// 6. 반환 값에 따라 결과 처리해주기
 		if(row>0) {
+			// 6-1. 반환 값이 1이면 댓글 저장이 성공
 			System.out.println("댓글 저장 성공");
+			// 6-1-1. 댓글 내용이 삽입되면 다시 갱신을 해줘야 하기 때문에 댓글을 전체 조회하여 다시 세션에 comment 값으로 넣어주기
 			ArrayList<commentDTO> cm_list = (ArrayList) dao.selectAll();
 			session.setAttribute("comment", cm_list);
+			// 6-1-2. 팝업창으로 알려주고, community_1.jsp로 이동
 			out.println("<script>alert('댓글이 등록완료 되었습니다.'); location.href='community_1.jsp';</script>");
 		}else {
+			// 6-2. 반환 값이 0이면 댓글 저장이 실패
 			System.out.println("댓글 저장 실패");
+			// 6-2-2. 팝업창으로 알려주고, community_1.jsp로 이동
+			out.println("<script>alert('댓글이 등록에 실패하였습니다.'); location.href='community_1.jsp';</script>");
 		}
 		
-//		response.sendRedirect("community_1.jsp");
 	}
 
 }

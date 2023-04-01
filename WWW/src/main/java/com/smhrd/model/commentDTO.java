@@ -1,16 +1,22 @@
 package com.smhrd.model;
 
 public class commentDTO {
+	// 댓글 번호
 	private int cmt_idx;
+	// 원글(커뮤니티 글 번호)
 	private int c_idx;
+	// 댓글 내용
 	private String cmt_content;
+	// 작성 일자
 	private String cmt_dt;
+	// 작성자
 	private String user_id;
 
+	// 기본 생성자
 	public commentDTO() {
 
 	}
-
+	// 생성자
 	public commentDTO(int cmt_idx, int c_idx, String cmt_content, String cmt_dt, String user_id) {
 		super();
 		this.cmt_idx = cmt_idx;
@@ -19,7 +25,7 @@ public class commentDTO {
 		this.cmt_dt = cmt_dt;
 		this.user_id = user_id;
 	}
-
+	// getter/setter 메소드
 	public int getCmt_idx() {
 		return cmt_idx;
 	}
