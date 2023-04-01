@@ -15,12 +15,13 @@
 <head>
 <meta charset="UTF-8">
 <title>WWW</title>
+
 <link rel="icon" href="./logo_img/favicon.png">
 <link href="https://fonts.googleapis.com/
     icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
     rel="stylesheet">
     
-    
+    <link rel="stylesheet" type="text/css" href="./styles/font_style.css">
 	<link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 	<link rel="stylesheet" href="./styles/footer,header.css">
@@ -37,11 +38,6 @@
     
         
     <style>
- @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-  
-*{
-font-family: 'Noto Sans KR', sans-serif;
-}
 /*hover시작*/
         figure.snip1384 {
             font-family: 'Raleway', Arial, sans-serif;

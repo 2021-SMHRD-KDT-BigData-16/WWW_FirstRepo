@@ -16,6 +16,8 @@
 <head>
 <meta charset="UTF-8">
 <title>detail_page</title>
+	<link rel="stylesheet" type="text/css" href="./styles/font_style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="icon" href="./logo_img/favicon.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="./styles/movie_detail.css">
@@ -42,43 +44,46 @@
 
 <body>
 
-    <!-- 헤더 시작 -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "z-index: 1 !important;">
+   	 <!-- 헤더 시작 -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
+            <a class="navbar-brand" href="contentSearch"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"  href="contentSearch">홈</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="contentSearch">홈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="moviePage.jsp">영화</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="moviePage.jsp">영화</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="font-size : 13pt" aria-current="page" href="community.jsp">커뮤니티</a>
+                        <a class="nav-link active" style="font-size : 13pt" aria-current="page"
+                            href="community.jsp">플레이리스트</a>
                     </li>
                 </ul>
-
-                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
+				
+               <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
-
-                    <button type="button" class="btn btn-outline-warning">
-                        <a class="btn_link" style="color: white !important" href="#">검색</a>
+                    <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
+                        <p class="btn_link" style="color: white !important; margin : 0;" >검색</p>
                     </button>
                 </form>
-
-                <% memberDTO user =(memberDTO)session.getAttribute("user"); %>
+				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
 				<p class="header_nick"><%=user.getUser_nick()+"님"%></p>
 					<form action="logoutService" align="center" method = "post">
                     <button type="button" class="btn btn-outline-warning" style="margin-left : 20px ">
                         <a class="btn_link" style="color: white !important" href="logoutService">로그아웃</a>
                     </button>
                 	</form>
+				
+                
 
 
             </div>

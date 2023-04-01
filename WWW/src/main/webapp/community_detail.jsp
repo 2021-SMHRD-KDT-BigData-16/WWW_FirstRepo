@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="./styles/font_style.css">
 	<link rel="stylesheet" type="text/css" href="./styles/header_nick.css">
 	<link rel="icon" href="./logo_img/favicon.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">

@@ -18,6 +18,7 @@
 <head>
 <meta charset="UTF-8">
     <title>Search_result</title>
+    	<link rel="stylesheet" type="text/css" href="./styles/font_style.css">
     <link rel="icon" href="./logo_img/favicon.png">
     <link rel="stylesheet" href="./styles/header_nick.css">
     <link rel="stylesheet" href="./styles/community.css">
