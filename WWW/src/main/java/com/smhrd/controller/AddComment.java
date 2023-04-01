@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,7 +27,8 @@ public class AddComment extends HttpServlet {
 		
 //------------------------------------------------------DB에 추가할 데이터 불러오기--------------------------------------------------//
 		request.setCharacterEncoding("UTF-8");
-		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		String content = request.getParameter("content");
 		Date date = new Date();
 		//로그인 된 닉네임 출력
@@ -54,14 +56,15 @@ public class AddComment extends HttpServlet {
 		dto.setUser_id(user.getUser_id());
 		int row = dao.addComment(dto);
 		if(row>0) {
-			System.out.println("댓글 저장 성공");			
+			System.out.println("댓글 저장 성공");
+			ArrayList<commentDTO> cm_list = (ArrayList) dao.selectAll();
+			session.setAttribute("comment", cm_list);
+			out.println("<script>alert('댓글이 등록완료 되었습니다.'); location.href='community_1.jsp';</script>");
 		}else {
 			System.out.println("댓글 저장 실패");
 		}
 		
-		ArrayList<commentDTO> cm_list = (ArrayList) dao.selectAll();
-		session.setAttribute("comment", cm_list);
-		response.sendRedirect("community_1.jsp");
+//		response.sendRedirect("community_1.jsp");
 	}
 
 }

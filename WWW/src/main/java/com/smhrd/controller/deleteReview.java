@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -20,7 +21,8 @@ public class deleteReview extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		String temp = request.getParameter("data");
 		HttpSession session = request.getSession();
 		int idx = Integer.parseInt(temp);
@@ -31,19 +33,22 @@ public class deleteReview extends HttpServlet {
 		int row = dao.delete(dto);
 		if(row>0) {
 			System.out.println("삭제 성공");
+			ArrayList<reviewDTO> review_list = dao.search();
+			session.setAttribute("review", review_list);
+			out.println("<script>alert('리뷰 삭제 완료'); location.href='movie_detail.jsp';</script>");
 		}else {
 			System.out.println("삭제 실패");
 		}
-		ArrayList<reviewDTO> review_list = dao.search();
-		if (review_list != null) {
-			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
-			
-			// 세션을 불러오기
-			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
-			session.setAttribute("review", review_list);
-			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
-		}
-		response.sendRedirect("movie_detail.jsp");
+//		ArrayList<reviewDTO> review_list = dao.search();
+//		if (review_list != null) {
+//			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
+//			
+//			// 세션을 불러오기
+//			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+//			session.setAttribute("review", review_list);
+//			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
+//		}
+//		response.sendRedirect("movie_detail.jsp");
 		
 		
 	}

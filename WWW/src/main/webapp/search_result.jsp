@@ -36,11 +36,13 @@
     <script src="./Js/footer,header_auto_search.js"></script>
 </head>
 <body>
-
+<a href="#top" style="position: fixed;
+            right: 55px;
+            bottom: 55px;"><img alt="" src="./logo_img/arrow.png"></a>
 	 <!-- 헤더 시작 -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
+            <a class="navbar-brand" href="contentSearch"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
@@ -65,7 +67,7 @@
                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
-                        <a class="btn_link" style="color: white !important" href="">검색</a>
+                        <p class="btn_link" style="color: white !important; margin : 0;" >검색</p>
                     </button>
                 </form>
 				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>

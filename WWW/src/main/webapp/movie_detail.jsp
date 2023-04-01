@@ -213,12 +213,14 @@
                                 <br>
 
                                                     <h3>리뷰</h3>
-                                 <div class = "scroll_contatiner" style="overflow-y: scroll; width : 767px; height: 750px;">
+                                                <div class = "scroll_contatiner" style="overflow-y: scroll; width : 767px; height: 750px;">
                                                 
-                                 <form action = "reviewText" method = "post">
-									<p ><textarea cols="100" rows="5"name = "review_content"></textarea></p>
-									<p><input type="submit" value="Submit"></p>
-								</form>
+                                               <form action = "reviewText" method = "post">
+                                       <p><textarea cols="100" rows="5"name = "review_content" style="resize : none;"></textarea></p>
+                                       <input id="review" type="submit" value="등록">
+                                     </form>
+											    
+											    
 											    
                                                     <% boolean isReview=false; %>
                                                         

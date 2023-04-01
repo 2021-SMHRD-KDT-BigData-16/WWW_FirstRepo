@@ -137,7 +137,18 @@ body {
 /*스크롤 하는 기능*/
 
 
-
+#review{
+    padding: 0.3% 0.7%;
+    background-color:  #212529;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 14px;
+    left: 711px;
+}
+form{
+    position: relative;
+}
 
 /* .btn {
     --bs-btn-padding-x: 1.0rem !important;
