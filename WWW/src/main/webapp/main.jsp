@@ -32,6 +32,142 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./Js/footer,header_auto_search.js"></script>
+    
+    
+    
+        
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+  
+*{
+font-family: 'Noto Sans KR', sans-serif;
+}
+/*hover시작*/
+        figure.snip1384 {
+            font-family: 'Raleway', Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            min-width: 166px;
+            max-width: 236px;
+            width: 70px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+            background-color:  #000000;
+        }
+
+        figure.snip1384 * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+        }
+
+        figure.snip1384 img {
+            max-width: 100%;
+            backface-visibility: hidden;
+            vertical-align: top;
+        }
+
+        figure.snip1384:after,
+        figure.snip1384 figcaption {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        figure.snip1384:after {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.65);
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+            opacity: 0;
+        }
+
+        figure.snip1384 figcaption {
+            z-index: 1;
+            padding-top: 80px;
+        }
+
+        figure.snip1384 h6,
+        figure.snip1384 .links {
+            width: 100%;
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        figure.snip1384 h6 {
+            line-height: 1.1em;
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+
+        figure.snip1384 p {
+            font-size: 0.9em;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0;
+            top: 50%;
+            -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+        }
+
+        figure.snip1384 i {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 20px 25px;
+            font-size: 34px;
+            opacity: 0;
+            -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+        }
+
+        figure.snip1384 a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        figure.snip1384:hover img,
+        figure.snip1384.hover img {
+            zoom: 1;
+            filter: alpha(opacity=50);
+            -webkit-opacity: 0.5;
+            opacity: 0.5;
+        }
+
+        figure.snip1384:hover:after,
+        figure.snip1384.hover:after {
+            opacity: 1;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+        }
+
+        figure.snip1384:hover h6,
+        figure.snip1384.hover h6,
+        figure.snip1384:hover p,
+        figure.snip1384.hover p,
+        figure.snip1384:hover i,
+        figure.snip1384.hover i {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+
+
+    </style>
+    
 </head>
 <body>
 <a href="#top" style="position: fixed;
@@ -41,7 +177,7 @@
 <!-- 헤더 시작 -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 9 !important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/contentSearch"><img src="./logo_img/작은 로고.png" alt=""
+            <a class="navbar-brand" href="/ex03_myPage2.html"><img src="./logo_img/작은 로고.png" alt=""
                     style="width : 80px ; margin-left : 10px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">               
@@ -51,7 +187,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
-                            href="main.jsp">홈</a>
+                            href="contentSearch">홈</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" style="font-size : 13pt" aria-current="page"
@@ -66,7 +202,7 @@
                <form class="d-flex" role="search" align="center" action ="SearchResult" method="get">
                     <input id="searchInput" style="margin-right: 10px; width: 400px; z-index: 2;"  name = "search" placeholder=" 검색어를 입력해주세요.">
                     <button type="submit" class="btn btn-outline-warning" style = "margin-right : 95px">
-                        <p class="btn_link" style="color: white !important; margin : 0;" >검색</p>
+                        <a class="btn_link" style="color: white !important" href="">검색</a>
                     </button>
                 </form>
 				<% memberDTO user =(memberDTO)session.getAttribute("user"); %>
@@ -108,11 +244,19 @@
             <a class="next">&#10095;</a>
             <ul class="slides">
             <%for(int i = 0 ; i < contents.size(); i++){ %>
-				<li>	
-					<a href="detailContent?data=<%=contents.get(i).getV_title() %>">						
-						<img src="./netflix_img/<%=contents.get(i).getV_title()%>.jpg" />
-					</a> 
-				</li> 
+            <li>
+			    <figure class="snip1384" style="float : left; ">
+			        <img src="./netflix_img/<%=contents.get(i).getV_title()%>.jpg" />
+			        <figcaption>
+			            <h6><%=contents.get(i).getV_title()%></h6>
+			            <br>
+			            <p>시청하러가기</p><i
+			            class="ion-ios-arrow-right"></i>
+			        </figcaption>
+			        <a a href="detailContent?data=<%=contents.get(i).getV_title() %>"></a>
+			        
+			    </figure>
+			</li>
             <%} %>
             </ul>
         </div>
@@ -124,11 +268,19 @@
             <a class="next">&#10095;</a>
             <ul class="slides">
             <%for(int i = 0 ; i < horror.size(); i++){ %>
-            	<li>	
-					<a href="detailContent?data=<%=horror.get(i).getV_title()%>">						
-						<img src="./netflix_img/<%=horror.get(i).getV_title()%>.jpg" />
-					</a> 
-				</li> 
+		    <li>
+		        <figure class="snip1384" style="float : left; ">
+		            <img src="./netflix_img/<%=horror.get(i).getV_title()%>.jpg" />
+		            <figcaption>
+		                <h6><%=horror.get(i).getV_title()%></h6>
+		                <br>
+		                <p>시청하러가기</p><i
+		                class="ion-ios-arrow-right"></i>
+		            </figcaption>
+		            <a a href="detailContent?data=<%=horror.get(i).getV_title()%>"></a>
+		            
+		        </figure>
+		    </li>
             <%} %>
             </ul>
         </div>
@@ -140,11 +292,19 @@
             <a class="next">&#10095;</a>
             <ul class="slides">
             <%for(int i = 0 ; i < action.size(); i++){ %>
-				<li>	
-					<a href="detailContent?data=<%=action.get(i).getV_title() %>">						
-						<img src="./netflix_img/<%=action.get(i).getV_title()%>.jpg" />
-					</a> 
-				</li> 
+			    <li>
+			        <figure class="snip1384" style="float : left; ">
+			            <img src="./netflix_img/<%=action.get(i).getV_title()%>.jpg" />
+			            <figcaption>
+			                <h6><%=action.get(i).getV_title()%></h6>
+			                <br>
+			                <p>시청하러가기</p><i
+			                class="ion-ios-arrow-right"></i>
+			            </figcaption>
+			            <a a href="detailContent?data=<%=action.get(i).getV_title()%>"></a>
+			            
+			        </figure>
+			    </li>
             <%} %>
             </ul>
         </div>
