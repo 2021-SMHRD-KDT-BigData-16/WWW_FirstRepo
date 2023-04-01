@@ -122,13 +122,13 @@
         <div id="playlist_tag">
 
             <h3 style="color : white"><%=user_list.get(u_idx).getUser_nick() %>님의 플레이리스트</h3>
-            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%></h3>
+            <h3 style="color : white"><%=c_list.get(idx).getC_hashtag().replace(",", " ")%>
             <%if (likeCheck>0) {%> 
-				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">❤</a>
+				<a href="likeDown?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/빈1하트.png" style="width:40px"></a>
 			<%} else{ %>
-    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none">🤍</a>
+    			<a href="likeUp?data=<%=c_list.get(idx).getC_idx()%>" style="font-size : 30px; text-decoration: none"><img src="./logo_img/하1트.png" style="width:40px"></a>
     	<%} %>
-
+			</h3>
         </div>
         <div class="slide_wrapper" id="movie">
             <a class="prev">&#10094;</a>
@@ -149,8 +149,8 @@
     </div>
     
 <div class="card bg-light">
-<form class="mb-4" action = "AddComment"><textarea style="resize: none;" class="form-control" rows="3" placeholder="감상평을 등록해주세요" name = "content"></textarea>
-                            <input id="review" type="submit" value="등록">
+<form class="mb-4" action = "AddComment"><textarea style="resize: none;" id="summary"class="form-control" rows="3" placeholder="감상평을 등록해주세요" name = "content"></textarea>
+                            <input id="review" type="submit" value="등록"">
                                 
                         </form>
 	 <%

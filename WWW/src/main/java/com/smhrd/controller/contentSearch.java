@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.model.boardDAO;
 import com.smhrd.model.communityDAO;
 import com.smhrd.model.communityDTO;
 import com.smhrd.model.contentDAO;
@@ -121,6 +122,7 @@ public class contentSearch extends HttpServlet {
 			session.setAttribute("user_list", user_list);
 			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
 		}
+		
 		response.sendRedirect("main.jsp");
 	}
 }

@@ -50,24 +50,19 @@ public class likeDown extends HttpServlet {
 		}
 		int row2 = dao.checkLike(dto);
 		if(likeResult>0) {
-			System.out.println("COMMUNITY 테이블 저장 성공");
-			session.setAttribute("likeCheck", row2);
-			ArrayList<communityDTO> comm_list = c_dao.selectAll();
-			session.setAttribute("community", comm_list);
-			out.println("<script>alert('좋아요 취소'); location.href='community_1.jsp';</script>");
-			
+			System.out.println("COMMUNITY 테이블 저장 성공");			
 		}else {
 			System.out.println("COMMUNITY 테이블 저장 실패");
 		}
-//		session.setAttribute("likeCheck", row2);
-//		ArrayList<communityDTO> comm_list = c_dao.selectAll();
-//		if (comm_list != null) {
-//			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
-//			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
-//			session.setAttribute("community", comm_list);
-//			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
-//		}
-//		response.sendRedirect("community_1.jsp");
+		session.setAttribute("likeCheck", row2);
+		ArrayList<communityDTO> comm_list = c_dao.selectAll();
+		if (comm_list != null) {
+			//dao의 search 메소드를 사용하여 결과 값이 반환된 경우
+			// 세션에 contents라는 이름으로 불러온 리스트 들고오기
+			session.setAttribute("community", comm_list);
+			// 반복해서 세션에 데이터를 넘긴 후에 main.jsp로 이동한다.
+		}
+		response.sendRedirect("community_1.jsp");
 	}
 
 }

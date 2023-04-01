@@ -54,16 +54,14 @@ public class likeUp extends HttpServlet {
 		int row2 = dao.checkLike(dto);
 		if(likeResult>0) {
 			System.out.println("community 저장 성공");
-			session.setAttribute("likeCheck", row2);
 			ArrayList<communityDTO> comm_list = c_dao.selectAll();
-			out.println("<script>alert('좋아요~'); location.href='community_1.jsp';</script>");
 		}else {
 			System.out.println("community 저장 실패");
 		}
-//		session.setAttribute("likeCheck", row2);
-//		ArrayList<communityDTO> comm_list = c_dao.selectAll();
-//		
-//		response.sendRedirect("community_1.jsp");
+		session.setAttribute("likeCheck", row2);
+		ArrayList<communityDTO> comm_list = c_dao.selectAll();
+		session.setAttribute("community", comm_list);
+		response.sendRedirect("community_1.jsp");
 	}
 
 }
