@@ -75,16 +75,15 @@ public class AddComment extends HttpServlet {
 			// 6-1. 반환 값이 1이면 댓글 저장이 성공
 			System.out.println("댓글 저장 성공");
 			// 6-1-1. 댓글 내용이 삽입되면 다시 갱신을 해줘야 하기 때문에 댓글을 전체 조회하여 다시 세션에 comment 값으로 넣어주기
-			ArrayList<commentDTO> cm_list = (ArrayList) dao.selectAll();
-			session.setAttribute("comment", cm_list);
-			// 6-1-2. 팝업창으로 알려주고, community_1.jsp로 이동
-			out.println("<script>alert('댓글이 등록완료 되었습니다.'); location.href='community_1.jsp';</script>");
 		}else {
 			// 6-2. 반환 값이 0이면 댓글 저장이 실패
 			System.out.println("댓글 저장 실패");
 			// 6-2-2. 팝업창으로 알려주고, community_1.jsp로 이동
-			out.println("<script>alert('댓글이 등록에 실패하였습니다.'); location.href='community_1.jsp';</script>");
 		}
+		ArrayList<commentDTO> cm_list = (ArrayList) dao.selectAll();
+		session.setAttribute("comment", cm_list);
+		// 6-1-2. 팝업창으로 알려주고, community_1.jsp로 이동
+		response.sendRedirect("community_1.jsp");
 		
 	}
 
