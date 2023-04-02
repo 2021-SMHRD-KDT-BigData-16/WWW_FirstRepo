@@ -106,16 +106,15 @@ div#title {
 
 /* 아코디언 몸통 (겉)*/
 .accordion-button {
-	background-color: #ff7600 !important;
+	background-color: rgb(6,13,23) !important;
 	color: white !important;
 	font-size: 15pt !important;
 }
-
 /* 해시태그 열리는 아코디언 안에 체크박스 부분(안) (부트스트랩)  */
 .accordion-body {
 	font-size: 13pt;
-	background-color: #ffcca0;
-	color: black;
+	background-color: #5e718d;
+	color: white;
 	/* 오른쪽으로 좀 띄어봄(이상하면 지워도됨) */
 	padding: 5px 50px 5px 50px !important;
 	/* 상단, 우측, 하단, 좌측*/
@@ -145,7 +144,7 @@ input[type=checkbox] {
 	height: 700px;
 	margin: 0;
 	padding: 0;
-	background-color: #ff7700;
+	background-color: rgb(6,13,23);
 	margin-top: 30px;
 	border-radius: 8px;
 	/* display: flex; */
@@ -191,14 +190,14 @@ button.draggable {
 }
 
 .scroll_contatiner::-webkit-scrollbar-thumb {
-	background-color: #ff7700;
+	background-color:rgb(6,13,23);
 	border-radius: 10px;
 	background-clip: padding-box;
 	border: 2px solid transparent;
 }
 
 .scroll_contatiner::-webkit-scrollbar-track {
-	background-color: #ffb06b;
+	background-color:#5e718d;
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 5px white;
 }

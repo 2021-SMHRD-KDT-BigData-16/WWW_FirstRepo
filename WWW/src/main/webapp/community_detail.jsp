@@ -165,6 +165,8 @@
                                             onclick='getCheckboxValue(),checkStr()'> 다큐멘터리
                                         <input class="hash_check" type="checkbox" name="hash_name" value="드라마"
                                             onclick='getCheckboxValue(),checkStr()'> 드라마
+                                        <input class="hash_check" type="checkbox" name="hash_name" value="가족"
+                                            onclick='getCheckboxValue(),checkStr()'> 가족
 
 
                                     </div>
@@ -194,6 +196,10 @@
                                             onclick='getCheckboxValue(),checkStr()'> 사랑
                                         <input class="hash_check" type="checkbox" name="hash_name" value="그리움"
                                             onclick='getCheckboxValue(),checkStr()'> 그리움
+                                        <input class="hash_check" type="checkbox" name="hash_name" value="감동"
+                                            onclick='getCheckboxValue(),checkStr()'> 감동
+                                        <input class="hash_check" type="checkbox" name="hash_name" value="신남"
+                                            onclick='getCheckboxValue(),checkStr()'> 신남
 
 
                                     </div>
@@ -221,6 +227,8 @@
                                             onclick='getCheckboxValue(),checkStr()'> 2030
                                         <input class="hash_check" type="checkbox" name="hash_name" value="7080"
                                             onclick='getCheckboxValue(),checkStr()'> 7080
+                                        <input class="hash_check" type="checkbox" name="hash_name" value="7080"
+                                            onclick='getCheckboxValue(),checkStr()'> 7080
 
                                     </div>
                                 </div>
@@ -240,12 +248,12 @@
                     <div class="d_container">
 
                         <input class="input_search" type="text" id="movieInput" type="text"
-                            style= "margin-right: 10px; width: 500px; z-index: 2; box-shadow:5px 5px 10px #e16900;"
+                            style= "margin-right: 10px; margin-bottom : 10px;width: 500px; z-index: 2; box-shadow:5px 5px 10px rgb(6,13,23);"
                             data-cate="high" onkeyup="search(this);" placeholder="검색할 영화를 입력하세요">
 
                         <!-- 연관검색 리스트가 출력되는곳 -->
                         
-                        <div class= "scroll_contatiner" id="movieList" style="overflow:scroll; width:1350px; height:238px; color : white; bolder = 10px"></div>
+                        <div class= "scroll_contatiner" id="movieList" style="overflow:scroll; width:1350px; height:238px; color : white; bolder = 10px; padding-bottom : 10px;"></div>
 
                     </div>
 
@@ -404,7 +412,7 @@
        // 받아온 친구인듯 
        console.log(selected);
 
-       selected.innerHTML += "<div style = 'float : left;'> <img src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px #e16900;\">  </div>";
+       selected.innerHTML += "<div style = 'float : left;'> <img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\"> </div>";
        selectMoives+=target.innerText+",";
 
        
@@ -517,10 +525,7 @@ const draggables = document.querySelectorAll(".draggable");
 	    $('#selected').empty();
 	    
 	}
-	// ----------체크박스 끝---------------
-	
-	
-	   
+	//삭제
    
    
 
