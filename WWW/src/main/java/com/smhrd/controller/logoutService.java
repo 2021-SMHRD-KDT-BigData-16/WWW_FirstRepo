@@ -21,7 +21,8 @@ public class logoutService extends HttpServlet {
 		// 0. 세션, printWriter 불러오기, 한글 인코딩
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
-		response.setContentType("text/html; charset = UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		
 		try {			
