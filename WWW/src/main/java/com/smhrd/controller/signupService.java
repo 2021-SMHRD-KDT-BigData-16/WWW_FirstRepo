@@ -88,7 +88,7 @@ public class signupService extends HttpServlet {
 			// response.sendRedirect("login.html");
 			out.close();
 		} else {
-			out.println("<script>alert('중복된 아이디가 있어요.! 다시 진행해 주세요.'); location.href='signup.html';</script>");
+			out.println("<script>alert('중복된 아이디 및 닉네임이 있어요.! 다시 진행해 주세요.'); location.href='signup.html';</script>");
 			// response.sendRedirect("login.html");
 			out.close();
 			System.out.println("실패");
