@@ -1,6 +1,6 @@
 # WWW
 
-OTT Service(OTT + Community)
+OTT Service(OTT)
 <hr>
 <h3>WWW Git Repository Rules</h3>
 <ol>
