@@ -40,4 +40,8 @@
 		 set c_likes = c_likes - 1 
 		 where c_idx = #{c_idx}
 	</update>
+	<delete id="deleteCommunity" parameterType="com.smhrd.model.communityDTO">
+		delete from tb_community
+		where c_idx = #{c_idx}
+	</delete>
 </mapper>

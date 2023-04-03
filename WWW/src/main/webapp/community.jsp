@@ -14,6 +14,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	a{
+		text-decoration: none;
+		color : white;
+	}
+</style>
 <meta charset="UTF-8">
 <title>W.W.W</title>
 	<link rel="stylesheet" type="text/css" href="./styles/font_style.css">
@@ -141,7 +147,7 @@
                <%String[] user_comm = c_list.get(i).getC_content().split(","); %>
                <%int k =0; %>
                   <li>   
-                  <a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>"><div class="contain">
+                  <a href="detailPlayList?data=<%=c_list.get(i).getC_idx()%>" style="text-decoration:none;color:white;"><div class="contain">
                   <br>
                   <img class="a" src="./netflix_img/<%=user_comm[k+1]%>.jpg" alt="<%=user_comm[k+1]%>">
                   <img class="b" src="./netflix_img/<%=user_comm[k]%>.jpg" alt="<%=user_comm[k]%>">
@@ -151,9 +157,9 @@
                   <p class="p"><%=u_list.get(j).getUser_nick()%>의 플레이리스트</p>
                   <%} %>
                <%} %>
-                  <p><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %></p>
-      </div>
-      </a>
+                  <p style="color:white;"><%=c_list.get(i).getC_hashtag()%> ❤ : <%=c_list.get(i).getC_likes() %> <a href="deleteCommunity?data=<%=c_list.get(i).getC_idx()%>" style="text-decoration:none;">❌</a></p>
+      		</div>
+      		</a>
             </li> 
                   
                <% } %>   
