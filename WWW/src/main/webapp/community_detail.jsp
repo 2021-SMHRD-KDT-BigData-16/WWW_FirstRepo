@@ -253,7 +253,7 @@
 
                         <!-- 연관검색 리스트가 출력되는곳 -->
                         
-                        <div class= "scroll_contatiner" id="movieList" style="overflow:scroll; width:1350px; height:238px; color : white; bolder = 10px; padding-bottom : 10px;"></div>
+                        <div class= "scroll_contatiner" id="movieList" style="overflow:scroll; width:1350px; height:325px; color : white; bolder = 10px; padding-bottom : 10px; padding-left : 45px; padding-top: 30px"></div>
 
                     </div>
 
@@ -262,7 +262,7 @@
 
                         <!-- 출력시키는 곳 -->
                         <div class= "scroll_contatiner" style="z-index: 3; overflow:scroll; width:1350px; height:330px; ">
-                            <div id="selected" style="margin-left : 60px; margin-top : 10px;"></div>
+                            <div id="selected" style="margin-left : 60px; margin-top : 10px; "></div>
                         </div>
                     </div>
                 
@@ -395,7 +395,7 @@
                    // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
                    if (movie['src'].includes(checkWord)) {
                        // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
-                       movieList.append( "<span style=\"cursor: pointer;margin-left : 50px; margin-top : 200px;\" onclick=\"select(this);\">"+movie['src'] + "</span> <br/> <img style='cursor: pointer;' onclick='select(this);' src = './netflix_img/"+ movie['src']+".jpg> <br/>");
+                       movieList.append( "<div style = 'float : left; cursor: pointer' onclick='select(this);' ><img src ='./netflix_img/"+ movie['src']+".jpg' style = 'margin-left : 30px ;margin-right : 40px ; border-radius : 10px';> <p style = 'text-align:center'>"+movie['src'] + "</p></div>  ");
                    }
                })
 
@@ -413,21 +413,12 @@
        // 비어있는  div에 innertext를 출력시킬꺼야 target의 이너텍스트를 타겟은 위의 전체 함수에서
        // 받아온 친구인듯 
        console.log(selected);
-
-       selected.innerHTML+= "<div style = 'float : left;'> <img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\"></div>";
-       selectMoives.push(target.innerText+",");
+	   console.log(target.innerText)
+	   
+       selected.innerHTML += "<div style = 'float : left;'> <img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\"></div>";
+       selectMoives += target.innerText+",";
 
        
-       // 클릭시 이미지 삭제!
-       $(".img_con").click(function () {
-    	   console.log("이미지 삭제")
-           $(this).remove();
-    	   
-    	   //정현이가 할꺼는 변수에 += 한거 삭제하기
-    	   //selected.innerHTML -= "<img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\">";
-    	   //selectMoives-=target.innerText+",";
-    	   
-       });
        
    }
 	 
