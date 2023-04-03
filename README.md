@@ -36,14 +36,6 @@ OTT Service(OTT + Community)
             <oi><img src="https://user-images.githubusercontent.com/98080954/229441608-90c076ee-988a-430d-889b-47aa63275211.png" alt=""></oi>
             <oi><img src="https://user-images.githubusercontent.com/98080954/229441599-6de72558-512e-4ab1-b99a-050ea8819de8.png" alt=""></oi>
             <oi><img src="https://user-images.githubusercontent.com/98080954/229441612-ed56acb4-6e59-4f51-a232-76217ea24391.png"></oi>
-![js](https://user-images.githubusercontent.com/98080954/229441599-6de72558-512e-4ab1-b99a-050ea8819de8.png)
-![시스템 흐름도 drawio](https://user-images.githubusercontent.com/98080954/229441600-e7313e3d-dbca-4fff-8e88-a13dd10b5397.png)
-![sql (1)](https://user-images.githubusercontent.com/98080954/229441608-90c076ee-988a-430d-889b-47aa63275211.png)
-![java](https://user-images.githubusercontent.com/98080954/229441609-f265caf2-8638-44d9-8030-332410a9d84a.png)
-![html](https://user-images.githubusercontent.com/98080954/229441612-ed56acb4-6e59-4f51-a232-76217ea24391.png)
-![테이블명세서~](https://user-images.githubusercontent.com/98080954/229441897-a8e9a144-2b04-4dc4-bef6-e409b66a5f58.png)
-
-
         </ul>
     <hr>
     <h3>4. 서비스 구조</h3>
@@ -106,7 +98,12 @@ OTT Service(OTT + Community)
             <br>
             <img src="https://user-images.githubusercontent.com/98080954/229440586-ef2b2af3-abf7-46f0-98be-d6a695e154d2.png" style="height: 480px;width: 700px;">
         </ul>
-        
+![js](https://user-images.githubusercontent.com/98080954/229441599-6de72558-512e-4ab1-b99a-050ea8819de8.png)
+![시스템 흐름도 drawio](https://user-images.githubusercontent.com/98080954/229441600-e7313e3d-dbca-4fff-8e88-a13dd10b5397.png)
+![sql (1)](https://user-images.githubusercontent.com/98080954/229441608-90c076ee-988a-430d-889b-47aa63275211.png)
+![java](https://user-images.githubusercontent.com/98080954/229441609-f265caf2-8638-44d9-8030-332410a9d84a.png)
+![html](https://user-images.githubusercontent.com/98080954/229441612-ed56acb4-6e59-4f51-a232-76217ea24391.png)
+![테이블명세서~](https://user-images.githubusercontent.com/98080954/229441897-a8e9a144-2b04-4dc4-bef6-e409b66a5f58.png)
 ![1](https://user-images.githubusercontent.com/98080954/229440563-911e6387-f75b-4aaf-a1fc-c0f83d385abe.png)
 ![2](https://user-images.githubusercontent.com/98080954/229440564-22160389-d478-4390-911d-e77304f62200.png)
 ![3](https://user-images.githubusercontent.com/98080954/229440565-ba563abb-7bbb-418c-8242-44e456a87474.png)
