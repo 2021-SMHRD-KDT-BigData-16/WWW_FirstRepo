@@ -395,14 +395,16 @@
                    // 만약에 src가 내가입력한 글자(checkWord)에 입력되어있는데에 포함되어있으면
                    if (movie['src'].includes(checkWord)) {
                        // 연관검색에 뜨는 정보임 (이거 클릭하면 정보를 여기 안에 든거를 자동완성에 출력을 해주겠다~)
-                       movieList.append( "<span style=\"cursor: pointer;margin-left : 50px; margin-top : 200px;\" onclick=\"select(this);\">"+movie['src'] + "</span> <br/>");
+                       movieList.append( "<span style=\"cursor: pointer;margin-left : 50px; margin-top : 200px;\" onclick=\"select(this);\">"+movie['src'] + "</span> <br/> <img style='cursor: pointer;' onclick='select(this);' src = './netflix_img/"+ movie['src']+".jpg> <br/>");
                    }
                })
+
+           
            }
        })
    }
 
-   /* <img style="cursor: pointer;" onclick="select(this);" src = "/ajax_search-main/${movie['src']}.jpg "> <br/> */
+   /*  */
 	
 		const selected = "";
    function select(target) {
@@ -412,10 +414,20 @@
        // 받아온 친구인듯 
        console.log(selected);
 
-       selected.innerHTML += "<div style = 'float : left;'> <img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\"> </div>";
-       selectMoives+=target.innerText+",";
+       selected.innerHTML+= "<div style = 'float : left;'> <img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\"></div>";
+       selectMoives.push(target.innerText+",");
 
        
+       // 클릭시 이미지 삭제!
+       $(".img_con").click(function () {
+    	   console.log("이미지 삭제")
+           $(this).remove();
+    	   
+    	   //정현이가 할꺼는 변수에 += 한거 삭제하기
+    	   //selected.innerHTML -= "<img class = 'img_con' src =\"./netflix_img/"+target.innerText+".jpg\" style =\"width : 186px;height : 256px; margin : 10px 15px 10px 0px ; z-index : 5; border-radius : 10px; box-shadow:5px 5px 10px rgb(6,13,23);\">";
+    	   //selectMoives-=target.innerText+",";
+    	   
+       });
        
    }
 	 
@@ -525,7 +537,6 @@ const draggables = document.querySelectorAll(".draggable");
 	    $('#selected').empty();
 	    
 	}
-	//삭제
    
    
 
