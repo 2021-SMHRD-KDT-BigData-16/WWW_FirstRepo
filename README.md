@@ -22,6 +22,7 @@ OTT Service(OTT + Community)
     <li>글 작성, 사진 업로드, 검색 기능 구현</li>
     <li>좋아요 기능을 통한 커뮤니티 실시간 인기글 조회 </li>
 </ul>
+<hr>
 <h3>2. 주요 기능</h3>
     <ul>
         <li>영화 컨텐츠 조회</li>
