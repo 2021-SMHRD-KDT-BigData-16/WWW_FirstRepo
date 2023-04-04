@@ -268,12 +268,12 @@
                 
 
 
-                <div style="margin-left : 1191px; margin-top : 10px;">
+                <div style="margin-left : 1220px; margin-top : 10px;">
                     <button class="btn btn-primary" type="button" onclick="sendData();"
-                        style="background-color : #ff7600; border:none ;">SUBMIT</button>
+                        style="background-color : #ff7600; border:none ;">작성하기</button>
 
                     <button class="btn btn-prsimary" type="button" onclick='reset()'
-                        style="background-color : #ff7600; color:white ;  border:none ;">ALLRESET</button>
+                        style="background-color : #ff7600; color:white ;  border:none ;">초기화</button>
                 </div>
             </div>
         </div>

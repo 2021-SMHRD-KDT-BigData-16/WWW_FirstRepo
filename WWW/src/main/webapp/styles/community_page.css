@@ -46,6 +46,7 @@ li {
     padding: 10px 20px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
+    left:10px;
 }
 .prev:hover, .next:hover {
   background-color: rgba(255,118,0,0.85);
@@ -65,15 +66,14 @@ li {
     transition: 0.6s ease;
     font-size : 30px;
     border-radius: 3px 0 0 3px;
+    left: 1540px;
 }
 
 /* 플레이리스트 버튼 위치 설정 */
 .slide_wrapper >button{
 	    top: 200px;
 }
-.next{
-    left: 1530px;
-}
+
 .slide_wrapper a{
 	top :195px;
 }
