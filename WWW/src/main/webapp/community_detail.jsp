@@ -508,8 +508,7 @@ const draggables = document.querySelectorAll(".draggable");
 	
 	    if (vCnt > 2) {
 	
-	        alert(`탁월한 선택이세요! 
-	        	 세개만 선택가능합니다 `);
+	        alert(`탁월한 선택이세요! 세개만 선택가능합니다!`);
 	
 	        return;
 	    }
