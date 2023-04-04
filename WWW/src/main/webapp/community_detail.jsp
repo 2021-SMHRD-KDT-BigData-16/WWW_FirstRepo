@@ -227,8 +227,6 @@
                                             onclick='getCheckboxValue(),checkStr()'> 2030
                                         <input class="hash_check" type="checkbox" name="hash_name" value="7080"
                                             onclick='getCheckboxValue(),checkStr()'> 7080
-                                        <input class="hash_check" type="checkbox" name="hash_name" value="7080"
-                                            onclick='getCheckboxValue(),checkStr()'> 7080
 
                                     </div>
                                 </div>
