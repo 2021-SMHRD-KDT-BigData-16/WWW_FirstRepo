@@ -9,6 +9,7 @@
 	<select id="commentAllSearch" resultType="com.smhrd.model.commentDTO">
 		select *
 		from tb_comment
+		order by cmt_dt desc
 	</select>
 	
 	<insert id="addComment" parameterType="com.smhrd.model.commentDTO">
